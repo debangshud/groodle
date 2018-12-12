@@ -1,6 +1,6 @@
-# micro-services
+# Spring Boot Micro Services
 
-# Installations
+## Installations
 
 **Oracle Express**
 ----------
