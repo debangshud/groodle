@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: sample-spring-boot-mongodb
+server:
+  port: 9020
