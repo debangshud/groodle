@@ -1,0 +1,25 @@
+server:
+  port: 10001
+
+spring:
+  application:
+    name: sample-spring-boot-rabbitmq
+
+booking:
+  exchange:  booking.inventory-update.exchange
+  routingkey: booking.inventory-update.routingKey
+  queue: booking.inventory-update.queue
+
+airbnb:
+  exchange:  airbnb.inventory-update.exchange
+  routingkey: airbnb.inventory-update.routingKey
+  queue: airbnb.inventory-update.queue
+
+---
+spring:
+  profiles: container
+  rabbitmq:
+    host: ${RABBITMQ_HOST}
+
+
+
