@@ -1,0 +1,10 @@
+server:
+  port: 10001
+spring:
+  application:
+    name: customer-service
+  cloud:
+    config:
+      discovery:
+        service-id: spring-cloud-config-service
+        enabled: true
