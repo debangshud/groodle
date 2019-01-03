@@ -12,6 +12,8 @@
         <module>spring-cloud-config-service</module>
         <module>netflix-eureka-naming-service</module>
         <module>netflix-zuul-api-gateway-service</module>
+        <module>sample-spring-boot-oauth-service</module>
+        <module>zipkin-distributed-tracing-service</module>
+        <module>customer-service</module>
     </modules>
-
 </project>
