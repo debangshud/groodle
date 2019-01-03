@@ -14,6 +14,8 @@
         <module>netflix-zuul-api-gateway-service</module>
         <module>sample-spring-boot-oauth-service</module>
         <module>zipkin-distributed-tracing-service</module>
+        <module>sample-spring-boot-mongodb</module>
+        <module>sample-spring-boot-jpa</module>
         <module>customer-service</module>
     </modules>
 </project>
