@@ -1,6 +1,6 @@
-package org.acacia.sample.springboot.rabbitmq.sender;
+package org.dasgupta.sample.springboot.rabbitmq.sender;
 
-import org.acacia.sample.springboot.rabbitmq.listener.BookingInventoryUpdateMessage;
+import org.dasgupta.sample.springboot.rabbitmq.listener.BookingInventoryUpdateMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;

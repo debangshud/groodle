@@ -1,4 +1,4 @@
-package org.acacia.sample.springboot.jpa.config;
+package org.dasgupta.sample.springboot.jpa.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;

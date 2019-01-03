@@ -1,4 +1,4 @@
-package org.acacia.sample.springboot.docker.resource;
+package org.dasgupta.sample.springboot.docker.resource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

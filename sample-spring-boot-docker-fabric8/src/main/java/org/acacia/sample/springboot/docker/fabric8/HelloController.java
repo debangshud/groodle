@@ -1,4 +1,4 @@
-package org.acacia.sample.springboot.docker.fabric8;
+package org.dasgupta.sample.springboot.docker.fabric8;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

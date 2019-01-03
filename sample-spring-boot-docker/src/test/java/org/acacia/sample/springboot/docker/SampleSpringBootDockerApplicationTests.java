@@ -1,4 +1,4 @@
-package org.acacia.sample.springboot.docker;
+package org.dasgupta.sample.springboot.docker;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

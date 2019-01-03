@@ -1,7 +1,7 @@
-package org.acacia.sample.springboot.mongodb.controllers;
+package org.dasgupta.sample.springboot.mongodb.controllers;
 
-import org.acacia.sample.springboot.mongodb.domain.Product;
-import org.acacia.sample.springboot.mongodb.repositories.ProductRepository;
+import org.dasgupta.sample.springboot.mongodb.domain.Product;
+import org.dasgupta.sample.springboot.mongodb.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package org.acacia.sample.springboot.docker.fabric8;
+package org.dasgupta.sample.springboot.docker.fabric8;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

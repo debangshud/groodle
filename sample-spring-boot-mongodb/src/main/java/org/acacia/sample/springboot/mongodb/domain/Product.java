@@ -1,4 +1,4 @@
-package org.acacia.sample.springboot.mongodb.domain;
+package org.dasgupta.sample.springboot.mongodb.domain;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;

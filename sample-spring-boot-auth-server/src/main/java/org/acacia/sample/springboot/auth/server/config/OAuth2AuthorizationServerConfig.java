@@ -1,4 +1,4 @@
-package org.acacia.sample.springboot.auth.server.config;
+package org.dasgupta.sample.springboot.auth.server.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;

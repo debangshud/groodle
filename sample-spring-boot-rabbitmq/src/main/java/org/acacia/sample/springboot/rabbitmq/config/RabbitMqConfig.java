@@ -1,4 +1,4 @@
-package org.acacia.sample.springboot.rabbitmq.config;
+package org.dasgupta.sample.springboot.rabbitmq.config;
 
 import org.springframework.amqp.core.*;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;

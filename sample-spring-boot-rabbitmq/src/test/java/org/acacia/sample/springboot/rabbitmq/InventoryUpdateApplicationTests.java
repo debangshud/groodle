@@ -1,4 +1,4 @@
-package org.acacia.sample.springboot.rabbitmq;
+package org.dasgupta.sample.springboot.rabbitmq;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

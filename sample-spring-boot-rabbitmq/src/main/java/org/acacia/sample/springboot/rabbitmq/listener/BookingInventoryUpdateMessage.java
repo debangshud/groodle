@@ -1,4 +1,4 @@
-package org.acacia.sample.springboot.rabbitmq.listener;
+package org.dasgupta.sample.springboot.rabbitmq.listener;
 
 public class BookingInventoryUpdateMessage {
 

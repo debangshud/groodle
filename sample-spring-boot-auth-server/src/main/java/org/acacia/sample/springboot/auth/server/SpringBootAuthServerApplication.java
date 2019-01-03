@@ -1,4 +1,4 @@
-package org.acacia.sample.springboot.auth.server;
+package org.dasgupta.sample.springboot.auth.server;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

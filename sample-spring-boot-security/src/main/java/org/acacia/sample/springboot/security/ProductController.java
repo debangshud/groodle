@@ -1,4 +1,4 @@
-package org.acacia.sample.springboot.security;
+package org.dasgupta.sample.springboot.security;
 
 public class ProductController {
 

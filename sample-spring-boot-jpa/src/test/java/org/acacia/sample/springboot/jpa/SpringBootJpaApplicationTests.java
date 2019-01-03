@@ -1,4 +1,4 @@
-package org.acacia.sample.springboot.jpa;
+package org.dasgupta.sample.springboot.jpa;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

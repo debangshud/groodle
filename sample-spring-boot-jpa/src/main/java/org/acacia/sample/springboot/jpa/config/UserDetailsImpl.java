@@ -1,7 +1,7 @@
-package org.acacia.sample.springboot.jpa.config;
+package org.dasgupta.sample.springboot.jpa.config;
 
-import org.acacia.sample.springboot.jpa.entity.User;
-import org.acacia.sample.springboot.jpa.entity.UserRole;
+import org.dasgupta.sample.springboot.jpa.entity.User;
+import org.dasgupta.sample.springboot.jpa.entity.UserRole;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

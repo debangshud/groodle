@@ -1,4 +1,4 @@
-package org.acacia.sample.springboot.jpa.config;
+package org.dasgupta.sample.springboot.jpa.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.access.expression.method.MethodSecurityExpressionHandler;

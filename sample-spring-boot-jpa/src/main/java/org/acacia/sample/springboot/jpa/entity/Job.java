@@ -1,4 +1,4 @@
-package org.acacia.sample.springboot.jpa.entity;
+package org.dasgupta.sample.springboot.jpa.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

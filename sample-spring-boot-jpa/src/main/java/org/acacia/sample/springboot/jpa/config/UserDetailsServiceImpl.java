@@ -1,7 +1,7 @@
-package org.acacia.sample.springboot.jpa.config;
+package org.dasgupta.sample.springboot.jpa.config;
 
-import org.acacia.sample.springboot.jpa.entity.User;
-import org.acacia.sample.springboot.jpa.repository.UserRepository;
+import org.dasgupta.sample.springboot.jpa.entity.User;
+import org.dasgupta.sample.springboot.jpa.repository.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

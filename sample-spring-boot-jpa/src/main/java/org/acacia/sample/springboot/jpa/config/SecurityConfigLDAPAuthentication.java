@@ -1,4 +1,4 @@
-package org.acacia.sample.springboot.jpa.config;
+package org.dasgupta.sample.springboot.jpa.config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

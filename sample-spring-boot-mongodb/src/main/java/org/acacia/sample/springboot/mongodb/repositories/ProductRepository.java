@@ -1,6 +1,6 @@
-package org.acacia.sample.springboot.mongodb.repositories;
+package org.dasgupta.sample.springboot.mongodb.repositories;
 
-import org.acacia.sample.springboot.mongodb.domain.Product;
+import org.dasgupta.sample.springboot.mongodb.domain.Product;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

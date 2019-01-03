@@ -1,4 +1,4 @@
-package org.acacia.sample.springboot.mongodb;
+package org.dasgupta.sample.springboot.mongodb;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
