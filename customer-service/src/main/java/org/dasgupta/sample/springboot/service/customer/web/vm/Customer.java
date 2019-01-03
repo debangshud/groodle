@@ -1,8 +1,11 @@
 package org.dasgupta.sample.springboot.service.customer.web.vm;
 
+import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
 
-@Data
+@Builder
+@Getter
 public class Customer {
 
     private String id;

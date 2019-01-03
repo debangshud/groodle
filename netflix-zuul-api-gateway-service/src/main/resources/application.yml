@@ -1,6 +1,11 @@
 spring:
   application:
     name: netflix-zuul-api-gateway-server
+  cloud:
+    config:
+      discovery:
+        service-id: spring-cloud-config-service
+        enabled: true
 server:
   port: 8765
 eureka:
