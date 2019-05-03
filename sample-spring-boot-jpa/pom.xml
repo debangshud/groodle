@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>org.acacia</groupId>
+	<groupId>org.dasgupta</groupId>
 	<artifactId>sample-spring-boot-jpa</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>

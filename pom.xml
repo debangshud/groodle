@@ -13,9 +13,17 @@
         <module>netflix-eureka-naming-service</module>
         <module>netflix-zuul-api-gateway-service</module>
         <module>sample-spring-boot-oauth-service</module>
-        <module>zipkin-distributed-tracing-service</module>
+        <module>zipkin-distributed-tracing-server</module>
         <module>sample-spring-boot-mongodb</module>
         <module>sample-spring-boot-jpa</module>
         <module>customer-service</module>
+        <module>employee-service</module>
+        <module>sample-spring-boot-docker</module>
+        <module>sample-spring-boot-docker-fabric8</module>
+        <module>sample-spring-boot-rabbitmq</module>
+        <module>sample-spring-boot-reactive</module>
+        <module>sample-spring-boot-scheduling</module>
+        <module>sample-spring-boot-security</module>
+        <module>spring-boot-admin-server</module>
     </modules>
 </project>
