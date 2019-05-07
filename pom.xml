@@ -24,6 +24,8 @@
         <module>sample-spring-boot-reactive</module>
         <module>sample-spring-boot-scheduling</module>
         <module>sample-spring-boot-security</module>
+        <module>sample-spring-boot-axon</module>
         <module>spring-boot-admin-server</module>
+        <module>aws-service</module>
     </modules>
 </project>
