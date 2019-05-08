@@ -1,7 +1,9 @@
 package org.dasgupta.springboot.axon.command;
 
+import lombok.Data;
 import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
+@Data
 public class PlaceOrderCommand {
 
     @TargetAggregateIdentifier

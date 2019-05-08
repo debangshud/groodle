@@ -2,7 +2,9 @@ package org.dasgupta.springboot.axon.endpoint;
 
 import lombok.extern.slf4j.Slf4j;
 import org.axonframework.commandhandling.gateway.CommandGateway;
+import org.dasgupta.springboot.axon.command.ConfirmOrderCommand;
 import org.dasgupta.springboot.axon.command.PlaceOrderCommand;
+import org.dasgupta.springboot.axon.command.ShipOrderCommand;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,5 +26,7 @@ public class OrderRestEndpoint {
         log.info("ship-order ...");
         final String orderId = UUID.randomUUID().toString();
         commandGateway.send(new PlaceOrderCommand(orderId, "Deluxe Chair"));
+        commandGateway.send(new ConfirmOrderCommand(orderId));
+        commandGateway.send(new ShipOrderCommand(orderId));
     }
 }
