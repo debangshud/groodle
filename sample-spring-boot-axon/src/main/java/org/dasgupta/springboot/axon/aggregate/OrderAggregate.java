@@ -26,17 +26,19 @@ public class OrderAggregate {
 
     @CommandHandler
     public OrderAggregate(PlaceOrderCommand command) {
-        log.info("OrderAggregate(PlaceOrderCommand)");
+        log.info("PlaceOrderCommand");
         apply(new OrderPlacedEvent(command.getOrderId(), command.getProduct()));
     }
 
     @CommandHandler
     public void handle(ConfirmOrderCommand command) {
+        log.info("ConfirmOrderCommand");
         apply(new OrderConfirmedEvent(orderId));
     }
 
     @CommandHandler
     public void handle(ShipOrderCommand command) {
+        log.info("ShipOrderCommand");
         if (!orderConfirmed) {
             throw new IllegalStateException("Cannot ship an order which has not been confirmed yet.");
         }

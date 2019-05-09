@@ -27,6 +27,6 @@ public class OrderRestEndpoint {
         final String orderId = UUID.randomUUID().toString();
         commandGateway.send(new PlaceOrderCommand(orderId, "Deluxe Chair"));
         commandGateway.send(new ConfirmOrderCommand(orderId));
-        commandGateway.send(new ShipOrderCommand(orderId));
+//        commandGateway.send(new ShipOrderCommand(orderId));
     }
 }
