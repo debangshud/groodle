@@ -1,4 +1,4 @@
-package com.example.demo;
+package org.dasgupta.sample.springboot.jpa.h2;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

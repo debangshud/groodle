@@ -1,0 +1,25 @@
+customer:
+  datasource:
+    jdbc-url: jdbc:h2:file:./sample-spring-boot-jpa-h2/target/data/customer-db
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+employee:
+  datasource:
+    jdbc-url: jdbc:h2:file:./sample-spring-boot-jpa-h2/target/data/employee-db
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+spring:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create-drop
+  h2:
+    console:
+      enabled: true
+

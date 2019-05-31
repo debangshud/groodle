@@ -16,6 +16,7 @@
         <module>zipkin-distributed-tracing-server</module>
         <module>sample-spring-boot-mongodb</module>
         <module>sample-spring-boot-jpa</module>
+        <module>sample-spring-boot-jpa-h2</module>
         <module>customer-service</module>
         <module>employee-service</module>
         <module>sample-spring-boot-docker</module>
