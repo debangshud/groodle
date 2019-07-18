@@ -1,16 +1,22 @@
 customer:
   datasource:
-    jdbc-url: jdbc:h2:file:./sample-spring-boot-jpa-h2/target/data/customer-db
+    jdbc-url: jdbc:h2:file:./sample-spring-boot-jpa-h2/target/data/customer-db;INIT=CREATE SCHEMA IF NOT EXISTS CUSTOMER
     driver-class-name: org.h2.Driver
     username: sa
     password:
+    maximumPoolSize: 3
+    poolName: customer-db-pool
+    schema: CUSTOMER
 
 employee:
   datasource:
-    jdbc-url: jdbc:h2:file:./sample-spring-boot-jpa-h2/target/data/employee-db
+    jdbc-url: jdbc:h2:file:./sample-spring-boot-jpa-h2/target/data/employee-db;INIT=CREATE SCHEMA IF NOT EXISTS EMPLOYEE
     driver-class-name: org.h2.Driver
     username: sa
     password:
+    maximum-pool-size: 2
+    pool-name: employee-db-pool
+    schema: EMPLOYEE
 
 spring:
   jpa:
