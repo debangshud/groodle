@@ -18,6 +18,16 @@ employee:
     pool-name: employee-db-pool
     schema: EMPLOYEE
 
+product:
+  datasource:
+    jdbc-url: jdbc:h2:file:./target/data/product-db;MODE=Oracle;INIT=CREATE SCHEMA IF NOT EXISTS PRODUCT
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+    maximum-pool-size: 2
+    pool-name: product-db-pool
+    schema: PRODUCT
+
 spring:
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
