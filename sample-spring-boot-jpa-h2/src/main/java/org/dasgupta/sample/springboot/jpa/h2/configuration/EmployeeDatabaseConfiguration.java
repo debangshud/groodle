@@ -1,6 +1,9 @@
 package org.dasgupta.sample.springboot.jpa.h2.configuration;
 
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.autoconfigure.orm.jpa.HibernateProperties;
+import org.springframework.boot.autoconfigure.orm.jpa.HibernateSettings;
+import org.springframework.boot.autoconfigure.orm.jpa.JpaProperties;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
@@ -33,10 +36,14 @@ public class EmployeeDatabaseConfiguration {
     }
 
     @Bean(name = "employeeEntityManagerFactory")
-    public LocalContainerEntityManagerFactoryBean employeeEntityManagerFactory(EntityManagerFactoryBuilder builder, @Qualifier("employeeDataSource") DataSource dataSource) {
+    public LocalContainerEntityManagerFactoryBean employeeEntityManagerFactory(
+            EntityManagerFactoryBuilder builder,
+            @Qualifier("employeeDataSource") DataSource dataSource,
+            JpaProperties jpaProperties,
+            HibernateProperties hibernateProperties) {
 
-        Map<String, Object> properties = new HashMap<String, Object>();
-        properties.put("hibernate.hbm2ddl.auto", "create-drop");
+        Map<String, Object> properties = hibernateProperties.determineHibernateProperties(
+                jpaProperties.getProperties(), new HibernateSettings());
         return builder.dataSource(dataSource)
                 .packages("org.dasgupta.sample.springboot.jpa.h2.entity.employee")
                 .persistenceUnit("employee")

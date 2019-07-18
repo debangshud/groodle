@@ -1,6 +1,6 @@
 customer:
   datasource:
-    jdbc-url: jdbc:h2:file:./target/data/customer-db;INIT=CREATE SCHEMA IF NOT EXISTS CUSTOMER
+    jdbc-url: jdbc:h2:file:./target/data/customer-db;MODE=Oracle;INIT=CREATE SCHEMA IF NOT EXISTS CUSTOMER
     driver-class-name: org.h2.Driver
     username: sa
     password:
@@ -10,7 +10,7 @@ customer:
 
 employee:
   datasource:
-    jdbc-url: jdbc:h2:file:./target/data/employee-db;INIT=CREATE SCHEMA IF NOT EXISTS EMPLOYEE
+    jdbc-url: jdbc:h2:file:./target/data/employee-db;MODE=Oracle;INIT=CREATE SCHEMA IF NOT EXISTS EMPLOYEE
     driver-class-name: org.h2.Driver
     username: sa
     password:
