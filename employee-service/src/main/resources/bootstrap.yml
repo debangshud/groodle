@@ -6,7 +6,7 @@ spring:
   cloud:
     config:
       discovery:
-        service-id: spring-cloud-config-service
+        service-id: config-service
         enabled: true
 
 eureka:
