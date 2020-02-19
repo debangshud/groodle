@@ -4,29 +4,28 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.dasgupta</groupId>
+    <groupId>org.groodle.boot</groupId>
     <artifactId>micro-services</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <spring-cloud.version>Hoxton.SR1</spring-cloud.version>
+        <docker.image.prefix>groodle</docker.image.prefix>
+        <spring-boot.version>2.2.2.RELEASE</spring-boot.version>
+    </properties>
     <modules>
-        <module>spring-cloud-config-service</module>
-        <module>netflix-eureka-naming-service</module>
-        <module>netflix-zuul-api-gateway-service</module>
-        <module>sample-spring-boot-oauth-service</module>
+        <module>parent-boot</module>
+        <module>config-service</module>
+        <module>discovery-service</module>
+        <module>api-gateway-service</module>
         <module>zipkin-distributed-tracing-server</module>
-        <module>sample-spring-boot-mongodb</module>
-        <module>sample-spring-boot-jpa</module>
-        <module>sample-spring-boot-jpa-h2</module>
         <module>customer-service</module>
         <module>employee-service</module>
-        <module>sample-spring-boot-docker</module>
-        <module>sample-spring-boot-docker-fabric8</module>
-        <module>sample-spring-boot-rabbitmq</module>
-        <module>sample-spring-boot-reactive</module>
-        <module>sample-spring-boot-scheduling</module>
-        <module>sample-spring-boot-security</module>
-        <module>sample-spring-boot-axon</module>
         <module>spring-boot-admin-server</module>
-        <module>aws-service</module>
     </modules>
 </project>

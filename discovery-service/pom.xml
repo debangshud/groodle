@@ -2,26 +2,29 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.groodle.boot</groupId>
+    <artifactId>discovery-service</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>discovery-service</name>
+    <description>Netflix Eureka Naming Service</description>
+
     <parent>
         <groupId>org.groodle.boot</groupId>
         <artifactId>parent-boot</artifactId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../parent-boot</relativePath>
     </parent>
-    <groupId>org.groodle.boot</groupId>
-    <artifactId>employee-service</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>employee-service</name>
-    <description>Demo project for Spring Boot</description>
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-webflux</artifactId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -29,16 +32,12 @@
             <scope>runtime</scope>
         </dependency>
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -66,7 +65,7 @@
                             </build>
                             <run>
                                 <ports>
-                                    <port>10001:10001</port>
+                                    <port>8761:8761</port>
                                 </ports>
                             </run>
                         </image>
@@ -75,5 +74,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
