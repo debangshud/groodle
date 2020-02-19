@@ -6,7 +6,7 @@ spring:
         server:
           git:
             uri: https://github.com/debangshud/micro-services.git
-            search-paths: config-source
+            search-paths: config-source/src/main/resources
             username: "debangshud"
             password: "')BsFc69"
 server:

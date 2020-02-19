@@ -1,0 +1,17 @@
+server:
+  port: 9411
+spring:
+  application:
+    name: zipkin-distributed-tracing-service
+  cloud:
+    config:
+      discovery:
+        service-id: spring-cloud-config-service
+        enabled: true
+  main:
+    allow-bean-definition-overriding: true
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka/
+
