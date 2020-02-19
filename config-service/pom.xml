@@ -46,9 +46,8 @@
 			<plugin>
 				<groupId>io.fabric8</groupId>
 				<artifactId>docker-maven-plugin</artifactId>
-				<version>0.24.0</version>
+				<version>${docker-maven-plugin.version}</version>
 				<configuration>
-					<dockerHost>http://localhost:2375</dockerHost>
 					<verbose>true</verbose>
 					<images>
 						<image>
@@ -65,7 +64,7 @@
 							</build>
 							<run>
 								<ports>
-									<port>8888:8888</port>
+									<port>10001:10001</port>
 								</ports>
 							</run>
 						</image>
