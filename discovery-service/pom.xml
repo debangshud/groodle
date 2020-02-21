@@ -43,6 +43,16 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>org.groodle.boot.service.discovery.Application</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>io.fabric8</groupId>
@@ -65,7 +75,7 @@
                             </build>
                             <run>
                                 <ports>
-                                    <port>10001:10001</port>
+                                    <port>8761:8761</port>
                                 </ports>
                             </run>
                         </image>

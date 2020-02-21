@@ -25,7 +25,7 @@
         <module>config-source</module>
         <module>discovery-service</module>
         <module>api-gateway-service</module>
-        <module>zipkin-distributed-tracing-server</module>
+        <module>tracing-service</module>
         <module>customer-service</module>
         <module>employee-service</module>
         <module>spring-boot-admin-server</module>

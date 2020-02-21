@@ -12,7 +12,7 @@
     <groupId>org.groodle.boot</groupId>
     <artifactId>parent-boot</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name></name>
+    <name>parent-boot</name>
     <packaging>pom</packaging>
 
     <dependencyManagement>

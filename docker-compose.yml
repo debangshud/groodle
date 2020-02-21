@@ -1,0 +1,17 @@
+version: "3.7"
+services:
+  discovery-service:
+    image: "groodle/discovery-service:latest"
+    ports:
+      - 8761:8761
+  config-service:
+    image: "groodle/config-service:latest"
+    command: bash -c "dockerize -wait http://discovery-service:8761/actuator/health"
+    ports:
+      - 8888:8888
+    links:
+      - "discovery-service"
+    depends_on:
+      - "discovery-service"
+    environment:
+      - EUREKA_SERVER=http://discovery-service:8761/eureka/
