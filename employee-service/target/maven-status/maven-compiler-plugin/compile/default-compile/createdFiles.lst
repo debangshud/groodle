@@ -1,5 +1,0 @@
-org/groodle/boot/service/employee/Application.class
-org/groodle/boot/service/employee/model/Employee$EmployeeBuilder.class
-org/groodle/boot/service/employee/repository/EmployeeRepository.class
-org/groodle/boot/service/employee/model/Employee.class
-org/groodle/boot/service/employee/web/rest/EmployeeReactiveController.class

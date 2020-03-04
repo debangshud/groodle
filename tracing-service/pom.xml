@@ -2,11 +2,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <artifactId>tracing-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
-
     <name>tracing-service</name>
     <description>Zipkin Distributed Tracing Service</description>
 
@@ -49,34 +47,30 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>org.groodle.boot.service.tracing.Application</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>io.fabric8</groupId>
-                <artifactId>docker-maven-plugin</artifactId>
-                <version>${docker-maven-plugin.version}</version>
-                <configuration>
-                    <verbose>true</verbose>
-                    <images>
-                        <image>
-                            <name>${docker.image.prefix}/${project.artifactId}</name>
-                            <build>
-                                <dockerFileDir>${project.basedir}/src/main/docker/</dockerFileDir>
-                                <assembly>
-                                    <descriptorRef>artifact</descriptorRef>
-                                </assembly>
-                                <tags>
-                                    <tag>latest</tag>
-                                    <tag>${project.version}</tag>
-                                </tags>
-                            </build>
-                            <run>
-                                <ports>
-                                    <port>10001:10001</port>
-                                </ports>
-                            </run>
-                        </image>
-                    </images>
-                </configuration>
+                <artifactId>fabric8-maven-plugin</artifactId>
+                <version>3.5.37</version>
+                <executions>
+                    <execution>
+                        <id>fmp</id>
+                        <goals>
+                            <goal>resource</goal>
+                            <goal>build</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

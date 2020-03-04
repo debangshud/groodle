@@ -1,2 +1,0 @@
-JAVA_APP_DIR=/deployments
-JAVA_MAIN_CLASS=org.groodle.boot.service.employee.Application

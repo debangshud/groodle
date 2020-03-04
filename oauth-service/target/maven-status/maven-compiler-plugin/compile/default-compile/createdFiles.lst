@@ -1,7 +1,0 @@
-org/groodle/boot/service/oauth/config/AuthorizationScope.class
-org/groodle/boot/service/oauth/config/ResourceServer.class
-org/groodle/boot/service/oauth/Application.class
-org/groodle/boot/service/oauth/config/OAuth2AuthorizationServerConfig.class
-org/groodle/boot/service/oauth/config/ServerSecurityConfig.class
-org/groodle/boot/service/oauth/config/AuthorizationGrantType.class
-org/groodle/boot/service/oauth/config/AuthorizationServerConfig.class

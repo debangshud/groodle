@@ -1,8 +1,0 @@
-spring:
-  application:
-    name: api-gateway-service
-  cloud:
-    config:
-      discovery:
-        service-id: config-service
-        enabled: true
