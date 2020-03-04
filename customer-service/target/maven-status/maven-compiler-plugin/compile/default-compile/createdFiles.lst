@@ -1,6 +1,6 @@
-org/groodle/boot/service/customer/web/vm/Customer$CustomerBuilder.class
-org/groodle/boot/service/customer/Application.class
 org/groodle/boot/service/customer/repository/CustomerRepository.class
 org/groodle/boot/service/customer/web/vm/Customer.class
+org/groodle/boot/service/customer/web/vm/Customer$CustomerBuilder.class
+org/groodle/boot/service/customer/Application.class
 org/groodle/boot/service/customer/web/errors/CustomerNotFoundException.class
 org/groodle/boot/service/customer/web/rest/CustomerController.class

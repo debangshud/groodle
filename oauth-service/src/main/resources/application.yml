@@ -1,0 +1,14 @@
+debug: false
+security:
+  oauth2:
+    authorization:
+      check-token-access: ''
+server:
+  port: 9090
+spring:
+  application:
+    name: spring-boot-auth-server
+  datasource:
+    password: OAUTH
+    url: jdbc:oracle:thin:@//localhost:1521/xe
+    username: OAUTH

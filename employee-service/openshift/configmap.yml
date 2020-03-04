@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: employee-service
+data:
+  application.yaml: |-
+    spring:
+      application:
+        name: employee-service

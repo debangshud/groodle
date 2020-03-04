@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: oauth-service
+data:
+  application.yaml: |-
+    spring:
+      application:
+        name: oauth-service

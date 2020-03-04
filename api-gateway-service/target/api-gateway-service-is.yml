@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: List
+items:
+- apiVersion: image.openshift.io/v1
+  kind: ImageStream
+  metadata:
+    name: api-gateway-service
+  spec:
+    tags:
+    - from:
+        kind: ImageStreamImage
+        name: api-gateway-service@sha256:ec60a5f184f6062599d7b2d587212e3913490e78c0ff4c774857448c64e0891b
+        namespace: groodle
+      name: latest

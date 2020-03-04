@@ -1,0 +1,2 @@
+org/groodle/boot/service/api_gateway/Application.class
+org/groodle/boot/service/api_gateway/ZuulLoggingFilter.class

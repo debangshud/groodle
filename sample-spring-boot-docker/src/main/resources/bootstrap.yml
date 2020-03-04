@@ -1,6 +1,0 @@
-spring:
-  application:
-    name: sample-spring-boot-docker
-  cloud:
-    config:
-      uri: http://${CLOUD_CONFIG_HOST}:${CLOUD_CONFIG_PORT}

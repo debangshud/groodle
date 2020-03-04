@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: config-service
+  cloud:
+    config:
+      fail-fast: true
+      server:
+        git:
+          uri: https://github.com/debangshud/micro-services.git
+          search-paths: config-source/src/main/resources
+          username: "debangshud"
+          password: "')BsFc69"
+server:
+  port: 8888
+
