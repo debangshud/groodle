@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <include file="/db/changelog/changes/001-create-table-oauth-client-details.xml"/>
+    <include file="/db/changelog/changes/002-create-table-oauth-client-token.xml"/>
+    <include file="/db/changelog/changes/003-create-table-oauth-access-token.xml"/>
+    <include file="/db/changelog/changes/004-create-table-oauth-refresh-token.xml"/>
+    <include file="/db/changelog/changes/005-create-table-oauth-code.xml"/>
+    <include file="/db/changelog/changes/006-create-table-oauth-approvals.xml"/>
+    <include file="/db/changelog/changes/007-create-table-ClientDetails.xml"/>
+    <include file="/db/changelog/changes/008-insert-table-oauth-client-details.xml"/>
+</databaseChangeLog>

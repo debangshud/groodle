@@ -1,0 +1,14 @@
+security:
+  oauth2:
+    authorization:
+      check-token-access: ''
+spring:
+  application:
+    name: oauth-service
+  liquibase:
+    change-log: classpath:/db/changelog/changelog-master.xml
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:test;
+    username: sa
+    password:
