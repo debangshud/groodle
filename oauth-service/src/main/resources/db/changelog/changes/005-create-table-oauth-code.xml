@@ -8,8 +8,8 @@
 
     <changeSet author="ddasgupta" id="1">
         <createTable tableName="oauth_code">
-            <column name="code" type="VARCHAR(255)"/>
-            <column name="authentication" type="VARCHAR(2000)"/>
+            <column name="code" type="varchar(256)"/>
+            <column name="authentication" type="blob"/>
         </createTable>
         <rollback>
             <dropTable tableName="oauth_code"/>

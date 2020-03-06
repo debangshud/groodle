@@ -1,7 +1,3 @@
-security:
-  oauth2:
-    authorization:
-      check-token-access: ''
 spring:
   application:
     name: oauth-service
@@ -12,3 +8,8 @@ spring:
     url: jdbc:h2:mem:test;
     username: sa
     password:
+  h2:
+    console:
+      enabled: true
+      settings:
+        web-allow-others: true

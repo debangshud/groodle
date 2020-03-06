@@ -7,19 +7,19 @@
     http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
     <changeSet author="ddasgupta" id="1">
-        <createTable tableName="oauth_access_token">
-            <column name="authentication_id" type="varchar(256)">
-                <constraints primaryKey="true"/>
+        <createTable tableName="users">
+            <column name="username" type="varchar(50)">
+                <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="token_id" type="varchar(256)"/>
-            <column name="token" type="blob"/>
-            <column name="user_name" type="varchar(256)"/>
-            <column name="client_id" type="varchar(256)"/>
-            <column name="authentication" type="blob"/>
-            <column name="refresh_token" type="varchar(256)"/>
+            <column name="password" type="varchar(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="enabled" type="boolean">
+                <constraints nullable="false"/>
+            </column>
         </createTable>
         <rollback>
-            <dropTable tableName="oauth_access_token"/>
+            <dropTable tableName="users"/>
         </rollback>
     </changeSet>
 </databaseChangeLog>

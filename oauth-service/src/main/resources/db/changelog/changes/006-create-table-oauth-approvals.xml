@@ -8,10 +8,10 @@
 
     <changeSet author="ddasgupta" id="1">
         <createTable tableName="oauth_approvals">
-            <column name="userId" type="VARCHAR(255)"/>
-            <column name="clientId" type="VARCHAR(255)"/>
-            <column name="scope" type="VARCHAR(255)"/>
-            <column name="status" type="VARCHAR(10)"/>
+            <column name="userId" type="varchar(256)"/>
+            <column name="clientId" type="varchar(256)"/>
+            <column name="scope" type="varchar(256)"/>
+            <column name="status" type="varchar(10)"/>
             <column name="expiresAt" type="timestamp"/>
             <column name="lastModifiedAt" type="timestamp"/>
         </createTable>

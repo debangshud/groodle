@@ -11,6 +11,8 @@
     <include file="/db/changelog/changes/004-create-table-oauth-refresh-token.xml"/>
     <include file="/db/changelog/changes/005-create-table-oauth-code.xml"/>
     <include file="/db/changelog/changes/006-create-table-oauth-approvals.xml"/>
-    <include file="/db/changelog/changes/007-create-table-ClientDetails.xml"/>
-    <include file="/db/changelog/changes/008-insert-table-oauth-client-details.xml"/>
+    <include file="/db/changelog/changes/007-create-table-oauth2-client-details.xml"/>
+    <include file="/db/changelog/changes/008-create-table-users.xml"/>
+    <include file="/db/changelog/changes/009-create-table-authorities.xml"/>
+    <include file="/db/changelog/changes/999-insert-data.xml"/>
 </databaseChangeLog>

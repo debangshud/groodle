@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet author="ddasgupta" id="1">
+        <insert tableName="users">
+            <column name="username" value="admin"/>
+            <column name="password" value="{noop}admin"/>
+            <column name="enabled" value="true"/>
+        </insert>
+        <insert tableName="users">
+            <column name="username" value="user"/>
+            <column name="password" value="{noop}user"/>
+            <column name="enabled" value="true"/>
+        </insert>
+        <insert tableName="users">
+            <column name="username" value="groodle"/>
+            <column name="password" value="{noop}groodle"/>
+            <column name="enabled" value="true"/>
+        </insert>
+        <!-- ================================== -->
+        <insert tableName="authorities">
+            <column name="username" value="admin"/>
+            <column name="authority" value="ROLE_USER"/>
+        </insert>
+        <insert tableName="authorities">
+            <column name="username" value="admin"/>
+            <column name="authority" value="ROLE_ADMIN"/>
+        </insert>
+        <insert tableName="authorities">
+            <column name="username" value="user"/>
+            <column name="authority" value="ROLE_USER"/>
+        </insert>
+        <insert tableName="authorities">
+            <column name="username" value="groodle"/>
+            <column name="authority" value="ROLE_USER"/>
+        </insert>
+        <!-- ================================== -->
+
+        <insert tableName="oauth_client_details">
+            <column name="client_id" value="client"/>
+            <column name="client_secret" value="{noop}secret"/>
+            <column name="scope" value="read,write"/>
+            <column name="authorized_grant_types" value="password"/>
+            <column name="access_token_validity" valueNumeric="36000"/>
+            <column name="refresh_token_validity" valueNumeric="36000"/>
+            <column name="autoapprove" value="true"/>
+        </insert>
+        <insert tableName="oauth_client_details">
+            <column name="client_id" value="groodle"/>
+            <column name="client_secret" value="{noop}groodlesecret"/>
+            <column name="scope" value="read,write"/>
+            <column name="authorized_grant_types"
+                    value="password,refresh_token,client_credentials,authorization_code,implicit"/>
+            <column name="access_token_validity" valueNumeric="36000"/>
+            <column name="refresh_token_validity" valueNumeric="36000"/>
+            <column name="autoapprove" value="true"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

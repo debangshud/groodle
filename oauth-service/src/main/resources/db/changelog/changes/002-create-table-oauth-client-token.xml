@@ -8,13 +8,13 @@
 
     <changeSet author="ddasgupta" id="1">
         <createTable tableName="oauth_client_token">
-            <column name="authentication_id" type="VARCHAR(255)">
+            <column name="authentication_id" type="varchar(256)">
                 <constraints primaryKey="true"/>
             </column>
-            <column name="token_id" type="VARCHAR(255)"/>
-            <column name="token" type="VARCHAR(2000)"/>
-            <column name="user_name" type="VARCHAR(255)"/>
-            <column name="client_id" type="VARCHAR(255)"/>
+            <column name="token_id" type="varchar(256)"/>
+            <column name="token" type="blob"/>
+            <column name="user_name" type="varchar(256)"/>
+            <column name="client_id" type="varchar(256)"/>
         </createTable>
         <rollback>
             <dropTable tableName="oauth_client_token"/>
