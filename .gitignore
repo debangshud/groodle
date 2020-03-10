@@ -1,8 +1,8 @@
 # Created by .ignore support plugin (hsz.mobi)
 /.idea/
 /target
+target/
 .metadata
 *.iws
 *.iml
 *.ipr
-

@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: oauth-service
+  cloud:
+    config:
+      discovery:
+        service-id: config-service
+        enabled: true
+  liquibase:
+    change-log: classpath:/db/changelog/changelog-master.xml

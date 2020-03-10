@@ -23,6 +23,12 @@
 
 ### Distributed Configuration Service (config-service)
 
+
+
+```shell script
+curl --location --request GET 'http://config-service-groodle.192.168.64.2.nip.io/customer-service/default'
+```
+
 ### OAuth Service (oauth-service)
 
 #### FAQ
@@ -59,7 +65,7 @@ http://localhost:8080/h2-console
 ##### How to use 'password' grant type and get an access token for a given client id, client secret, username and password? 
 
 ```shell script
-curl --location --request POST 'http://localhost:8080/oauth/token' \
+curl --location --request POST 'http://oauth-service-groodle.192.168.64.2.nip.io/oauth/token' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --header 'Authorization: Basic Z3Jvb2RsZTpncm9vZGxlc2VjcmV0' \
 --data-urlencode 'grant_type=password' \
@@ -69,7 +75,7 @@ curl --location --request POST 'http://localhost:8080/oauth/token' \
 ##### How to use 'client_credentials' grant type and get an access token for a given client id, client secret, username and password 
 
 ```shell script
-curl --location --request POST 'http://localhost:8080/oauth/token' \
+curl --location --request POST 'http://oauth-service-groodle.192.168.64.2.nip.io/oauth/token' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --header 'Authorization: Basic Z3Jvb2RsZTpncm9vZGxlc2VjcmV0' \
 --data-urlencode 'grant_type=client_credentials'

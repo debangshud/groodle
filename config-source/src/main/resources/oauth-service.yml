@@ -9,7 +9,6 @@ spring:
       enabled: true
       settings:
         web-allow-others: true
-
 security:
   oauth2:
     authorization:
