@@ -8,3 +8,9 @@ spring:
         enabled: true
   liquibase:
     change-log: classpath:/db/changelog/changelog-master.xml
+security:
+  jwt:
+    key-store: classpath:/keystore.jks
+    key-store-password: password
+    key-pair-alias: mytestkey
+    key-pair-password: changeme

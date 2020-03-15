@@ -11,39 +11,65 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.A
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
+import org.springframework.security.oauth2.provider.ClientDetailsService;
 import org.springframework.security.oauth2.provider.approval.ApprovalStore;
 import org.springframework.security.oauth2.provider.approval.JdbcApprovalStore;
 import org.springframework.security.oauth2.provider.code.AuthorizationCodeServices;
 import org.springframework.security.oauth2.provider.code.JdbcAuthorizationCodeServices;
+import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
+import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
+import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
+import org.springframework.security.oauth2.provider.token.store.KeyStoreKeyFactory;
 
 import javax.sql.DataSource;
+import java.security.KeyPair;
 
 
 @Configuration
 @EnableAuthorizationServer
 public class AuthorizationServerConfiguration extends AuthorizationServerConfigurerAdapter {
 
-    @Autowired
-    @Qualifier("authenticationManagerBean")
     private AuthenticationManager authenticationManager;
-
-    @Qualifier("dataSource")
-    @Autowired
     private DataSource dataSource;
+    private JwtProperties jwtProperties;
+    private ClientDetailsService clientDetailsService;
 
-//    @Autowired
-//    private PasswordEncoder passwordEncoder;
-
-    @Bean
-    public TokenStore tokenStore() {
-        return new JdbcTokenStore(dataSource);
+    public AuthorizationServerConfiguration(final @Qualifier("authenticationManagerBean") AuthenticationManager authenticationManager,
+                                            final @Qualifier("dataSource") DataSource dataSource,
+                                            final ClientDetailsService clientDetailsService,
+                                            final JwtProperties jwtProperties) {
+        this.authenticationManager = authenticationManager;
+        this.dataSource = dataSource;
+        this.jwtProperties = jwtProperties;
+        this.clientDetailsService = clientDetailsService;
     }
 
     @Bean
-    public ApprovalStore approvalStore() {
-        return new JdbcApprovalStore(dataSource);
+    public TokenStore tokenStore() {
+        return new JwtTokenStore(accessTokenConverter());
+    }
+
+    @Bean
+    public JwtAccessTokenConverter accessTokenConverter() {
+        JwtAccessTokenConverter accessTokenConverter = new JwtAccessTokenConverter();
+        KeyPair keyPair = keyPair(jwtProperties, keyStoreKeyFactory(jwtProperties));
+        accessTokenConverter.setKeyPair(keyPair);
+//        accessTokenConverter.setSigningKey("123");
+        return accessTokenConverter;
+    }
+
+    @Override
+    public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
+        clients.jdbc(dataSource);
+    }
+
+    @Override
+    public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
+        endpoints.authenticationManager(authenticationManager)
+                .accessTokenConverter(accessTokenConverter())
+                .tokenStore(tokenStore());
     }
 
     @Bean
@@ -51,23 +77,29 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
         return new JdbcAuthorizationCodeServices(dataSource);
     }
 
-    @Override
-    public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-        clients.jdbc(dataSource);
-//                .passwordEncoder(passwordEncoder);
-    }
-
-    @Override
-    public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
-        endpoints
-                .approvalStore(approvalStore())
-                .tokenStore(tokenStore())
-                .authorizationCodeServices(authorizationCodeServices())
-                .authenticationManager(authenticationManager);
-    }
 
     @Override
     public void configure(AuthorizationServerSecurityConfigurer oauthServer) throws Exception {
-        oauthServer.tokenKeyAccess("permitAll()").checkTokenAccess("isAuthenticated()").allowFormAuthenticationForClients();
+        oauthServer.tokenKeyAccess("permitAll()")
+                .checkTokenAccess("isAuthenticated()");
+        //.allowFormAuthenticationForClients();
+    }
+
+    @Bean
+    public DefaultTokenServices tokenServices(final TokenStore tokenStore) {
+        DefaultTokenServices tokenServices = new DefaultTokenServices();
+        tokenServices.setSupportRefreshToken(true);
+        tokenServices.setTokenStore(tokenStore());
+        tokenServices.setClientDetailsService(clientDetailsService);
+        tokenServices.setAuthenticationManager(this.authenticationManager);
+        return tokenServices;
+    }
+
+    private KeyPair keyPair(JwtProperties jwtProperties, KeyStoreKeyFactory keyStoreKeyFactory) {
+        return keyStoreKeyFactory.getKeyPair(jwtProperties.getKeyPairAlias(), jwtProperties.getKeyPairPassword().toCharArray());
+    }
+
+    private KeyStoreKeyFactory keyStoreKeyFactory(JwtProperties jwtProperties) {
+        return new KeyStoreKeyFactory(jwtProperties.getKeyStore(), jwtProperties.getKeyStorePassword().toCharArray());
     }
 }

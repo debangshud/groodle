@@ -20,6 +20,7 @@
         <docker.image.prefix>groodle</docker.image.prefix>
         <docker-maven-plugin.version>0.27.2</docker-maven-plugin.version>
         <fabric8-maven-plugin.version>3.5.37</fabric8-maven-plugin.version>
+        <nimbus-jose-jwt.version>7.3</nimbus-jose-jwt.version>
     </properties>
     <modules>
         <module>parent-boot</module>

@@ -6,3 +6,6 @@ spring:
       discovery:
         service-id: config-service
         enabled: true
+security:
+  jwt:
+    public-key: classpath:public.txt

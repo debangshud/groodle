@@ -1,9 +1,0 @@
-version: "3.7"
-services:
-  customer-service:
-    image: "groodle/customer-service:latest"
-    ports:
-      - 10001:10001
-    environment:
-      - PROFILE=default
-      - EUREKA_SERVER=http://discovery-service:8761/eureka/

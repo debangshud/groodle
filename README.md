@@ -23,7 +23,7 @@
 
 ### Distributed Configuration Service (config-service)
 
-
+#### Sample Call
 
 ```shell script
 curl --location --request GET 'http://config-service-groodle.192.168.64.2.nip.io/customer-service/default'
@@ -81,7 +81,19 @@ curl --location --request POST 'http://oauth-service-groodle.192.168.64.2.nip.io
 --data-urlencode 'grant_type=client_credentials'
 ```
 ### API Gateway Service (api-gateway-service)
+```shell script
+
+curl --location --request GET http://oauth-service-groodle.192.168.64.2.nip.io/.well-known/jwks.json
+```
 
 ### Customer Service (customer-service)
 
+```shell script
+curl --location --request GET 'http://customer-service-groodle.192.168.64.2.nip.io/1'
+```
+
 ### Employee Service (customer-service)
+
+```shell script
+curl --location --request GET 'http://employee-service-groodle.192.168.64.2.nip.io/1'
+```
