@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -20,24 +21,31 @@ public class CustomerController {
     @Value("${test.prop}")
     private String testProp;
 
+    @GetMapping("/")
+    public List<Customer> getAll() {
+        log.info("method:getAll()");
+        log.info("Test Property: {}",testProp);
+
+        return customerRepository.findAll();
+    }
+
     @GetMapping("/{id}")
-    public Customer get(@PathVariable String id) {
-        log.info("get");
+    public Customer getById(@PathVariable String id) {
+        log.info("method: getById(id)");
         log.debug("Requested Customer Id:{}", id);
         log.info("Test Property: {}",testProp);
-        Optional<Customer> customer = Optional.ofNullable(customerRepository.findCustomerById(id));
+        Optional<Customer> customer = customerRepository.findById(id);
         if (customer.isPresent()) {
             return customer.get();
         } else {
             throw new CustomerNotFoundException();
         }
-
     }
 
     @PostMapping("/")
-    public Customer post(@RequestBody Customer customer) {
+    public Customer create(@RequestBody Customer customer) {
         log.info("post");
         log.debug("Customer:{}", customer);
-        return customerRepository.createCustomer(customer);
+        return customerRepository.save(customer);
     }
 }

@@ -1,14 +1,16 @@
 package org.groodle.boot.service.customer.web.vm;
 
-import lombok.Builder;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
-@Builder
-@Getter @Setter
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+@Data
 public class Customer {
 
+    @Id
     private String id;
     private String firstName;
     private String lastName;

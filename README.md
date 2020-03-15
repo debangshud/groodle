@@ -2,6 +2,13 @@
 
 ## Installations
 
+### Minishift
+
+```shell script
+minishift start --vm-driver virtualbox
+```
+
+
 **Oracle Express**
 ----------
 **Credentials**
@@ -22,6 +29,19 @@
 ## Services
 
 ### Distributed Configuration Service (config-service)
+
+#### Build & Deploy
+
+```shell script
+# login to openshift using username:developer & password:developer 
+oc login
+
+cd config-service
+oc policy add-role-to-user view system:serviceaccount:myproject:default
+oc apply -f openshift/configmap.yml
+mvn clean fabric8:deploy
+
+```
 
 #### Sample Call
 
