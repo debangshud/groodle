@@ -11,6 +11,7 @@ spring:
     url: jdbc:postgresql://postgresql:5432/sampledb
     username: developer
     password: developer
+    initialization-mode: always
   jpa:
     database: POSTGRESQL
     show-sql: true
@@ -19,6 +20,7 @@ spring:
       ddl-auto: 'validate'
     properties:
       hibernate:
+        default_schema: customer_owner
         jdbc:
           lob:
             non_contextual_creation: true

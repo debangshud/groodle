@@ -8,17 +8,14 @@
 
     <changeSet author="ddasgupta" id="1">
         <insert tableName="customer">
-            <column name="id" value="1"/>
             <column name="first_name" value="Debangshu"/>
             <column name="last_name" value="Dasgupta"/>
         </insert>
         <insert tableName="customer">
-            <column name="id" value="2"/>
             <column name="first_name" value="Manjistha"/>
             <column name="last_name" value="Dasgupta"/>
         </insert>
         <insert tableName="customer">
-            <column name="id" value="3"/>
             <column name="first_name" value="Rishan"/>
             <column name="last_name" value="Dasgupta"/>
         </insert>

@@ -4,9 +4,6 @@
 
 ### Minishift
 
-```shell script
-minishift start --vm-driver virtualbox
-```
 
 
 **Oracle Express**
@@ -27,6 +24,13 @@ minishift start --vm-driver virtualbox
 | APEX | 8080 |
 
 ## Services
+### Minishift
+```shell script
+minishift start --vm-driver virtualbox
+oc new-project groodle
+oc project groodle
+```
+
 
 ### Distributed Configuration Service (config-service)
 
@@ -37,7 +41,7 @@ minishift start --vm-driver virtualbox
 oc login
 
 cd config-service
-oc policy add-role-to-user view system:serviceaccount:myproject:default
+oc policy add-role-to-user view system:serviceaccount:groodle:default
 oc apply -f openshift/configmap.yml
 mvn clean fabric8:deploy
 

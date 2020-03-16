@@ -2,16 +2,15 @@ package org.groodle.boot.service.customer.web.vm;
 
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Data
 public class Customer {
 
     @Id
-    private String id;
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private Long id;
     private String firstName;
     private String lastName;
 }
