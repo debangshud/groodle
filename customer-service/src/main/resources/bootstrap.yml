@@ -8,3 +8,4 @@ spring:
         enabled: true
   liquibase:
     change-log: classpath:/db/changelog/changelog-master.xml
+    default-schema: customer_owner

@@ -7,7 +7,7 @@
     http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
     <changeSet author="ddasgupta" id="1">
-        <createTable tableName="customer">
+        <createTable tableName="customer" schemaName="customer_owner">
             <column name="id" autoIncrement="true" incrementBy="1" startWith="1001" type="bigint">
                 <constraints nullable="false" primaryKey="true"/>
             </column>

@@ -8,9 +8,10 @@ spring:
 #    username: sa
 #    password:
     platform: postgres
-    url: jdbc:postgresql://postgresql:5432/sampledb
+    url: jdbc:postgresql://postgresql:5432/sampledb?currentSchema=customer_owner
     username: developer
     password: developer
+    driver-class-name: org.postgresql.Driver
     initialization-mode: always
   jpa:
     database: POSTGRESQL
@@ -20,6 +21,7 @@ spring:
       ddl-auto: 'validate'
     properties:
       hibernate:
+        default_schema: customer_owner
         jdbc:
           lob:
             non_contextual_creation: true
