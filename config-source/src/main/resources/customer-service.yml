@@ -20,7 +20,6 @@ spring:
       ddl-auto: 'validate'
     properties:
       hibernate:
-        default_schema: customer_owner
         jdbc:
           lob:
             non_contextual_creation: true
