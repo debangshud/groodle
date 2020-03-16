@@ -8,7 +8,7 @@ spring:
 #    username: sa
 #    password:
     platform: postgres
-    url: jdbc:postgresql://postgresql:5432/sampledb?currentSchema=customer_owner
+    url: jdbc:postgresql://postgresql:5432/sampledb
     username: developer
     password: developer
     driver-class-name: org.postgresql.Driver

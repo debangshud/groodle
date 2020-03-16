@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet author="ddasgupta" id="1">
+        <insert tableName="employee" schemaName="employee_owner">
+            <column name="first_name" value="Debangshu"/>
+            <column name="last_name" value="Dasgupta"/>
+        </insert>
+        <insert tableName="employee" schemaName="employee_owner">
+            <column name="first_name" value="Srinivas"/>
+            <column name="last_name" value="Chidella"/>
+        </insert>
+        <insert tableName="employee" schemaName="employee_owner">
+            <column name="first_name" value="Siva"/>
+            <column name="last_name" value="Eranki"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

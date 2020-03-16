@@ -16,7 +16,7 @@ import java.util.Optional;
 public class CustomerController {
 
     @Autowired
-    private CustomerRepository customerRepository;
+    private CustomerRepository repository;
 
     @Value("${test.prop}")
     private String testProp;
@@ -26,15 +26,15 @@ public class CustomerController {
         log.info("method:getAll()");
         log.info("Test Property: {}",testProp);
 
-        return customerRepository.findAll();
+        return repository.findAll();
     }
 
     @GetMapping("/{id}")
-    public Customer getById(@PathVariable String id) {
+    public Customer getById(@PathVariable Long id) {
         log.info("method: getById(id)");
         log.debug("Requested Customer Id:{}", id);
         log.info("Test Property: {}",testProp);
-        Optional<Customer> customer = customerRepository.findById(id);
+        Optional<Customer> customer = repository.findById(id);
         if (customer.isPresent()) {
             return customer.get();
         } else {
@@ -44,8 +44,8 @@ public class CustomerController {
 
     @PostMapping("/")
     public Customer create(@RequestBody Customer customer) {
-        log.info("post");
+        log.info("method:create(customer)");
         log.debug("Customer:{}", customer);
-        return customerRepository.save(customer);
+        return repository.save(customer);
     }
 }
