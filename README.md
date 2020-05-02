@@ -4,33 +4,38 @@
 
 ### Minishift
 
+### Oracle Express
+
+#### Credentials
+
+|Username|Password|
+|--------|--------|
+|SYSTEM  | admin  |
+|SYS     | admin  |
 
 
-**Oracle Express**
-----------
-**Credentials**
-
-|Username|Password  |
-|--|--|
-|SYSTEM  | admin |
-|SYS  | admin |
-
-
-**Ports**
+#### Ports
 
 |Service|Port  |
-|--|--|
-| DB | 1521 |
-| APEX | 8080 |
+|-------|------|
+| DB    | 1521 |
+| APEX  | 8080 |
 
 ## Services
 ### Minishift
 ```shell script
+minishift stop
+minishift status
 minishift start --vm-driver virtualbox
 oc new-project groodle
 oc project groodle
 ```
 
+### Postgresql
+
+```shell script
+oc port-forward postgresql-1-j8bdd 5432
+```
 
 ### Distributed Configuration Service (config-service)
 
