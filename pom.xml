@@ -32,6 +32,7 @@
         <module>api-gateway-service</module>
         <module>tracing-service</module>
         <module>oauth-service</module>
+        <module>reference-service</module>
         <module>customer-service</module>
         <module>employee-service</module>
         <module>admin-service</module>
