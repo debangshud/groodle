@@ -10,7 +10,7 @@ spring:
     change-log: classpath:/db/changelog/changelog-master.xml
 security:
   jwt:
-    key-store: classpath:keystore.jks
-    key-store-password: password
+    key-store: classpath:certs/keystore.jks
+    key-store-password: changeit
     key-pair-alias: mytestkey
-    key-pair-password: changeme
+    key-pair-password: changeit
