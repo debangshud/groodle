@@ -154,6 +154,7 @@ oc port-forward postgresql-1-j8bdd 5432
 ```shell script
 # login to openshift using username:developer & password:developer 
 cd config-service
+oc policy add-role-to-user view system:serviceaccount:myproject:default
 oc apply -f openshift/configmap.yml
 mvn clean fabric8:deploy
 curl --location --request GET 'http://config-service-groodle.192.168.64.2.nip.io/customer-service/default'
