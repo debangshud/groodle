@@ -15,6 +15,6 @@ security:
       check-token-access: ''
   jwt:
     key-store: classpath:keystore.jks
-    key-store-password: changeit
+    key-store-password: password
     key-pair-alias: mytestkey
-    key-pair-password: changeit
+    key-pair-password: changeme
