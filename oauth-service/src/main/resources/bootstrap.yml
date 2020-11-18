@@ -11,6 +11,6 @@ spring:
 security:
   jwt:
     key-store: classpath:keystore.jks
-    key-store-password: password
+    key-store-password: changeit
     key-pair-alias: mytestkey
-    key-pair-password: changeme
+    key-pair-password: changeit
