@@ -23,6 +23,7 @@
         <postgresql.version>42.2.9</postgresql.version>
         <liquibase-core.version>3.8.7</liquibase-core.version>
         <spring-boot-admin.version>2.2.2</spring-boot-admin.version>
+        <liquibase-mongodb.version>4.1.1.2</liquibase-mongodb.version>
     </properties>
     <modules>
         <module>parent-boot</module>

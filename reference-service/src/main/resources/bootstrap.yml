@@ -6,11 +6,3 @@ spring:
       discovery:
         service-id: config-service
         enabled: true
-  data:
-    mongodb:
-      database: sampledb
-      authentication-database: sampledb
-      host: localhost
-      port: 27017
-      username: developer
-      password: developer
