@@ -1,5 +1,0 @@
-spring:
-  data:
-    mongodb:
-      database: reference
-      uri: mongodb://192.168.86.29:27017,192.168.86.35:27017,192.168.86.37:27017
