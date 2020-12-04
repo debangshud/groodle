@@ -7,3 +7,6 @@ spring:
       port: 27017
       username: developer
       password: developer
+mongock:
+  change-logs-scan-package:
+    - org.groodle.boot.service.reference.changelogs
