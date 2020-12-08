@@ -9,7 +9,6 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.groodle.boot</groupId>
     <artifactId>parent-boot</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>parent-boot</name>
@@ -81,6 +80,7 @@
                 <artifactId>opencsv</artifactId>
                 <version>${opencsv.version}</version>
             </dependency>
+
         </dependencies>
     </dependencyManagement>
     <build>
@@ -95,6 +95,11 @@
                     <groupId>io.fabric8</groupId>
                     <artifactId>fabric8-maven-plugin</artifactId>
                     <version>${fabric8-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>${maven-resources-plugin.version}</version>
                 </plugin>
             </plugins>
         </pluginManagement>

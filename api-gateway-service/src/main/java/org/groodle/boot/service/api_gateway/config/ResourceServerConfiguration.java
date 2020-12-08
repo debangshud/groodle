@@ -35,8 +35,7 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
 
     @Bean
     public TokenStore tokenStore() {
-        TokenStore tokenStore = new JwtTokenStore(accessTokenConverter());
-        return tokenStore;
+        return new JwtTokenStore(accessTokenConverter());
     }
 
     @Bean

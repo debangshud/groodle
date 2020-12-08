@@ -31,8 +31,7 @@ public class CountryController {
 
     @GetMapping("/countries/{alpha2}")
     public Country getByAlpha2(@PathVariable String alpha2){
-        Country country = repository.findByAlpha2(alpha2);
-        return country;
+        return repository.findByAlpha2(alpha2);
     }
 
 }
