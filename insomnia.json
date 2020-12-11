@@ -1,1 +1,599 @@
-{"_type":"export","__export_format":4,"__export_date":"2020-12-09T22:04:47.902Z","__export_source":"insomnia.desktop.app:v2020.4.2","resources":[{"_id":"req_d97931c2fb624a97881947354db24f33","parentId":"fld_48a914aad01e47299157c2e70e581274","modified":1605824185159,"created":1605813232142,"url":"{{ service.api_gateway.url }}/{{ service.customer.name }}","name":"customer-api-gateway-service","description":"","method":"GET","body":{},"parameters":[],"headers":[],"authentication":{"type":"oauth2","grantType":"client_credentials","accessTokenUrl":"{{ service.oauth.url }}/oauth/token","clientId":"groodle","clientSecret":"groodlesecret"},"metaSortKey":-1605813232202,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"fld_48a914aad01e47299157c2e70e581274","parentId":"fld_cb0621db63024d1887ce9cd476e35cb0","modified":1605823264646,"created":1605813219360,"name":"api-gateway","description":"","environment":{},"environmentPropertyOrder":null,"metaSortKey":-1605823225023,"_type":"request_group"},{"_id":"fld_cb0621db63024d1887ce9cd476e35cb0","parentId":"wrk_7203025feaf0479da8ef4f37f82dd735","modified":1605823245761,"created":1605823245761,"name":"micro-services","description":"","environment":{},"environmentPropertyOrder":null,"metaSortKey":-1605823245761,"_type":"request_group"},{"_id":"wrk_7203025feaf0479da8ef4f37f82dd735","parentId":null,"modified":1605576671288,"created":1605576671288,"name":"Insomnia","description":"","scope":null,"_type":"workspace"},{"_id":"req_5c2f5c501a114ade96d85bb4a9d3e11a","parentId":"fld_48a914aad01e47299157c2e70e581274","modified":1605824280674,"created":1605823884321,"url":"{{ service.api_gateway.url }}/{{ service.employee.name }}/1","name":"employee-api-gateway-service","description":"","method":"GET","body":{},"parameters":[],"headers":[],"authentication":{"type":"oauth2","grantType":"client_credentials","accessTokenUrl":"{{ service.oauth.url }}/oauth/token","clientId":"groodle","clientSecret":"groodlesecret"},"metaSortKey":-1605778490594,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_75368698c2ef44e4924798da2fa4e97b","parentId":"fld_48a914aad01e47299157c2e70e581274","modified":1607061914792,"created":1605901445978,"url":"{{ service.api_gateway.url }}/{{ service.reference.name }}/countries","name":"reference-api-gateway-service","description":"","method":"GET","body":{},"parameters":[],"headers":[],"authentication":{"type":"oauth2","grantType":"client_credentials","accessTokenUrl":"{{ service.oauth.url }}/oauth/token","clientId":"groodle","clientSecret":"groodlesecret"},"metaSortKey":-1605761119790,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_952d85ee8a90442aa648ef05a2b7b9ee","parentId":"fld_cfd38829eb6c4f8d81bbe43c5b87aba8","modified":1605824031383,"created":1605576791796,"url":"{{ service.customer.url }}/","name":"customer-service","description":"","method":"GET","body":{},"parameters":[],"headers":[],"authentication":{},"metaSortKey":-1605743748986,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"fld_cfd38829eb6c4f8d81bbe43c5b87aba8","parentId":"fld_cb0621db63024d1887ce9cd476e35cb0","modified":1605823249578,"created":1605823224973,"name":"services","description":"","environment":{},"environmentPropertyOrder":null,"metaSortKey":-1605823224973,"_type":"request_group"},{"_id":"req_d4dbebec357d4ab1b2bea248c4b50be0","parentId":"fld_cfd38829eb6c4f8d81bbe43c5b87aba8","modified":1605824016263,"created":1605577240697,"url":"{{ service.config.url }}/{{ service.customer.name }}/default","name":"customer-service-config","description":"","method":"GET","body":{},"parameters":[],"headers":[],"authentication":{},"metaSortKey":-1605743748936,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_38bd98efcf114649a1da19a1a8089dfb","parentId":"fld_cfd38829eb6c4f8d81bbe43c5b87aba8","modified":1605823229824,"created":1605743748886,"url":"{{ service.oauth.url }}/oauth/token","name":"oauth","description":"","method":"POST","body":{"mimeType":"application/x-www-form-urlencoded","params":[{"name":"grant_type","value":"password","description":"","id":"pair_6ce0259f400d4f5f9ce9754528380fe0"},{"name":"username","value":"user","description":"","id":"pair_e008aaf88ee74781bdd621019f841082"},{"name":"password","value":"user","description":"","id":"pair_3b497a86ba08431fa3b2d4659f6b322d"}]},"parameters":[],"headers":[{"name":"Content-Type","value":"application/x-www-form-urlencoded","description":"","id":"pair_d29caf44d06d4a1fbe1653c428349720"}],"authentication":{"type":"basic","disabled":false,"username":"groodle","password":"groodlesecret"},"metaSortKey":-1605743748886,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_b38dad972e8f479c81ba9043079d63cf","parentId":"fld_cfd38829eb6c4f8d81bbe43c5b87aba8","modified":1605824040871,"created":1605823389314,"url":"{{ service.employee.url }}","name":"employee-service","description":"","method":"GET","body":{},"parameters":[],"headers":[],"authentication":{},"metaSortKey":-1605743748961,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_767678bc868544bda52b687fcb996757","parentId":"fld_cfd38829eb6c4f8d81bbe43c5b87aba8","modified":1605824067258,"created":1605824054696,"url":"{{ service.config.url }}/{{ service.employee.name }}/default","name":"employee-service-config","description":"","method":"GET","body":{},"parameters":[],"headers":[],"authentication":{},"metaSortKey":-1605743748911,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_977d05a48e9e49efb29ba095e91aebbe","parentId":"fld_cfd38829eb6c4f8d81bbe43c5b87aba8","modified":1605824133102,"created":1605824124912,"url":"{{ service.config.url }}/{{ service.api_gateway.name }}/default","name":"api-gateway-service-config","description":"","method":"GET","body":{},"parameters":[],"headers":[],"authentication":{},"metaSortKey":-1605743748898.5,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_cc7eada26b7f4d0497a8209f58f53c2c","parentId":"fld_cfd38829eb6c4f8d81bbe43c5b87aba8","modified":1605901526408,"created":1605901507843,"url":"{{ service.reference.url }}/countries","name":"reference-service","description":"","method":"GET","body":{},"parameters":[],"headers":[],"authentication":{},"metaSortKey":-1605743748948.5,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_483be1d064404bb2903ec909f79e12a8","parentId":"fld_cfd38829eb6c4f8d81bbe43c5b87aba8","modified":1605901798391,"created":1605901785968,"url":"{{ service.config.url }}/{{ service.reference.name }}/default","name":"reference-service-config","description":"","method":"GET","body":{},"parameters":[],"headers":[],"authentication":{},"metaSortKey":-1605743748904.75,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"env_a8784ccb89f54ab2b5d6304bc5c7fe65dea87484","parentId":"wrk_7203025feaf0479da8ef4f37f82dd735","modified":1605913807536,"created":1605576671333,"name":"Base Environment","data":{"protocol":"http","domain":"192.168.64.4.nip.io","namespace":"myproject"},"dataPropertyOrder":{"&":["protocol","domain","namespace"]},"color":null,"isPrivate":false,"metaSortKey":1605576671333,"_type":"environment"},{"_id":"jar_a8784ccb89f54ab2b5d6304bc5c7fe65dea87484","parentId":"wrk_7203025feaf0479da8ef4f37f82dd735","modified":1607061809071,"created":1605576671336,"name":"Default Jar","cookies":[{"key":"9fe937f68d882ab9b9a4394564c07f14","value":"b8f103ab5044972bf57e74a481ab8390","domain":"customer-service-myproject.192.168.64.3.nip.io","path":"/","httpOnly":true,"hostOnly":true,"creation":"2020-11-17T01:37:44.954Z","lastAccessed":"2020-11-18T23:55:20.215Z","id":"7493274077865169"},{"key":"16e395b5f7fd6e14ed4130957ee275dc","value":"8a18a3b6185447c5201eb51aca93c091","domain":"config-service-myproject.192.168.64.3.nip.io","path":"/","httpOnly":true,"hostOnly":true,"creation":"2020-11-17T01:41:01.849Z","lastAccessed":"2020-11-17T01:41:01.849Z","id":"6263202089786246"},{"key":"88b4ddc8ac51e6c1ff8dadb6cd1c8d3a","value":"8c99ef0c92bb9b2056ca933f8139d1ce","domain":"oauth-service-myproject.192.168.64.3.nip.io","path":"/","httpOnly":true,"hostOnly":true,"creation":"2020-11-18T23:58:09.846Z","lastAccessed":"2020-11-19T00:08:54.689Z","id":"8634973478243122"},{"key":"JSESSIONID","value":"D57730E02C11AAF8AE0A914F9BD24555","domain":"oauth-service-myproject.192.168.64.3.nip.io","path":"/","httpOnly":true,"hostOnly":true,"creation":"2020-11-19T00:02:05.696Z","lastAccessed":"2020-11-19T00:02:05.696Z","id":"3355183791065466"},{"key":"d3030ce8b0122bee1709b47d9a39b27b","value":"104584287b9a07485f1920d45022d630","domain":"api-gateway-service-myproject.192.168.64.3.nip.io","path":"/","httpOnly":true,"hostOnly":true,"creation":"2020-11-19T19:25:29.989Z","lastAccessed":"2020-11-20T19:51:34.349Z","id":"15710134844481827"},{"key":"ee8d0d4912ccf98711aab78124133a88","value":"1bbe0ed627caf2aaeeef5ebdf0769b95","domain":"employee-service-myproject.192.168.64.3.nip.io","path":"/","httpOnly":true,"hostOnly":true,"creation":"2020-11-19T22:04:45.637Z","lastAccessed":"2020-11-19T22:09:23.341Z","id":"20385817153772745"},{"key":"45da82ddc072d2c348860ccc8c17b9ff","value":"09c92836e722bcadc662b191005ed68d","domain":"reference-service-myproject.192.168.64.3.nip.io","path":"/","httpOnly":true,"hostOnly":true,"creation":"2020-11-20T19:45:27.676Z","lastAccessed":"2020-11-20T19:45:27.676Z","id":"38793379034979925"},{"key":"16e395b5f7fd6e14ed4130957ee275dc","value":"7e9450c0bde7dcde0a6f80362ed1a929","domain":"config-service-myproject.192.168.64.4.nip.io","path":"/","httpOnly":true,"hostOnly":true,"creation":"2020-11-20T23:18:12.047Z","lastAccessed":"2020-11-20T23:18:12.047Z","id":"8287902489903358"},{"key":"45da82ddc072d2c348860ccc8c17b9ff","value":"abfc75674bb098de248d606b75cfa44c","domain":"reference-service-myproject.192.168.64.4.nip.io","path":"/","httpOnly":true,"hostOnly":true,"creation":"2020-11-20T23:19:56.114Z","lastAccessed":"2020-12-04T06:03:29.070Z","id":"0609889891795421"},{"key":"d3030ce8b0122bee1709b47d9a39b27b","value":"7e5296906afb322d4dd1e9110aa7a2ae","domain":"api-gateway-service-myproject.192.168.64.4.nip.io","path":"/","httpOnly":true,"hostOnly":true,"creation":"2020-11-20T23:24:32.073Z","lastAccessed":"2020-11-20T23:24:32.073Z","id":"6138646931234542"},{"key":"88b4ddc8ac51e6c1ff8dadb6cd1c8d3a","value":"21f16a5216d8165e9f67750aa87d2d47","domain":"oauth-service-myproject.192.168.64.4.nip.io","path":"/","httpOnly":true,"hostOnly":true,"creation":"2020-12-03T20:58:10.861Z","lastAccessed":"2020-12-03T20:58:10.861Z","id":"8315658896954974"}],"_type":"cookie_jar"},{"_id":"spc_2e2658209840407f8cb10fa1ccd7e286","parentId":"wrk_7203025feaf0479da8ef4f37f82dd735","modified":1605576671289,"created":1605576671289,"fileName":"Insomnia","contents":"","contentType":"yaml","_type":"api_spec"},{"_id":"env_f6bdf28af64c4eda95911c83e36ce5d5","parentId":"env_a8784ccb89f54ab2b5d6304bc5c7fe65dea87484","modified":1605901413831,"created":1605576686849,"name":"localhost","data":{"service":{"employee":{"name":"employee-service","url":"{{ protocol }}://{{ service.employee.name }}-{{ namespace }}.{{ domain }}"},"customer":{"name":"customer-service","url":"{{ protocol }}://{{ service.customer.name }}-{{ namespace }}.{{ domain }}"},"reference":{"name":"reference-service","url":"{{ protocol }}://{{ service.reference.name }}-{{ namespace }}.{{ domain }}"},"config":{"name":"config-service","url":"{{ protocol }}://{{ service.config.name }}-{{ namespace }}.{{ domain }}"},"oauth":{"name":"oauth-service","url":"{{ protocol }}://{{ service.oauth.name }}-{{ namespace }}.{{ domain }}"},"api_gateway":{"name":"api-gateway-service","url":"{{ protocol }}://{{ service.api_gateway.name }}-{{ namespace }}.{{ domain }}"}}},"dataPropertyOrder":{"&":["service"],"&~|service":["employee","customer","reference","config","oauth","api_gateway"],"&~|service~|employee":["name","url"],"&~|service~|customer":["name","url"],"&~|service~|reference":["name","url"],"&~|service~|config":["name","url"],"&~|service~|oauth":["name","url"],"&~|service~|api_gateway":["name","url"]},"color":null,"isPrivate":false,"metaSortKey":1605576686849,"_type":"environment"}]}
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2020-12-09T22:04:47.902Z",
+  "__export_source": "insomnia.desktop.app:v2020.4.2",
+  "resources": [
+    {
+      "_id": "req_d97931c2fb624a97881947354db24f33",
+      "parentId": "fld_48a914aad01e47299157c2e70e581274",
+      "modified": 1605824185159,
+      "created": 1605813232142,
+      "url": "{{ service.api_gateway.url }}/{{ service.customer.name }}",
+      "name": "customer-api-gateway-service",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "oauth2",
+        "grantType": "client_credentials",
+        "accessTokenUrl": "{{ service.oauth.url }}/oauth/token",
+        "clientId": "groodle",
+        "clientSecret": "groodlesecret"
+      },
+      "metaSortKey": -1605813232202,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_48a914aad01e47299157c2e70e581274",
+      "parentId": "fld_cb0621db63024d1887ce9cd476e35cb0",
+      "modified": 1605823264646,
+      "created": 1605813219360,
+      "name": "api-gateway",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1605823225023,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_cb0621db63024d1887ce9cd476e35cb0",
+      "parentId": "wrk_7203025feaf0479da8ef4f37f82dd735",
+      "modified": 1605823245761,
+      "created": 1605823245761,
+      "name": "micro-services",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1605823245761,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_7203025feaf0479da8ef4f37f82dd735",
+      "parentId": null,
+      "modified": 1605576671288,
+      "created": 1605576671288,
+      "name": "Insomnia",
+      "description": "",
+      "scope": null,
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_5c2f5c501a114ade96d85bb4a9d3e11a",
+      "parentId": "fld_48a914aad01e47299157c2e70e581274",
+      "modified": 1605824280674,
+      "created": 1605823884321,
+      "url": "{{ service.api_gateway.url }}/{{ service.employee.name }}/1",
+      "name": "employee-api-gateway-service",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "oauth2",
+        "grantType": "client_credentials",
+        "accessTokenUrl": "{{ service.oauth.url }}/oauth/token",
+        "clientId": "groodle",
+        "clientSecret": "groodlesecret"
+      },
+      "metaSortKey": -1605778490594,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_75368698c2ef44e4924798da2fa4e97b",
+      "parentId": "fld_48a914aad01e47299157c2e70e581274",
+      "modified": 1607061914792,
+      "created": 1605901445978,
+      "url": "{{ service.api_gateway.url }}/{{ service.reference.name }}/countries",
+      "name": "reference-api-gateway-service",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "oauth2",
+        "grantType": "client_credentials",
+        "accessTokenUrl": "{{ service.oauth.url }}/oauth/token",
+        "clientId": "groodle",
+        "clientSecret": "groodlesecret"
+      },
+      "metaSortKey": -1605761119790,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_952d85ee8a90442aa648ef05a2b7b9ee",
+      "parentId": "fld_cfd38829eb6c4f8d81bbe43c5b87aba8",
+      "modified": 1605824031383,
+      "created": 1605576791796,
+      "url": "{{ service.customer.url }}/",
+      "name": "customer-service",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1605743748986,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_cfd38829eb6c4f8d81bbe43c5b87aba8",
+      "parentId": "fld_cb0621db63024d1887ce9cd476e35cb0",
+      "modified": 1605823249578,
+      "created": 1605823224973,
+      "name": "services",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1605823224973,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_d4dbebec357d4ab1b2bea248c4b50be0",
+      "parentId": "fld_cfd38829eb6c4f8d81bbe43c5b87aba8",
+      "modified": 1605824016263,
+      "created": 1605577240697,
+      "url": "{{ service.config.url }}/{{ service.customer.name }}/default",
+      "name": "customer-service-config",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1605743748936,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_38bd98efcf114649a1da19a1a8089dfb",
+      "parentId": "fld_cfd38829eb6c4f8d81bbe43c5b87aba8",
+      "modified": 1605823229824,
+      "created": 1605743748886,
+      "url": "{{ service.oauth.url }}/oauth/token",
+      "name": "oauth",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/x-www-form-urlencoded",
+        "params": [
+          {
+            "name": "grant_type",
+            "value": "password",
+            "description": "",
+            "id": "pair_6ce0259f400d4f5f9ce9754528380fe0"
+          },
+          {
+            "name": "username",
+            "value": "user",
+            "description": "",
+            "id": "pair_e008aaf88ee74781bdd621019f841082"
+          },
+          {
+            "name": "password",
+            "value": "user",
+            "description": "",
+            "id": "pair_3b497a86ba08431fa3b2d4659f6b322d"
+          }
+        ]
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded",
+          "description": "",
+          "id": "pair_d29caf44d06d4a1fbe1653c428349720"
+        }
+      ],
+      "authentication": {
+        "type": "basic",
+        "disabled": false,
+        "username": "groodle",
+        "password": "groodlesecret"
+      },
+      "metaSortKey": -1605743748886,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_b38dad972e8f479c81ba9043079d63cf",
+      "parentId": "fld_cfd38829eb6c4f8d81bbe43c5b87aba8",
+      "modified": 1605824040871,
+      "created": 1605823389314,
+      "url": "{{ service.employee.url }}",
+      "name": "employee-service",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1605743748961,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_767678bc868544bda52b687fcb996757",
+      "parentId": "fld_cfd38829eb6c4f8d81bbe43c5b87aba8",
+      "modified": 1605824067258,
+      "created": 1605824054696,
+      "url": "{{ service.config.url }}/{{ service.employee.name }}/default",
+      "name": "employee-service-config",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1605743748911,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_977d05a48e9e49efb29ba095e91aebbe",
+      "parentId": "fld_cfd38829eb6c4f8d81bbe43c5b87aba8",
+      "modified": 1605824133102,
+      "created": 1605824124912,
+      "url": "{{ service.config.url }}/{{ service.api_gateway.name }}/default",
+      "name": "api-gateway-service-config",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1605743748898.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_cc7eada26b7f4d0497a8209f58f53c2c",
+      "parentId": "fld_cfd38829eb6c4f8d81bbe43c5b87aba8",
+      "modified": 1605901526408,
+      "created": 1605901507843,
+      "url": "{{ service.reference.url }}/countries",
+      "name": "reference-service",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1605743748948.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_483be1d064404bb2903ec909f79e12a8",
+      "parentId": "fld_cfd38829eb6c4f8d81bbe43c5b87aba8",
+      "modified": 1605901798391,
+      "created": 1605901785968,
+      "url": "{{ service.config.url }}/{{ service.reference.name }}/default",
+      "name": "reference-service-config",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1605743748904.75,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "env_a8784ccb89f54ab2b5d6304bc5c7fe65dea87484",
+      "parentId": "wrk_7203025feaf0479da8ef4f37f82dd735",
+      "modified": 1605913807536,
+      "created": 1605576671333,
+      "name": "Base Environment",
+      "data": {
+        "protocol": "http",
+        "domain": "192.168.64.4.nip.io",
+        "namespace": "myproject"
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "protocol",
+          "domain",
+          "namespace"
+        ]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1605576671333,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_a8784ccb89f54ab2b5d6304bc5c7fe65dea87484",
+      "parentId": "wrk_7203025feaf0479da8ef4f37f82dd735",
+      "modified": 1607061809071,
+      "created": 1605576671336,
+      "name": "Default Jar",
+      "cookies": [
+        {
+          "key": "9fe937f68d882ab9b9a4394564c07f14",
+          "value": "b8f103ab5044972bf57e74a481ab8390",
+          "domain": "customer-service-myproject.192.168.64.3.nip.io",
+          "path": "/",
+          "httpOnly": true,
+          "hostOnly": true,
+          "creation": "2020-11-17T01:37:44.954Z",
+          "lastAccessed": "2020-11-18T23:55:20.215Z",
+          "id": "7493274077865169"
+        },
+        {
+          "key": "16e395b5f7fd6e14ed4130957ee275dc",
+          "value": "8a18a3b6185447c5201eb51aca93c091",
+          "domain": "config-service-myproject.192.168.64.3.nip.io",
+          "path": "/",
+          "httpOnly": true,
+          "hostOnly": true,
+          "creation": "2020-11-17T01:41:01.849Z",
+          "lastAccessed": "2020-11-17T01:41:01.849Z",
+          "id": "6263202089786246"
+        },
+        {
+          "key": "88b4ddc8ac51e6c1ff8dadb6cd1c8d3a",
+          "value": "8c99ef0c92bb9b2056ca933f8139d1ce",
+          "domain": "oauth-service-myproject.192.168.64.3.nip.io",
+          "path": "/",
+          "httpOnly": true,
+          "hostOnly": true,
+          "creation": "2020-11-18T23:58:09.846Z",
+          "lastAccessed": "2020-11-19T00:08:54.689Z",
+          "id": "8634973478243122"
+        },
+        {
+          "key": "JSESSIONID",
+          "value": "D57730E02C11AAF8AE0A914F9BD24555",
+          "domain": "oauth-service-myproject.192.168.64.3.nip.io",
+          "path": "/",
+          "httpOnly": true,
+          "hostOnly": true,
+          "creation": "2020-11-19T00:02:05.696Z",
+          "lastAccessed": "2020-11-19T00:02:05.696Z",
+          "id": "3355183791065466"
+        },
+        {
+          "key": "d3030ce8b0122bee1709b47d9a39b27b",
+          "value": "104584287b9a07485f1920d45022d630",
+          "domain": "api-gateway-service-myproject.192.168.64.3.nip.io",
+          "path": "/",
+          "httpOnly": true,
+          "hostOnly": true,
+          "creation": "2020-11-19T19:25:29.989Z",
+          "lastAccessed": "2020-11-20T19:51:34.349Z",
+          "id": "15710134844481827"
+        },
+        {
+          "key": "ee8d0d4912ccf98711aab78124133a88",
+          "value": "1bbe0ed627caf2aaeeef5ebdf0769b95",
+          "domain": "employee-service-myproject.192.168.64.3.nip.io",
+          "path": "/",
+          "httpOnly": true,
+          "hostOnly": true,
+          "creation": "2020-11-19T22:04:45.637Z",
+          "lastAccessed": "2020-11-19T22:09:23.341Z",
+          "id": "20385817153772745"
+        },
+        {
+          "key": "45da82ddc072d2c348860ccc8c17b9ff",
+          "value": "09c92836e722bcadc662b191005ed68d",
+          "domain": "reference-service-myproject.192.168.64.3.nip.io",
+          "path": "/",
+          "httpOnly": true,
+          "hostOnly": true,
+          "creation": "2020-11-20T19:45:27.676Z",
+          "lastAccessed": "2020-11-20T19:45:27.676Z",
+          "id": "38793379034979925"
+        },
+        {
+          "key": "16e395b5f7fd6e14ed4130957ee275dc",
+          "value": "7e9450c0bde7dcde0a6f80362ed1a929",
+          "domain": "config-service-myproject.192.168.64.4.nip.io",
+          "path": "/",
+          "httpOnly": true,
+          "hostOnly": true,
+          "creation": "2020-11-20T23:18:12.047Z",
+          "lastAccessed": "2020-11-20T23:18:12.047Z",
+          "id": "8287902489903358"
+        },
+        {
+          "key": "45da82ddc072d2c348860ccc8c17b9ff",
+          "value": "abfc75674bb098de248d606b75cfa44c",
+          "domain": "reference-service-myproject.192.168.64.4.nip.io",
+          "path": "/",
+          "httpOnly": true,
+          "hostOnly": true,
+          "creation": "2020-11-20T23:19:56.114Z",
+          "lastAccessed": "2020-12-04T06:03:29.070Z",
+          "id": "0609889891795421"
+        },
+        {
+          "key": "d3030ce8b0122bee1709b47d9a39b27b",
+          "value": "7e5296906afb322d4dd1e9110aa7a2ae",
+          "domain": "api-gateway-service-myproject.192.168.64.4.nip.io",
+          "path": "/",
+          "httpOnly": true,
+          "hostOnly": true,
+          "creation": "2020-11-20T23:24:32.073Z",
+          "lastAccessed": "2020-11-20T23:24:32.073Z",
+          "id": "6138646931234542"
+        },
+        {
+          "key": "88b4ddc8ac51e6c1ff8dadb6cd1c8d3a",
+          "value": "21f16a5216d8165e9f67750aa87d2d47",
+          "domain": "oauth-service-myproject.192.168.64.4.nip.io",
+          "path": "/",
+          "httpOnly": true,
+          "hostOnly": true,
+          "creation": "2020-12-03T20:58:10.861Z",
+          "lastAccessed": "2020-12-03T20:58:10.861Z",
+          "id": "8315658896954974"
+        }
+      ],
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "spc_2e2658209840407f8cb10fa1ccd7e286",
+      "parentId": "wrk_7203025feaf0479da8ef4f37f82dd735",
+      "modified": 1605576671289,
+      "created": 1605576671289,
+      "fileName": "Insomnia",
+      "contents": "",
+      "contentType": "yaml",
+      "_type": "api_spec"
+    },
+    {
+      "_id": "env_f6bdf28af64c4eda95911c83e36ce5d5",
+      "parentId": "env_a8784ccb89f54ab2b5d6304bc5c7fe65dea87484",
+      "modified": 1605901413831,
+      "created": 1605576686849,
+      "name": "localhost",
+      "data": {
+        "service": {
+          "employee": {
+            "name": "employee-service",
+            "url": "{{ protocol }}://{{ service.employee.name }}-{{ namespace }}.{{ domain }}"
+          },
+          "customer": {
+            "name": "customer-service",
+            "url": "{{ protocol }}://{{ service.customer.name }}-{{ namespace }}.{{ domain }}"
+          },
+          "reference": {
+            "name": "reference-service",
+            "url": "{{ protocol }}://{{ service.reference.name }}-{{ namespace }}.{{ domain }}"
+          },
+          "config": {
+            "name": "config-service",
+            "url": "{{ protocol }}://{{ service.config.name }}-{{ namespace }}.{{ domain }}"
+          },
+          "oauth": {
+            "name": "oauth-service",
+            "url": "{{ protocol }}://{{ service.oauth.name }}-{{ namespace }}.{{ domain }}"
+          },
+          "api_gateway": {
+            "name": "api-gateway-service",
+            "url": "{{ protocol }}://{{ service.api_gateway.name }}-{{ namespace }}.{{ domain }}"
+          }
+        }
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "service"
+        ],
+        "&~|service": [
+          "employee",
+          "customer",
+          "reference",
+          "config",
+          "oauth",
+          "api_gateway"
+        ],
+        "&~|service~|employee": [
+          "name",
+          "url"
+        ],
+        "&~|service~|customer": [
+          "name",
+          "url"
+        ],
+        "&~|service~|reference": [
+          "name",
+          "url"
+        ],
+        "&~|service~|config": [
+          "name",
+          "url"
+        ],
+        "&~|service~|oauth": [
+          "name",
+          "url"
+        ],
+        "&~|service~|api_gateway": [
+          "name",
+          "url"
+        ]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1605576686849,
+      "_type": "environment"
+    }
+  ]
+}
