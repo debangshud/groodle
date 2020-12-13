@@ -6,18 +6,32 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
     http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
-    <changeSet author="ddasgupta" id="1">
-        <insert tableName="product" schemaName="product_owner">
-            <column name="name" value="Fire TV Stick Lite"/>
-            <column name="description" value="Our most affordable Fire TV Stick - Enjoy fast streaming in Full HD. Comes with Alexa Voice Remote Lite."/>
+    <changeSet author="ddasgupta" id="3">
+        <insert tableName="manufacturer" schemaName="product_owner">
+            <column name="name" value="Google"/>
+        </insert>
+        <insert tableName="manufacturer" schemaName="product_owner">
+            <column name="name" value="Samsung"/>
         </insert>
         <insert tableName="product" schemaName="product_owner">
-            <column name="name" value="Echo Flex with Smart Clock"/>
-            <column name="description" value="This bundle includes the Echo Flex Plug-in smart speaker with Alexa and the All-New 'Made for Amazon' THIRDREALITY Smart Clock for Echo Flex"/>
+            <column name="name" value="Pixel 5"/>
+            <column name="description" value="Google Pixel 5 with Fi"/>
+            <column name="manufacturer_id" value="1001"/>
         </insert>
         <insert tableName="product" schemaName="product_owner">
-            <column name="name" value="Blink Mini 1 camera"/>
-            <column name="description" value="1080P HD indoor, plug-in security camera with motion detection and two way audio that lets you monitor the inside of your home day and night."/>
+            <column name="name" value="Pixel 4a (5G)"/>
+            <column name="description" value="Pixel 4a 5G with Fi"/>
+            <column name="manufacturer_id" value="1001"/>
+        </insert>
+        <insert tableName="product" schemaName="product_owner">
+            <column name="name" value="Pixel 4a"/>
+            <column name="description" value="Google Pixel 4a with Fi"/>
+            <column name="manufacturer_id" value="1001"/>
+        </insert>
+        <insert tableName="product" schemaName="product_owner">
+            <column name="name" value="Samsung Note 20 5G"/>
+            <column name="description" value="Samsung Galaxy Note20 5G with Fi"/>
+            <column name="manufacturer_id" value="1002"/>
         </insert>
     </changeSet>
 </databaseChangeLog>
