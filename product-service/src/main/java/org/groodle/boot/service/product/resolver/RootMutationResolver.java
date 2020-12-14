@@ -8,27 +8,29 @@ import org.groodle.boot.service.product.repository.ProductRepository;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ProductMutation implements GraphQLMutationResolver {
+public class RootMutationResolver implements GraphQLMutationResolver {
 
     private ManufacturerRepository manufacturerRepository;
     private ProductRepository productRepository;
 
-    public ProductMutation(ManufacturerRepository manufacturerRepository, ProductRepository productRepository) {
+    public RootMutationResolver(ManufacturerRepository manufacturerRepository, ProductRepository productRepository) {
         this.manufacturerRepository = manufacturerRepository;
         this.productRepository = productRepository;
     }
 
     public Product createProduct(String name, String description, Long id) {
-
-        Manufacturer manufacturer = manufacturerRepository.findById(id).orElse(null);
-        if (manufacturer == null) {
-            return null;
-        }
         Product product = Product.builder()
                 .name(name)
                 .description(description)
                 .manufacturer(Manufacturer.builder().id(id).build())
                 .build();
-        return productRepository.save(product);
+        productRepository.save(product);
+        return product;
+    }
+
+    public Manufacturer createManufacturer(String name) {
+        Manufacturer manufacturer = Manufacturer.builder().name(name).build();
+        manufacturerRepository.save(manufacturer);
+        return manufacturer;
     }
 }
