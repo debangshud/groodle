@@ -1,10 +1,15 @@
 package org.groodle.boot.service.product.model;
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@Setter
+@Getter
 @Entity
 public class Product {
     @Id

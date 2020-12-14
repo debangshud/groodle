@@ -1,16 +1,20 @@
 type Query {
-  products(count: Int):[Product]
-  productById(id: ID): Product
+    products(count: Int):[Product]
+    productById(id: ID): Product
+}
+
+type Mutation {
+    createProduct(name: String!, description: String!, manufacturer: ID!): Product!
 }
 
 type Product {
-  id: ID!,
-  name: String,
-  description: String,
-  manufacturer: Manufacturer
+    id: ID!,
+    name: String,
+    description: String,
+    manufacturer: Manufacturer
 }
 
 type Manufacturer {
-  id: ID!,
-  name: String
+    id: ID!,
+    name: String
 }
