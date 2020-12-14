@@ -5,9 +5,8 @@
 	<artifactId>api-gateway-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	<name>API Gateway Service</name>
+	<name>api-gateway-service</name>
 	<description>Netflix Zuul API Gateway Service</description>
-
 	<parent>
 		<groupId>org.groodle.boot</groupId>
 		<artifactId>parent-boot</artifactId>
@@ -80,6 +79,16 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>org.groodle.boot.service.api_gateway.Application</mainClass>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 			<plugin>
 				<groupId>io.fabric8</groupId>

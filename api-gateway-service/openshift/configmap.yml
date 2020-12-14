@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: api-gateway-service
+data:
+  application.yaml: |-
+    spring:
+      application:
+        name: api-gateway-service
