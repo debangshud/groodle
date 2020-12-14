@@ -16,22 +16,22 @@
         <insert tableName="product" schemaName="product_owner">
             <column name="name" value="Pixel 5"/>
             <column name="description" value="Google Pixel 5 with Fi"/>
-            <column name="manufacturer_id" value="1001"/>
+            <column name="manufacturer_id" value="1"/>
         </insert>
         <insert tableName="product" schemaName="product_owner">
             <column name="name" value="Pixel 4a (5G)"/>
             <column name="description" value="Pixel 4a 5G with Fi"/>
-            <column name="manufacturer_id" value="1001"/>
+            <column name="manufacturer_id" value="1"/>
         </insert>
         <insert tableName="product" schemaName="product_owner">
             <column name="name" value="Pixel 4a"/>
             <column name="description" value="Google Pixel 4a with Fi"/>
-            <column name="manufacturer_id" value="1001"/>
+            <column name="manufacturer_id" value="1"/>
         </insert>
         <insert tableName="product" schemaName="product_owner">
             <column name="name" value="Samsung Note 20 5G"/>
             <column name="description" value="Samsung Galaxy Note20 5G with Fi"/>
-            <column name="manufacturer_id" value="1002"/>
+            <column name="manufacturer_id" value="2"/>
         </insert>
     </changeSet>
 </databaseChangeLog>
