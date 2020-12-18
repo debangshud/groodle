@@ -13,16 +13,16 @@ import java.util.List;
 @RestController
 public class CountryController {
 
-    private CountryRepository repository;
+    private final CountryRepository countryRepository;
 
-    public CountryController(CountryRepository repository) {
-        this.repository = repository;
+    public CountryController(CountryRepository countryRepository) {
+        this.countryRepository = countryRepository;
     }
 
     @GetMapping("/countries")
     public List<Country> getAll(){
 
-        List<Country> all = repository.findAll();
+        List<Country> all = countryRepository.findAll();
 
         log.info("Returned Records: {}",all.size());
 
@@ -31,7 +31,7 @@ public class CountryController {
 
     @GetMapping("/countries/{alpha2}")
     public Country getByAlpha2(@PathVariable String alpha2){
-        return repository.findByAlpha2(alpha2);
+        return countryRepository.findByAlpha2(alpha2);
     }
 
 }

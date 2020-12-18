@@ -26,10 +26,10 @@ import java.security.KeyPair;
 @EnableAuthorizationServer
 public class AuthorizationServerConfiguration extends AuthorizationServerConfigurerAdapter {
 
-    private AuthenticationManager authenticationManager;
-    private DataSource dataSource;
-    private JwtProperties jwtProperties;
-    private ClientDetailsService clientDetailsService;
+    private final AuthenticationManager authenticationManager;
+    private final DataSource dataSource;
+    private final JwtProperties jwtProperties;
+    private final ClientDetailsService clientDetailsService;
 
     public AuthorizationServerConfiguration(final @Qualifier("authenticationManagerBean") AuthenticationManager authenticationManager,
                                             final @Qualifier("dataSource") DataSource dataSource,
@@ -61,7 +61,7 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
     }
 
     @Override
-    public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
+    public void configure(AuthorizationServerEndpointsConfigurer endpoints) {
         endpoints.authenticationManager(authenticationManager)
                 .accessTokenConverter(accessTokenConverter())
                 .tokenStore(tokenStore());
@@ -74,7 +74,7 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
 
 
     @Override
-    public void configure(AuthorizationServerSecurityConfigurer oauthServer) throws Exception {
+    public void configure(AuthorizationServerSecurityConfigurer oauthServer) {
         oauthServer.tokenKeyAccess("permitAll()")
                 .checkTokenAccess("isAuthenticated()");
         //.allowFormAuthenticationForClients();

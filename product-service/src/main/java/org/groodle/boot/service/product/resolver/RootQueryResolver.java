@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 @Component
 public class RootQueryResolver implements GraphQLQueryResolver {
 
-    private ProductRepository productRepository;
+    private final ProductRepository productRepository;
 
     public RootQueryResolver(ProductRepository productRepository) {
         this.productRepository = productRepository;

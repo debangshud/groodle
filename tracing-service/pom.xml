@@ -41,11 +41,11 @@
             <version>2.12.9</version>
             <scope>runtime</scope>
         </dependency>
-        <dependency>
-            <groupId>io.fabric8.zipkin</groupId>
-            <artifactId>zipkin-starter-mysql</artifactId>
-            <version>0.1.12</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>io.fabric8.zipkin</groupId>-->
+<!--            <artifactId>zipkin-starter-mysql</artifactId>-->
+<!--            <version>0.1.12</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>

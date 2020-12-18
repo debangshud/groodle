@@ -6,7 +6,6 @@ import com.github.cloudyrock.mongock.driver.mongodb.springdata.v2.decorator.impl
 import com.opencsv.CSVReader;
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.HeaderColumnNameMappingStrategy;
-import com.opencsv.exceptions.CsvException;
 import org.groodle.boot.service.reference.model.Country;
 import org.springframework.core.io.ClassPathResource;
 
@@ -18,14 +17,14 @@ import java.util.List;
 public class DatabaseChangelog {
 
     @ChangeSet(order = "001", id = "001", author = "Debangshu Dasgupta")
-    public void insert(MongockTemplate mongockTemplate) throws IOException, CsvException {
+    public void insert(MongockTemplate mongockTemplate) throws IOException {
 
         CSVReader reader = new CSVReader(new InputStreamReader(new ClassPathResource("iso-country-codes.csv").getInputStream()));
 
-        HeaderColumnNameMappingStrategy<Country> beanStrategy = new HeaderColumnNameMappingStrategy<Country>();
+        HeaderColumnNameMappingStrategy<Country> beanStrategy = new HeaderColumnNameMappingStrategy<>();
         beanStrategy.setType(Country.class);
 
-        CsvToBean<Country> csvToBean = new CsvToBean<Country>();
+        CsvToBean<Country> csvToBean = new CsvToBean<>();
         csvToBean.setCsvReader(reader);
         csvToBean.setMappingStrategy(beanStrategy);
 
