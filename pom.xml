@@ -33,6 +33,7 @@
         <graphql-spring-boot-starter.version>5.0.2</graphql-spring-boot-starter.version>
         <graphql-java-tools.version>5.2.4</graphql-java-tools.version>
         <graphiql-spring-boot-starter.version>8.0.0</graphiql-spring-boot-starter.version>
+        <zipkin.version>2.12.9</zipkin.version>
     </properties>
     <modules>
         <module>parent-boot</module>

@@ -1,6 +1,18 @@
 # Spring Boot Micro Services
 
 ## Setup Development Environment
+### Setup Minishift
+#### Setting Up Virtualization Environment
+##### MacOS
+```shell
+brew install hyperkit
+sudo chown root:wheel /usr/local/bin/hyperkit
+sudo chmod u+s /usr/local/bin/hyperkit
+brew install docker-machine-driver-hyperkit
+sudo chown root:wheel /usr/local/bin/docker-machine-driver-hyperkit
+sudo chmod u+s,+x /usr/local/bin/docker-machine-driver-hyperkit
+minishift start
+```
 ### Create MongoDB Development Environment
 
 Creae 3 Virtual Machines using Centos-7
