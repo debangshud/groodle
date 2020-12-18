@@ -11,6 +11,9 @@ Spring Boot/Kubernetes Micro Services
     - [OAuth Service](#oauth-service)
     - [API Gateway Service](#api-gateway-service)
     - [Customer Service](#customer-service)
+    - [Employee Service](#employee-service)
+    - [Product Service](#product-service)
+    - [Reference Service](#reference-service)
 ## Setup
 ### Minishift
 Setting up minishift in MacOS
@@ -74,7 +77,7 @@ curl --location --request POST 'http://oauth-service-groodle.192.168.64.2.nip.io
 ```
 Use 'client_credentials' grant type and get an access token for a given client id, client secret, username and password 
 ```shell script
-curl --location --request POST 'http://oauth-service-groodle.192.168.64.2.nip.io/oauth/token' \
+curl --location --request POST '<base_url>/oauth/token' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --header 'Authorization: Basic Z3Jvb2RsZTpncm9vZGxlc2VjcmV0' \
 --data-urlencode 'grant_type=client_credentials'
@@ -84,20 +87,34 @@ Build & Deploy
 ```shell script
 cd api-gateway-service
 mvn clean fabric8:deploy 
-curl --location --request GET http://oauth-service-groodle.192.168.64.2.nip.io/.well-known/jwks.json
+curl --location --request GET '<base_url>/.well-known/jwks.json'
 ```
 ### Customer Service
-#### Build & Deploy
+Build & Deploy
 ```shell script
 cd customer-service
 mvn clean fabric8:deploy 
-curl --location --request GET 'http://customer-service-groodle.192.168.64.2.nip.io/1'
+curl --location --request GET '<base_url>/1'
 ```
 
-### 5. Employee Service (customer-service)
-#### Build & Deploy
+### Employee Service
+Build & Deploy
 ```shell script
 cd employee-service
 mvn clean fabric8:deploy 
-curl --location --request GET 'http://employee-service-groodle.192.168.64.2.nip.io/1'
+curl --location --request GET '<base_url>/1'
+```
+### Product Service
+Build & Deploy
+```shell script
+cd product-service
+mvn clean fabric8:deploy 
+curl --location --request GET '<base_url>/1'
+```
+### Reference Service
+Build & Deploy
+```shell script
+cd reference-service
+mvn clean fabric8:deploy 
+curl --location --request GET '<base_url>/1'
 ```
