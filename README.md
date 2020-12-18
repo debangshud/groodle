@@ -1,10 +1,15 @@
 Spring Boot/Kubernetes Micro Services
-===============================
+-------------------------------------
 
-## Setup Development Environment
-### Setup Minishift
-#### Setting Up Virtualization Environment
-##### MacOS
+**Table of Contents**
+- [Setup](#setup)
+    - [Minishift](#minishift)
+- [Services](#services)
+    - [Postgresql](#postgresql)
+    - [MongoDB](#mongodb)
+## Setup
+### Minishift
+Setting up minishift in MacOS
 ```shell
 brew install hyperkit
 sudo chown root:wheel /usr/local/bin/hyperkit
@@ -12,44 +17,33 @@ sudo chmod u+s /usr/local/bin/hyperkit
 brew install docker-machine-driver-hyperkit
 sudo chown root:wheel /usr/local/bin/docker-machine-driver-hyperkit
 sudo chmod u+s,+x /usr/local/bin/docker-machine-driver-hyperkit
-```
-### Start Minishift
-```shell
 minishift start
-```
-The server is accessible via web console at:
-https://192.168.99.100:8443/console
-
-Username: developer
-Password: developer
-```shell
-# Username: developer
-# Password: developer    
-
+#The server is accessible via web console at:
+#https://192.168.99.100:8443/console
+#
+#Username: developer
+#Password: developer
+## Username: developer
+## Password: developer    
+minishift status
+minishift console
 oc login
 oc new-project groodle
 oc project groodle
 oc policy add-role-to-user view system:serviceaccount:groodle:default
-```
-### Minishift Commands
-
-```shell
 minishift stop
 ```
-```shell
-minishift status
-```
-```shell
-minishift console
-```
-
 ## Services
 ### Postgresql
 ```shell script
 oc port-forward <postgresql pod name> 5432:5432
 ```
+### MongoDB
+```shell script
+oc port-forward <mongodb pod name> 5432:5432
+```
 
-### 1. Distributed Configuration Service (config-service)
+### Distributed Configuration Service (config-service)
 #### Build & Deploy
 ```shell
 # login to openshift using username:developer & password:developer 
