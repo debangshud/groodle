@@ -7,6 +7,10 @@ Spring Boot/Kubernetes Micro Services
 - [Services](#services)
     - [Postgresql](#postgresql)
     - [MongoDB](#mongodb)
+    - [Configuration Service](#configuration-service)
+    - [OAuth Service](#oauth-service)
+    - [API Gateway Service](#api-gateway-service)
+    - [Customer Service](#customer-service)
 ## Setup
 ### Minishift
 Setting up minishift in MacOS
@@ -43,24 +47,23 @@ oc port-forward <postgresql pod name> 5432:5432
 oc port-forward <mongodb pod name> 5432:5432
 ```
 
-### Distributed Configuration Service (config-service)
-#### Build & Deploy
+### Configuration Service
+Build & Deploy
 ```shell
-# login to openshift using username:developer & password:developer 
 cd config-service
+oc login #using username:developer & password:developer 
 oc apply -f openshift/configmap.yml
 mvn clean fabric8:deploy
 curl --location --request GET 'http://config-service-groodle.<IP>.nip.io/customer-service/default'
 ```
-### 2. OAuth Service (oauth-service)
-#### Build & Deploy
+### OAuth Service
+Build & Deploy
 ```shell script
 cd oauth-service
 mvn clean fabric8:deploy
 ```
-#### Access H2 console
-http://localhost:8080/h2-console
-#### Use 'password' grant type and get an access token for a given client id, client secret, username and password
+H2 console: http://localhost:8080/h2-console
+Use 'password' grant type and get an access token for a given client id, client secret, username and password
 ```shell script
 curl --location --request POST 'http://oauth-service-groodle.192.168.64.2.nip.io/oauth/token' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
@@ -69,21 +72,21 @@ curl --location --request POST 'http://oauth-service-groodle.192.168.64.2.nip.io
 --data-urlencode 'username=user' \
 --data-urlencode 'password=user'
 ```
-#### Use 'client_credentials' grant type and get an access token for a given client id, client secret, username and password 
+Use 'client_credentials' grant type and get an access token for a given client id, client secret, username and password 
 ```shell script
 curl --location --request POST 'http://oauth-service-groodle.192.168.64.2.nip.io/oauth/token' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --header 'Authorization: Basic Z3Jvb2RsZTpncm9vZGxlc2VjcmV0' \
 --data-urlencode 'grant_type=client_credentials'
 ```
-### 3. API Gateway Service (api-gateway-service)
-#### Build & Deploy
+### API Gateway Service
+Build & Deploy
 ```shell script
 cd api-gateway-service
 mvn clean fabric8:deploy 
 curl --location --request GET http://oauth-service-groodle.192.168.64.2.nip.io/.well-known/jwks.json
 ```
-### 4. Customer Service (customer-service)
+### Customer Service
 #### Build & Deploy
 ```shell script
 cd customer-service
