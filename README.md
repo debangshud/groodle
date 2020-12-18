@@ -57,7 +57,7 @@ cd config-service
 oc login #using username:developer & password:developer 
 oc apply -f openshift/configmap.yml
 mvn clean fabric8:deploy
-curl --location --request GET 'http://config-service-groodle.<IP>.nip.io/customer-service/default'
+curl --location --request GET '<base_url>/customer-service/default'
 ```
 ### OAuth Service
 Build & Deploy
@@ -68,7 +68,7 @@ mvn clean fabric8:deploy
 H2 console: http://localhost:8080/h2-console
 Use 'password' grant type and get an access token for a given client id, client secret, username and password
 ```shell script
-curl --location --request POST 'http://oauth-service-groodle.192.168.64.2.nip.io/oauth/token' \
+curl --location --request POST '<base_url>/oauth/token' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --header 'Authorization: Basic Z3Jvb2RsZTpncm9vZGxlc2VjcmV0' \
 --data-urlencode 'grant_type=password' \
