@@ -1,4 +1,5 @@
-# Spring Boot Micro Services
+Spring Boot Micro Services
+===============================
 
 ## Setup Development Environment
 ### Setup Minishift
