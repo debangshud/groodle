@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class RootMutationResolver implements GraphQLMutationResolver {
 
-    private ManufacturerRepository manufacturerRepository;
-    private ProductRepository productRepository;
+    private final ManufacturerRepository manufacturerRepository;
+    private final ProductRepository productRepository;
 
     public RootMutationResolver(ManufacturerRepository manufacturerRepository, ProductRepository productRepository) {
         this.manufacturerRepository = manufacturerRepository;

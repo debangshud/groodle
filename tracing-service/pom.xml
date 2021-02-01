@@ -7,15 +7,21 @@
     <packaging>jar</packaging>
     <name>tracing-service</name>
     <description>Zipkin Distributed Tracing Service</description>
-
     <parent>
         <groupId>org.groodle.boot</groupId>
         <artifactId>parent-boot</artifactId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../parent-boot</relativePath>
     </parent>
-
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
@@ -27,21 +33,25 @@
         <dependency>
             <groupId>io.zipkin.java</groupId>
             <artifactId>zipkin-server</artifactId>
-            <version>1.28.0</version>
+            <version>2.12.9</version>
         </dependency>
         <dependency>
             <groupId>io.zipkin.java</groupId>
             <artifactId>zipkin-autoconfigure-ui</artifactId>
-            <version>1.28.0</version>
+            <version>2.12.9</version>
             <scope>runtime</scope>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>io.fabric8.zipkin</groupId>-->
+<!--            <artifactId>zipkin-starter-mysql</artifactId>-->
+<!--            <version>0.1.12</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
-
     <build>
         <plugins>
             <plugin>

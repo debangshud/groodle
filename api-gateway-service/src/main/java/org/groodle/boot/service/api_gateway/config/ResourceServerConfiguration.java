@@ -20,7 +20,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 @EnableResourceServer
 public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter {
 
-    private JwtProperties jwtProperties;
+    private final JwtProperties jwtProperties;
 
     public ResourceServerConfiguration(final JwtProperties jwtProperties) {
         this.jwtProperties = jwtProperties;
@@ -46,7 +46,7 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
     }
 
     @Override
-    public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
+    public void configure(ResourceServerSecurityConfigurer resources) {
         resources.tokenStore(tokenStore());
     }
 
