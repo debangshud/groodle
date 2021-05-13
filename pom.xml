@@ -37,7 +37,6 @@
     <modules>
         <module>parent-boot</module>
         <module>config-service</module>
-        <module>config-source</module>
         <module>discovery-service</module>
         <module>api-gateway-service</module>
         <module>tracing-service</module>
@@ -46,6 +45,7 @@
         <module>customer-service</module>
         <module>employee-service</module>
         <module>product-service</module>
+        <module>user-service</module>
         <module>admin-service</module>
     </modules>
 </project>

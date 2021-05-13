@@ -12,7 +12,40 @@ data:
           fail-fast: true
           server:
             git:
-              uri: https://github.com/debangshud/micro-services.git
-              search-paths: config-source/src/main/resources
-              username: "debangshud"
-              password: "')BsFc69"
+              uri: git@github.com:debangshud/micro-services-config.git
+              default-label: main
+              search-paths: src/main/resources
+              basedir: file://${user.home}/config-repo
+              cloneOnStart: true
+              refreshRate: 60
+              ignoreLocalSshSettings: true
+              hostKey: AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ==
+              hostKeyAlgorithm: ssh-rsa
+              privateKey: |
+                          -----BEGIN RSA PRIVATE KEY-----
+                          MIIEpAIBAAKCAQEAoGRTX2xIwN/ARTqim+8QmyDbWUZdYDx15RTJyQVvmzOudjnH
+                          QCnvCbvKG3n6iSQ7Gcjhznde5BbQTbKeczAwsUfCM89L1DuelS7VJKABk8NsJ2ii
+                          gVnNBbrXlE/bQ7fm/bB5S0mPU/8hs0axtGF7SP2EKxnpCtiubbloPDVFSslk5eZ0
+                          QeGQfhJd9eWeoLAmVLlBmw2jygso3uQvbsIDYFKhyq3MiS+1NfRt3zPb3SsR6C8A
+                          n9GCmZlqjTwayq+lqUNawYkjmjtaaGMC+pp8pd/wUYIGJMSKfjb1oECkf4aS7Ok6
+                          6eRCYamoqBwYQ04Sv4ZovzJn5rNWXWa5lBwuYwIDAQABAoIBAQCLErLgGMp0ww66
+                          eH8q6n3hpPnNTSAGJCatvfrBnT8KuiNaS/si/blRHU2/yWKdq5a7Yt244vSandV8
+                          qZaOloiCD5Cqz+IWYqO9A2C5Yyw67cZH3Yia1Dzb7QikhyG+dCWMb4qc52mqEZ0t
+                          D+1iVOxLe9cwcEULrJqCdbOWETLGBr9Wjdr+lLk8fHWtavMCKV03uFey3pbtQRGQ
+                          4hR32DUE/aY0SIuGsyvbJ/wjjkwTHNJNFBSEMUkpIEYK6T7xhv1rZugLdy35VW8x
+                          BNVKO0a89x7XGivamZgaBhCahkDBuaZh42IJPUGUp0An+qaHJlwKY4otywhc5sLX
+                          R8icZcNxAoGBAMv3jIp8TMHAV8PcWohEL054GKTBhAs1DcYN2L63rsM3txF8CPyF
+                          oACrcW6VZPT9c9+Ao5CFX/Q0flivIfvPPND5PIO9zm9vHQILNXC1pcnoX2RWGw7e
+                          8mSM6VjBmoHCzEG2DPjs8o7SZgA3DoXS1fTgxij3CA4mgk8H86yafziFAoGBAMlP
+                          BdD01vyPcjTIiCzarVZSHDkTtqffYpK7VRBIKNf2SLY0Ee7bwJBRzcGLjUsBFZ+5
+                          B29PJxnQLsKjPkBqKcqz6uS8LPrJQ5cJBA+jXmFzh++Tv0ANPabix0Muko0gfkY+
+                          A+3QcClY5PpIVVfUl8gFFMvKaZc+eFWqi7GDnfPHAoGAKJ1glOrvdd1RHKUyOdQp
+                          /1wWvCf0nS6xUXDMah21ZRYhFBA40d/h3oBFFBoXglk9y5GYAF0uoDgbuJkXEUdQ
+                          +uPGUw1mn/XmNtP4jjr9ilkFNbuXo7xtU+xjQtM6awBZH/SaXK8CFcJ7oStVbvxu
+                          slZX3yxhpD+yzv3sXcBd+OkCgYADCnyOAYTV39zby0OzWcJQkYD3o8KYmplEmivY
+                          yR5E1OWYSwUSVKN+Cp5PFCqYPXX0KblhBxMSIsDyE8E2++ORulIMDoOnbi7lMy+q
+                          hM9CLZqaFeNHtmt9/+L+ss9n7lu59+nbR9DJ7xvWZA1V/FImpV0BDxe1Py5WLPNb
+                          RR+3tQKBgQCES7/+O96+nAogJXLLG3Uwc83fYHjLK+7AAVKEhm3o1uC8TClziMdv
+                          XSgJxwdD08yiOiaPqLcFfBfFmVEFumRvbpo8KWO6X49Y939GpwRXwazGY7wzj5No
+                          fVgca1WLoQt4F8xzGvx244i8EJMyRlIMZHjCdNhl5VZQ1XAdV6HERA==
+                          -----END RSA PRIVATE KEY-----
