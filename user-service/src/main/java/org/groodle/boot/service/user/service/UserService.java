@@ -25,19 +25,18 @@ public class UserService {
     }
 
     public UserCreateResponse create(@RequestBody UserCreateRequest request) {
-        customerRepository.findAll().forEach(customer -> log.info("Id: {}", customer.getId()));
         customerRepository.findById(request.getCustomerId()).orElseThrow(() -> new CustomerNotFoundException(request.getCustomerId()));
-        userRepository.save(User.builder().username(request.getUsername()).password(request.getPassword()).build());
+        userRepository.save(User.builder().id(request.getCustomerId()).username(request.getUsername()).password(request.getPassword()).build());
         return UserCreateResponse.builder().status("Success").build();
     }
 
     public UserRetrieveResponse read(@PathVariable String username) {
-        User user = userRepository.findById(username).orElseThrow(() -> new UserNotFoundException(username));
+        User user = userRepository.findFirstByUsername(username).orElseThrow(() -> new UserNotFoundException(username));
         return UserRetrieveResponse.builder().username(user.getUsername()).password(user.getPassword()).build();
     }
 
     public UserPartialUpdateResponse update(@RequestBody UserPartialUpdateRequest request, @PathVariable String username) {
-        final User user = userRepository.findById(username).orElseThrow(() -> new UserNotFoundException(username));
+        final User user = userRepository.findFirstByUsername(username).orElseThrow(() -> new UserNotFoundException(username));
         Optional.ofNullable(request.getNewPassword()).ifPresent(s -> user.setPassword(s));
         Optional.ofNullable(request.getNewUsername()).ifPresent(s -> user.setUsername(s));
         userRepository.save(user);
