@@ -6,5 +6,5 @@ import lombok.Getter;
 @Getter
 @Builder
 public class UserPartialUpdateResponse {
-    private String status;
+    private String userId;
 }

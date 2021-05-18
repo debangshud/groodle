@@ -3,9 +3,11 @@ package org.groodle.boot.service.user.web.rest;
 import lombok.extern.slf4j.Slf4j;
 import org.groodle.boot.service.user.service.UserService;
 import org.groodle.boot.service.user.web.vm.*;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@RequestMapping("/users")
+@RequestMapping("/v1/users")
 @RestController
 @Slf4j
 public class UserController {
@@ -17,30 +19,31 @@ public class UserController {
     }
 
     @PostMapping()
-    public UserCreateResponse create(@RequestBody UserCreateRequest request) {
+    public ResponseEntity<UserCreateResponse> create(@RequestBody UserCreateRequest request) {
         log.info("{}", request);
         try {
-            return userService.create(request);
+            UserCreateResponse userCreateResponse = userService.create(request);
+            return new ResponseEntity<>(userCreateResponse, HttpStatus.CREATED);
         } finally {
             log.info("User created");
         }
     }
 
-    @GetMapping("/{username}")
-    public UserRetrieveResponse read(@PathVariable String username) {
-        log.info("Username: {}", username);
+    @GetMapping("/{userId}")
+    public ResponseEntity<UserRetrieveResponse> read(@PathVariable String userId) {
+        log.info("Id: {}", userId);
         try {
-            return userService.read(username);
+            return new ResponseEntity<>(userService.read(userId), HttpStatus.OK);
         } finally {
             log.info("Returned");
         }
     }
 
-    @PatchMapping("/{username}")
-    public UserPartialUpdateResponse update(@RequestBody UserPartialUpdateRequest request, @PathVariable String username) {
+    @PatchMapping("/{userId}")
+    public UserPartialUpdateResponse update(@RequestBody UserPartialUpdateRequest request, @PathVariable String userId) {
         log.info("{}", request);
         try {
-            return userService.update(request, username);
+            return userService.update(request, userId);
         } finally {
             log.info("User updated");
         }

@@ -13,6 +13,9 @@
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../parent-boot</relativePath>
     </parent>
+    <properties>
+        <swagger-request-validator.version>2.18.0</swagger-request-validator.version>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -41,6 +44,28 @@
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.atlassian.oai</groupId>
+            <artifactId>swagger-request-validator-core</artifactId>
+            <version>2.18.0</version>
+            <!--<scope>test</scope>-->
+        </dependency>
+        <dependency>
+            <groupId>com.atlassian.oai</groupId>
+            <artifactId>swagger-request-validator-mockmvc</artifactId>
+            <version>2.18.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.atlassian.oai</groupId>
+            <artifactId>swagger-request-validator-springmvc</artifactId>
+            <version>2.18.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.atlassian.oai</groupId>
+            <artifactId>swagger-request-validator-restassured</artifactId>
+            <version>2.18.0</version>
         </dependency>
         <dependency>
             <groupId>com.h2database</groupId>
