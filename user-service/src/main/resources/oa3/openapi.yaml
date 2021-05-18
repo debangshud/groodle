@@ -1,12 +1,121 @@
 openapi: "3.0.2"
 info:
-  title: API Title
-  version: "1.0"
+  title: User Service
+  description: User Service
+  version: "1.0.0"
 servers:
   - url: https://api.server.test/v1
 paths:
-  /test:
+  /v1/users/{userId}:
     get:
+      summary: Get User Details By ID
+      description: This API operation provide you the details of the given user id.
+      parameters:
+        - name: userId
+          description: The User ID
+          in: path
+          required: true
+          schema:
+            type: string
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  userId:
+                    type: string
+                  password:
+                    type: string
+                required:
+                  - userId
+                  - password
+    patch:
+      summary: Update User Details By ID
+      description: This API operation updates the details of the given user id.
+      parameters:
+        - name: userId
+          description: The User ID
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - type: object
+                  description: User ID Update Request
+                  properties:
+                    newUserId:
+                      type: string
+                  additionalProperties: false
+                  required:
+                    - newUserId
+                - type: object
+                  description: Password Update Request
+                  properties:
+                    currentPassword:
+                      type: string
+                    newPassword:
+                      type: string
+                  additionalProperties: false
+                  required:
+                    - currentPassword
+                    - newPassword
+                - type: object
+                  description: Password Reset Request
+                  properties:
+                    newPassword:
+                      type: string
+                  additionalProperties: false
+                  required:
+                    - newPassword
+      responses:
+        200:
+          description: Updated User Details
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  userId:
+                    type: string
+                required:
+                  - userId
+  /v1/users:
+    post:
+      summary: Create User Details
+      description: This API operation creates user details for given Customer ID
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                customerId:
+                  type: number
+                userId:
+                  type: string
+                password:
+                  type: string
+              required:
+                - customerId
+                - userId
+                - password
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  userId:
+                    type: string
+                required:
+                  - userId

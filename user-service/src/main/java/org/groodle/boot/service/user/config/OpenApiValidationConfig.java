@@ -1,6 +1,8 @@
 package org.groodle.boot.service.user.config;
 
 import com.atlassian.oai.validator.OpenApiInteractionValidator;
+import com.atlassian.oai.validator.report.LevelResolver;
+import com.atlassian.oai.validator.report.ValidationReport;
 import com.atlassian.oai.validator.springmvc.OpenApiValidationFilter;
 import com.atlassian.oai.validator.springmvc.OpenApiValidationInterceptor;
 import org.springframework.context.annotation.Bean;
@@ -15,7 +17,8 @@ public class OpenApiValidationConfig implements WebMvcConfigurer {
     private final OpenApiValidationInterceptor validationInterceptor;
 
     public OpenApiValidationConfig() {
-        this.validationInterceptor = new OpenApiValidationInterceptor(OpenApiInteractionValidator.createFor("/oa3/openapi.json").build());
+        this.validationInterceptor = new OpenApiValidationInterceptor(OpenApiInteractionValidator.createFor("/oa3/openapi.yaml")
+                .withLevelResolver(LevelResolver.create().withLevel("validation.schema.additionalProperties", ValidationReport.Level.IGNORE).build()).build());
     }
 
     @Bean
