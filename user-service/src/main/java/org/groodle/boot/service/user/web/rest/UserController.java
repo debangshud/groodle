@@ -48,4 +48,9 @@ public class UserController {
             log.info("User updated");
         }
     }
+
+    @DeleteMapping("/{userId}")
+    public UserDeleteResponse delete(@PathVariable String userId){
+        return userService.delete(userId);
+    }
 }

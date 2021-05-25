@@ -86,6 +86,29 @@ paths:
                     type: string
                 required:
                   - userId
+    delete:
+      summary: Delte User Details By ID
+      description: This API deltes the details of the given user id.
+      parameters:
+        - name: userId
+          description: The User ID
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                required:
+                  - status
+
   /v1/users:
     post:
       summary: Create User Details
