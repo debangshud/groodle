@@ -1,0 +1,6 @@
+Feature: User Service Functionalities
+  Scenario: Creating an User
+    Given 10001 is a valid customer id
+    And 10001 is not used for registration
+    When User create api is called with customer id as 10001, user id as user1 and password as test1
+    Then
