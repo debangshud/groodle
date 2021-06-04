@@ -13,6 +13,9 @@
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../parent-boot</relativePath>
     </parent>
+    <properties>
+        <class.main>org.groodle.boot.service.api_gateway.Application</class.main>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -54,35 +57,4 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <mainClass>org.groodle.boot.service.api_gateway.Application</mainClass>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>io.fabric8</groupId>
-                <artifactId>fabric8-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>fmp</id>
-                        <goals>
-                            <goal>resource</goal>
-                            <goal>build</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
 </project>
