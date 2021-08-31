@@ -61,6 +61,7 @@ oc policy add-role-to-user view system:serviceaccount:groodle:default
 oc login #using username:developer & password:developer 
 oc apply -f openshift/configmap.yml
 mvn clean fabric8:deploy
+mvn oc:build oc:resource oc:deploy
 curl --location --request GET '<base_url>/customer-service/default'
 ```
 ### OAuth Service

@@ -19,6 +19,7 @@
         <docker.image.prefix>groodle</docker.image.prefix>
         <docker-maven-plugin.version>0.27.2</docker-maven-plugin.version>
         <fabric8-maven-plugin.version>4.4.1</fabric8-maven-plugin.version>
+        <openshift-maven-plugin.version>1.4.0</openshift-maven-plugin.version>
         <postgresql.version>42.2.9</postgresql.version>
         <liquibase-core.version>3.8.7</liquibase-core.version>
         <spring-boot-admin.version>2.2.2</spring-boot-admin.version>
