@@ -1,0 +1,1211 @@
+_type: export
+__export_format: 4
+__export_date: 2021-08-31T20:25:22.582Z
+__export_source: insomnia.desktop.app:v2021.3.0
+resources:
+  - _id: req_d97931c2fb624a97881947354db24f33
+    parentId: fld_48a914aad01e47299157c2e70e581274
+    modified: 1605824185159
+    created: 1605813232142
+    url: "{{ service.api_gateway.url }}/{{ service.customer.name }}"
+    name: customer-api-gateway-service
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: oauth2
+      grantType: client_credentials
+      accessTokenUrl: "{{ service.oauth.url }}/oauth/token"
+      clientId: groodle
+      clientSecret: groodlesecret
+    metaSortKey: -1605813232202
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_48a914aad01e47299157c2e70e581274
+    parentId: fld_cb0621db63024d1887ce9cd476e35cb0
+    modified: 1605823264646
+    created: 1605813219360
+    name: api-gateway
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1605823225023
+    _type: request_group
+  - _id: fld_cb0621db63024d1887ce9cd476e35cb0
+    parentId: wrk_7203025feaf0479da8ef4f37f82dd735
+    modified: 1605823245761
+    created: 1605823245761
+    name: micro-services
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1605823245761
+    _type: request_group
+  - _id: wrk_7203025feaf0479da8ef4f37f82dd735
+    parentId: null
+    modified: 1605576671288
+    created: 1605576671288
+    name: Insomnia
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_5c2f5c501a114ade96d85bb4a9d3e11a
+    parentId: fld_48a914aad01e47299157c2e70e581274
+    modified: 1607982447207
+    created: 1605823884321
+    url: "{{ service.api_gateway.url }}/{{ service.employee.name }}/1"
+    name: employee-api-gateway-service
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: oauth2
+      grantType: client_credentials
+      accessTokenUrl: "{{ service.oauth.url }}/oauth/token"
+      clientId: groodle
+      clientSecret: groodlesecret
+    metaSortKey: -1605778490594
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_75368698c2ef44e4924798da2fa4e97b
+    parentId: fld_48a914aad01e47299157c2e70e581274
+    modified: 1607061914792
+    created: 1605901445978
+    url: "{{ service.api_gateway.url }}/{{ service.reference.name }}/countries"
+    name: reference-api-gateway-service
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: oauth2
+      grantType: client_credentials
+      accessTokenUrl: "{{ service.oauth.url }}/oauth/token"
+      clientId: groodle
+      clientSecret: groodlesecret
+    metaSortKey: -1605761119790
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_dbd258825e17449497897b32541c855b
+    parentId: fld_48a914aad01e47299157c2e70e581274
+    modified: 1607983149799
+    created: 1607909056848
+    url: "{{ service.api_gateway.url }}/{{ service.product.name }}/graphql"
+    name: product-api-gateway-service
+    description: ""
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"{\n  productById(id: 2)
+        {\n    id\n    name\n    description\n    manufacturer
+        {\n      id\n      name\n    }\n  }\n  products(count: 2)
+        {\n    id\n    name\n    description\n    manufacturer
+        {\n      name\n    }\n  }\n}\n"}'
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_36f06aa4f7414e4bb6e7bd06c671aafa
+    authentication:
+      type: oauth2
+      grantType: client_credentials
+      accessTokenUrl: "{{ service.oauth.url }}/oauth/token"
+      clientId: groodle
+      clientSecret: groodlesecret
+    metaSortKey: -1605795861398
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_2392b69b99ab42aa93b6104cc47a4deb
+    parentId: fld_fca4651ae6994102bb464468ac2053ec
+    modified: 1621895716395
+    created: 1620691885134
+    url: "{{ _.service.user.url }}/v1/users"
+    name: /users
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"customerId":10003,
+        	"userId":"user3",
+        	"password":"test3"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_454458257ce84d46a3289becac1a1e69
+    authentication: {}
+    metaSortKey: -1620691885134
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_fca4651ae6994102bb464468ac2053ec
+    parentId: fld_cfd38829eb6c4f8d81bbe43c5b87aba8
+    modified: 1620785181350
+    created: 1620785181350
+    name: user-service
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1620785181351
+    _type: request_group
+  - _id: fld_cfd38829eb6c4f8d81bbe43c5b87aba8
+    parentId: fld_cb0621db63024d1887ce9cd476e35cb0
+    modified: 1605823249578
+    created: 1605823224973
+    name: services
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1605823224973
+    _type: request_group
+  - _id: req_ae3e4326191547e2bc0993b832efa47d
+    parentId: fld_fca4651ae6994102bb464468ac2053ec
+    modified: 1621304536065
+    created: 1620692567239
+    url: "{{ _.service.user.url }}/v1/users/user1"
+    name: /users/{id} (Forgot Password)
+    description: ""
+    method: PATCH
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"newPassword": "test1"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_454458257ce84d46a3289becac1a1e69
+    authentication: {}
+    metaSortKey: -1620691885234
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_faafb516a88f4b009c18050a021ec7e4
+    parentId: fld_fca4651ae6994102bb464468ac2053ec
+    modified: 1621303925310
+    created: 1620697246481
+    url: "{{ _.service.user.url }}/v1/users/user1"
+    name: /users/{id}
+    description: ""
+    method: GET
+    body:
+      mimeType: application/json
+      text: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_454458257ce84d46a3289becac1a1e69
+    authentication: {}
+    metaSortKey: -1620691885184
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_c991929ad7f244559a01f3849efa0fff
+    parentId: fld_fca4651ae6994102bb464468ac2053ec
+    modified: 1621303903486
+    created: 1620700327289
+    url: "{{ _.service.user.url }}/v1/users/user1"
+    name: /users/{id} (Update UserId)
+    description: ""
+    method: PATCH
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"newUserId":"user1"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_454458257ce84d46a3289becac1a1e69
+    authentication: {}
+    metaSortKey: -1620691885209
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_9239dde4fc3940de8cbe7f1d512babf6
+    parentId: fld_fca4651ae6994102bb464468ac2053ec
+    modified: 1621897609318
+    created: 1620792488214
+    url: "{{ _.service.user.url }}/v1/users"
+    name: /users
+    description: Register a valid customer
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"customerId":10001,
+        	"userId":"user1",
+        	"password":"test1"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_454458257ce84d46a3289becac1a1e69
+    authentication: {}
+    metaSortKey: -1620691885109
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: true
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_d479637dd336434ca27a6da1226b9a79
+    parentId: fld_fca4651ae6994102bb464468ac2053ec
+    modified: 1621303979054
+    created: 1621033384906
+    url: "{{ _.service.user.url }}/v1/users/user1"
+    name: /users/{id} (Update Password)
+    description: ""
+    method: PATCH
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"currentPassword":"abc",
+        	"newPassword":"test1"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_454458257ce84d46a3289becac1a1e69
+    authentication: {}
+    metaSortKey: -1620691885196.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_464e760c4a0c4b4194889729d909477e
+    parentId: fld_fca4651ae6994102bb464468ac2053ec
+    modified: 1621038348806
+    created: 1621038297752
+    url: "{{ _.service.user.url }}/users/{{ _.service.user.user[0].id }}/sessions"
+    name: /users/{username}/sessions
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"password":"{{ _.service.user.user[0].password }}"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_454458257ce84d46a3289becac1a1e69
+    authentication: {}
+    metaSortKey: -1613252558655.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_e437eacc993e4ae996f642548f6e2773
+    parentId: fld_fca4651ae6994102bb464468ac2053ec
+    modified: 1621899882210
+    created: 1621899862243
+    url: "{{ _.service.user.url }}/v1/users/user1"
+    name: /users
+    description: Register a valid customer
+    method: DELETE
+    body:
+      mimeType: application/json
+      text: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_454458257ce84d46a3289becac1a1e69
+    authentication: {}
+    metaSortKey: -1616972221882.25
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: true
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_952d85ee8a90442aa648ef05a2b7b9ee
+    parentId: fld_3ec4c98a001d4150bf899a91d83b35d8
+    modified: 1620785636008
+    created: 1605576791796
+    url: "{{ _.service.customer.url }}/"
+    name: customer-service
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1605743748986
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_3ec4c98a001d4150bf899a91d83b35d8
+    parentId: fld_cfd38829eb6c4f8d81bbe43c5b87aba8
+    modified: 1620785619217
+    created: 1620785619217
+    name: customer-service
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1620785619217
+    _type: request_group
+  - _id: req_19e7961e75ff4843bff467e43eb20328
+    parentId: fld_4a8c6de54232400ebcf0456dc6b15c27
+    modified: 1620785665939
+    created: 1607635068104
+    url: "{{ service.product.url }}/graphql"
+    name: product-service-query
+    description: ""
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"query {\n  productCount,\n  products(count: 5)
+        {\n    id,\n    name,\n    description,\n    manufacturer
+        {\n      name\n    }\n  }\n  productById(id: 2)
+        {\n    id,\n    name,\n    description,\n    manufacturer{\n      id,\n      name\n    }\n  }\n}\n"}'
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_6e95919b515c4218b575a1c5717bbe37
+      - name: Content-Type
+        value: application/json;charset=UTF-8
+        description: ""
+        id: pair_cf877526cc1449859bb2ce81192c39a0
+    authentication: {}
+    metaSortKey: -1605743749036
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_4a8c6de54232400ebcf0456dc6b15c27
+    parentId: fld_cfd38829eb6c4f8d81bbe43c5b87aba8
+    modified: 1620785660005
+    created: 1620785660005
+    name: product-service
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1620785660005
+    _type: request_group
+  - _id: req_c79b7facd7474395a227553e8140d44f
+    parentId: fld_4a8c6de54232400ebcf0456dc6b15c27
+    modified: 1620785669774
+    created: 1607972029514
+    url: "{{ service.product.url }}/graphql"
+    name: product-service-mutation
+    description: ""
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"mutation {\n  createProduct(name: \"Samsung Galaxy S20 5G\",
+        description: \"Samsung Galaxy S20 5G with Fi\",manufacturer: 2)
+        {id,name}\n  createManufacturer(name: \"LG\"){id, name}\n}\n"}'
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_6e95919b515c4218b575a1c5717bbe37
+      - name: Content-Type
+        value: application/json;charset=UTF-8
+        description: ""
+        id: pair_cf877526cc1449859bb2ce81192c39a0
+    authentication: {}
+    metaSortKey: -1605743748986
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_b38dad972e8f479c81ba9043079d63cf
+    parentId: fld_32d4d01a1c3e43929bad7197a5fbc3eb
+    modified: 1620785689419
+    created: 1605823389314
+    url: "{{ service.employee.url }}"
+    name: employee-service
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1605743748961
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_32d4d01a1c3e43929bad7197a5fbc3eb
+    parentId: fld_cfd38829eb6c4f8d81bbe43c5b87aba8
+    modified: 1620785684944
+    created: 1620785684944
+    name: employee-service
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1620785684945
+    _type: request_group
+  - _id: req_767678bc868544bda52b687fcb996757
+    parentId: fld_32d4d01a1c3e43929bad7197a5fbc3eb
+    modified: 1620785692767
+    created: 1605824054696
+    url: "{{ service.config.url }}/{{ service.employee.name }}/default"
+    name: employee-service-config
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1605743748911
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_cc7eada26b7f4d0497a8209f58f53c2c
+    parentId: fld_bd2517da1c294607a0caad453a1243a6
+    modified: 1620785710746
+    created: 1605901507843
+    url: "{{ service.reference.url }}/countries"
+    name: reference-service
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1605743748948.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_bd2517da1c294607a0caad453a1243a6
+    parentId: fld_cfd38829eb6c4f8d81bbe43c5b87aba8
+    modified: 1620785706807
+    created: 1620785706807
+    name: reference-service
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1620785706807
+    _type: request_group
+  - _id: req_483be1d064404bb2903ec909f79e12a8
+    parentId: fld_bd2517da1c294607a0caad453a1243a6
+    modified: 1620785713146
+    created: 1605901785968
+    url: "{{ service.config.url }}/{{ service.reference.name }}/default"
+    name: reference-service-config
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1605743748998.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_38bd98efcf114649a1da19a1a8089dfb
+    parentId: fld_40882b1e96fa4b0d9e52b2465e124cc7
+    modified: 1620785731357
+    created: 1605743748886
+    url: "{{ service.oauth.url }}/oauth/token"
+    name: oauth
+    description: ""
+    method: POST
+    body:
+      mimeType: application/x-www-form-urlencoded
+      params:
+        - name: grant_type
+          value: password
+          description: ""
+          id: pair_6ce0259f400d4f5f9ce9754528380fe0
+        - name: username
+          value: user
+          description: ""
+          id: pair_e008aaf88ee74781bdd621019f841082
+        - name: password
+          value: user
+          description: ""
+          id: pair_3b497a86ba08431fa3b2d4659f6b322d
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/x-www-form-urlencoded
+        description: ""
+        id: pair_d29caf44d06d4a1fbe1653c428349720
+    authentication:
+      type: basic
+      disabled: false
+      username: groodle
+      password: groodlesecret
+    metaSortKey: -1605743748886
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_40882b1e96fa4b0d9e52b2465e124cc7
+    parentId: fld_cfd38829eb6c4f8d81bbe43c5b87aba8
+    modified: 1620785728166
+    created: 1620785728166
+    name: oauth-service
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1620785728166
+    _type: request_group
+  - _id: req_977d05a48e9e49efb29ba095e91aebbe
+    parentId: fld_aad4f5cc119d44aa8e1521ec693d0c1b
+    modified: 1620785769757
+    created: 1605824124912
+    url: "{{ service.config.url }}/{{ service.api_gateway.name }}/default"
+    name: api-gateway-service-config
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1605743748898.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_aad4f5cc119d44aa8e1521ec693d0c1b
+    parentId: fld_cfd38829eb6c4f8d81bbe43c5b87aba8
+    modified: 1620785766812
+    created: 1620785766812
+    name: api-gateway-service
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1620785766812
+    _type: request_group
+  - _id: req_d4dbebec357d4ab1b2bea248c4b50be0
+    parentId: fld_82bc7d0e3759445eaf5149738197b916
+    modified: 1621031671660
+    created: 1605577240697
+    url: "{{ _.service.config.url }}/{{ _.service.customer.name }}/default"
+    name: /customer-service/default
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1620785181351
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_82bc7d0e3759445eaf5149738197b916
+    parentId: fld_cfd38829eb6c4f8d81bbe43c5b87aba8
+    modified: 1620791340690
+    created: 1620791340690
+    name: config-service
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1620791340690
+    _type: request_group
+  - _id: req_99a7c8e89b524fc9b5508e90afa08a71
+    parentId: fld_82bc7d0e3759445eaf5149738197b916
+    modified: 1620791376258
+    created: 1620790583142
+    url: "{{ _.service.config.url }}/{{ _.service.user.name }}/default"
+    name: /user-service/default
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1620785181301
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_a8784ccb89f54ab2b5d6304bc5c7fe65dea87484
+    parentId: wrk_7203025feaf0479da8ef4f37f82dd735
+    modified: 1621032751422
+    created: 1605576671333
+    name: Base Environment
+    data:
+      protocol: http
+      domain: 192.168.64.8.nip.io
+      namespace: groodle
+    dataPropertyOrder:
+      "&":
+        - protocol
+        - domain
+        - namespace
+    color: null
+    isPrivate: false
+    metaSortKey: 1605576671333
+    _type: environment
+  - _id: jar_a8784ccb89f54ab2b5d6304bc5c7fe65dea87484
+    parentId: wrk_7203025feaf0479da8ef4f37f82dd735
+    modified: 1622842716575
+    created: 1605576671336
+    name: Default Jar
+    cookies:
+      - key: 9fe937f68d882ab9b9a4394564c07f14
+        value: b8f103ab5044972bf57e74a481ab8390
+        domain: customer-service-myproject.192.168.64.3.nip.io
+        path: /
+        httpOnly: true
+        hostOnly: true
+        creation: 2020-11-17T01:37:44.954Z
+        lastAccessed: 2020-11-18T23:55:20.215Z
+        id: "3512515118253152"
+      - key: 16e395b5f7fd6e14ed4130957ee275dc
+        value: 8a18a3b6185447c5201eb51aca93c091
+        domain: config-service-myproject.192.168.64.3.nip.io
+        path: /
+        httpOnly: true
+        hostOnly: true
+        creation: 2020-11-17T01:41:01.849Z
+        lastAccessed: 2020-11-17T01:41:01.849Z
+        id: "8010278732352394"
+      - key: 88b4ddc8ac51e6c1ff8dadb6cd1c8d3a
+        value: 8c99ef0c92bb9b2056ca933f8139d1ce
+        domain: oauth-service-myproject.192.168.64.3.nip.io
+        path: /
+        httpOnly: true
+        hostOnly: true
+        creation: 2020-11-18T23:58:09.846Z
+        lastAccessed: 2020-11-19T00:08:54.689Z
+        id: "23216816018363873"
+      - key: JSESSIONID
+        value: D57730E02C11AAF8AE0A914F9BD24555
+        domain: oauth-service-myproject.192.168.64.3.nip.io
+        path: /
+        httpOnly: true
+        hostOnly: true
+        creation: 2020-11-19T00:02:05.696Z
+        lastAccessed: 2020-11-19T00:02:05.696Z
+        id: "3092860846415044"
+      - key: d3030ce8b0122bee1709b47d9a39b27b
+        value: 104584287b9a07485f1920d45022d630
+        domain: api-gateway-service-myproject.192.168.64.3.nip.io
+        path: /
+        httpOnly: true
+        hostOnly: true
+        creation: 2020-11-19T19:25:29.989Z
+        lastAccessed: 2020-11-20T19:51:34.349Z
+        id: "3629440258589247"
+      - key: ee8d0d4912ccf98711aab78124133a88
+        value: 1bbe0ed627caf2aaeeef5ebdf0769b95
+        domain: employee-service-myproject.192.168.64.3.nip.io
+        path: /
+        httpOnly: true
+        hostOnly: true
+        creation: 2020-11-19T22:04:45.637Z
+        lastAccessed: 2020-11-19T22:09:23.341Z
+        id: "7091631471685644"
+      - key: 45da82ddc072d2c348860ccc8c17b9ff
+        value: 09c92836e722bcadc662b191005ed68d
+        domain: reference-service-myproject.192.168.64.3.nip.io
+        path: /
+        httpOnly: true
+        hostOnly: true
+        creation: 2020-11-20T19:45:27.676Z
+        lastAccessed: 2020-11-20T19:45:27.676Z
+        id: "501066733689735"
+      - key: 16e395b5f7fd6e14ed4130957ee275dc
+        value: 7e9450c0bde7dcde0a6f80362ed1a929
+        domain: config-service-myproject.192.168.64.4.nip.io
+        path: /
+        httpOnly: true
+        hostOnly: true
+        creation: 2020-11-20T23:18:12.047Z
+        lastAccessed: 2020-11-20T23:18:12.047Z
+        id: "2995513050721119"
+      - key: 45da82ddc072d2c348860ccc8c17b9ff
+        value: abfc75674bb098de248d606b75cfa44c
+        domain: reference-service-myproject.192.168.64.4.nip.io
+        path: /
+        httpOnly: true
+        hostOnly: true
+        creation: 2020-11-20T23:19:56.114Z
+        lastAccessed: 2020-12-04T06:03:29.070Z
+        id: "025882457519073032"
+      - key: d3030ce8b0122bee1709b47d9a39b27b
+        value: bd8933627d75b286423bde046d3a7a94
+        domain: api-gateway-service-myproject.192.168.64.4.nip.io
+        path: /
+        httpOnly: true
+        hostOnly: true
+        creation: 2020-11-20T23:24:32.073Z
+        lastAccessed: 2020-12-14T01:24:50.303Z
+        id: "9670384812646879"
+      - key: 88b4ddc8ac51e6c1ff8dadb6cd1c8d3a
+        value: 21f16a5216d8165e9f67750aa87d2d47
+        domain: oauth-service-myproject.192.168.64.4.nip.io
+        path: /
+        httpOnly: true
+        hostOnly: true
+        creation: 2020-12-03T20:58:10.861Z
+        lastAccessed: 2020-12-03T20:58:10.861Z
+        id: "34091587663321143"
+      - key: 6a3f0fa3bcddb96a98a2d81f5d37c3cf
+        value: fb4cb7953dacf3438d7ebf0ae5365469
+        domain: product-service-myproject.192.168.64.4.nip.io
+        path: /
+        httpOnly: true
+        hostOnly: true
+        creation: 2020-12-14T01:21:36.001Z
+        lastAccessed: 2020-12-14T20:17:11.213Z
+        id: "3844321680442402"
+      - key: 6a3f0fa3bcddb96a98a2d81f5d37c3cf
+        value: 2f3b57237f3a222d501dfcac1128ac52
+        domain: product-service-myproject.192.168.64.5.nip.io
+        path: /
+        httpOnly: true
+        hostOnly: true
+        creation: 2020-12-14T21:10:39.109Z
+        lastAccessed: 2020-12-14T21:10:39.109Z
+        id: "8031711544333837"
+      - key: d3030ce8b0122bee1709b47d9a39b27b
+        value: bf00d0eed85c9bb176b2f7e9bebe3096
+        domain: api-gateway-service-myproject.192.168.64.5.nip.io
+        path: /
+        httpOnly: true
+        hostOnly: true
+        creation: 2020-12-14T21:34:39.958Z
+        lastAccessed: 2020-12-14T21:53:14.169Z
+        id: "19920833270905192"
+      - key: 88b4ddc8ac51e6c1ff8dadb6cd1c8d3a
+        value: d24864c7809c3ac93ba437bfb46cf5f3
+        domain: oauth-service-myproject.192.168.64.5.nip.io
+        path: /
+        httpOnly: true
+        hostOnly: true
+        creation: 2020-12-14T21:37:24.021Z
+        lastAccessed: 2020-12-14T21:37:24.021Z
+        id: "051889055487042146"
+      - key: 16e395b5f7fd6e14ed4130957ee275dc
+        value: 586d515ef53a87def448ebf5907c05ee
+        domain: config-service-myproject.192.168.64.5.nip.io
+        path: /
+        httpOnly: true
+        hostOnly: true
+        creation: 2020-12-14T21:40:01.288Z
+        lastAccessed: 2020-12-14T21:40:01.288Z
+        id: "9655581454735978"
+      - key: ee8d0d4912ccf98711aab78124133a88
+        value: 8bfacd561761070d59a4c5c347fd3f33
+        domain: employee-service-myproject.192.168.64.5.nip.io
+        path: /
+        httpOnly: true
+        hostOnly: true
+        creation: 2020-12-14T21:47:56.104Z
+        lastAccessed: 2020-12-14T21:47:56.104Z
+        id: "16704747855995694"
+      - key: 16e395b5f7fd6e14ed4130957ee275dc
+        value: 7ff063a35e0434377bf9c4987aba32e6
+        domain: config-service-myproject.192.168.64.7.nip.io
+        path: /
+        httpOnly: true
+        hostOnly: true
+        creation: 2020-12-16T20:05:23.912Z
+        lastAccessed: 2020-12-16T20:05:23.912Z
+        id: "923676275464776"
+      - key: d6f851ea69dd57000bcb4370ce80f962
+        value: 8c91c015aee900b67db711ca5f372d51
+        domain: config-service-groodle.apps-crc.testing
+        path: /
+        httpOnly: true
+        hostOnly: true
+        creation: 2021-05-12T01:49:08.170Z
+        lastAccessed: 2021-05-13T20:02:38.814Z
+        id: "09609793041487857"
+      - key: c346a483121cd2bfd7f0feffff3e23c8
+        value: a6d628ed57e8545f8c42e692b9b8b522
+        domain: customer-service-groodle.apps-crc.testing
+        path: /
+        httpOnly: true
+        hostOnly: true
+        creation: 2021-05-12T01:49:44.661Z
+        lastAccessed: 2021-05-12T01:49:44.661Z
+        id: "8267704431356426"
+      - key: a6a5e7f34afef157a6752743c18fd387
+        value: fbc4bd4c0277e3a1503deaafc2b02c70
+        domain: user-service-groodle.apps-crc.testing
+        path: /
+        httpOnly: true
+        hostOnly: true
+        creation: 2021-05-12T03:57:15.167Z
+        lastAccessed: 2021-05-14T01:04:26.375Z
+        id: "06472860075255871"
+      - key: d6f851ea69dd57000bcb4370ce80f962
+        value: 8cd020a6ffad63616473a1a40d2fa435
+        domain: config-service-groodle.192.168.64.8.nip.io
+        path: /
+        httpOnly: true
+        hostOnly: true
+        creation: 2021-05-14T22:34:08.475Z
+        lastAccessed: 2021-06-04T21:38:36.574Z
+        id: "7657556567533448"
+      - key: a6a5e7f34afef157a6752743c18fd387
+        value: dc307e0e2fd9317f9f12bf68fc1e6b97
+        domain: user-service-groodle.192.168.64.8.nip.io
+        path: /
+        httpOnly: true
+        hostOnly: true
+        creation: 2021-05-14T22:44:59.566Z
+        lastAccessed: 2021-06-04T21:24:54.246Z
+        id: "3680438448844314"
+    _type: cookie_jar
+  - _id: spc_2e2658209840407f8cb10fa1ccd7e286
+    parentId: wrk_7203025feaf0479da8ef4f37f82dd735
+    modified: 1605576671289
+    created: 1605576671289
+    fileName: Insomnia
+    contents: ""
+    contentType: yaml
+    _type: api_spec
+  - _id: env_f6bdf28af64c4eda95911c83e36ce5d5
+    parentId: env_a8784ccb89f54ab2b5d6304bc5c7fe65dea87484
+    modified: 1621131764358
+    created: 1605576686849
+    name: minishift
+    data:
+      service:
+        product:
+          name: product-service
+          url: "{{ _.protocol }}://{{ _.service.product.name }}-{{ namespace }}.{{ domain
+            }}"
+        customer:
+          name: customer-service
+          url: "{{ _.protocol }}://{{ _.service.customer.name }}-{{ namespace }}.{{ domain
+            }}"
+        user:
+          name: user-service
+          url: "{{ _.protocol }}://{{ _.service.user.name }}-{{ namespace }}.{{ domain }}"
+        reference:
+          name: reference-service
+          url: "{{ _.protocol }}://{{ _.service.reference.name }}-{{ namespace }}.{{
+            domain }}"
+        config:
+          name: config-service
+          url: "{{ _.protocol }}://{{ _.service.config.name }}-{{ namespace }}.{{ domain
+            }}"
+        oauth:
+          name: oauth-service
+          url: "{{ _.protocol }}://{{ _.service.oauth.name }}-{{ namespace }}.{{ domain
+            }}"
+        api_gateway:
+          name: api-gateway-service
+          url: "{{ _.protocol }}://{{ _.service.api_gateway.name }}-{{ namespace }}.{{
+            domain }}"
+        employee:
+          name: employee-service
+          url: "{{ _.protocol }}://{{ _.service.employee.name }}-{{ namespace }}.{{ domain
+            }}"
+    dataPropertyOrder:
+      "&":
+        - service
+      "&~|service":
+        - product
+        - customer
+        - user
+        - reference
+        - config
+        - oauth
+        - api_gateway
+        - employee
+      "&~|service~|product":
+        - name
+        - url
+      "&~|service~|customer":
+        - name
+        - url
+      "&~|service~|user":
+        - name
+        - url
+      "&~|service~|reference":
+        - name
+        - url
+      "&~|service~|config":
+        - name
+        - url
+      "&~|service~|oauth":
+        - name
+        - url
+      "&~|service~|api_gateway":
+        - name
+        - url
+      "&~|service~|employee":
+        - name
+        - url
+    color: null
+    isPrivate: false
+    metaSortKey: 1605576686849
+    _type: environment
+  - _id: env_c715e4cf4111476393cbb6357417bc74
+    parentId: env_a8784ccb89f54ab2b5d6304bc5c7fe65dea87484
+    modified: 1621131724046
+    created: 1607971640822
+    name: localhost
+    data:
+      service:
+        product:
+          name: product-service
+          url: "{{ protocol }}://localhost:8080"
+        customer:
+          name: customer-service
+          url: "{{ protocol }}://localhost:8080"
+        user:
+          name: user-service
+          url: "{{ protocol }}://localhost:8080"
+        reference:
+          name: reference-service
+          url: "{{ protocol }}://localhost:8080"
+        config:
+          name: config-service
+          url: "{{ protocol }}://localhost:8080"
+        oauth:
+          name: oauth-service
+          url: "{{ protocol }}://localhost:8080"
+        api_gateway:
+          name: api-gateway-service
+          url: "{{ protocol }}://localhost:8080"
+        employee:
+          name: employee-service
+          url: "{{ _.protocol }}://localhost:8080"
+    dataPropertyOrder:
+      "&":
+        - service
+      "&~|service":
+        - product
+        - customer
+        - user
+        - reference
+        - config
+        - oauth
+        - api_gateway
+        - employee
+      "&~|service~|product":
+        - name
+        - url
+      "&~|service~|customer":
+        - name
+        - url
+      "&~|service~|user":
+        - name
+        - url
+      "&~|service~|reference":
+        - name
+        - url
+      "&~|service~|config":
+        - name
+        - url
+      "&~|service~|oauth":
+        - name
+        - url
+      "&~|service~|api_gateway":
+        - name
+        - url
+      "&~|service~|employee":
+        - name
+        - url
+    color: null
+    isPrivate: false
+    metaSortKey: 1607971640822
+    _type: environment
+  - _id: env_bc53115583494b4abf7001f09b591fb4
+    parentId: env_a8784ccb89f54ab2b5d6304bc5c7fe65dea87484
+    modified: 1620790803295
+    created: 1620783913417
+    name: CRC
+    data:
+      service:
+        product:
+          name: product-service
+          url: "{{ _.protocol }}://{{ service.product.name }}-{{ namespace
+            }}.apps-crc.testing"
+        customer:
+          name: customer-service
+          url: "{{ _.protocol }}://{{ service.customer.name }}-{{ namespace
+            }}.apps-crc.testing"
+        user:
+          name: user-service
+          url: "{{ _.protocol }}://{{ _.service.user.name }}-{{ namespace
+            }}.apps-crc.testing"
+        employee:
+          name: employee-service
+          url: "{{ _.protocol }}://{{ service.employee.name }}-{{ namespace
+            }}.apps-crc.testing"
+        reference:
+          name: reference-service
+          url: "{{ _.protocol }}://{{ service.reference.name }}-{{ namespace
+            }}.apps-crc.testing"
+        config:
+          name: config-service
+          url: "{{ _.protocol }}://{{ service.config.name }}-{{ namespace
+            }}.apps-crc.testing"
+        oauth:
+          name: oauth-service
+          url: "{{ _.protocol }}://{{ service.oauth.name }}-{{ namespace
+            }}.apps-crc.testing"
+        api_gateway:
+          name: api-gateway-service
+          url: "{{ _.protocol }}://{{ service.api_gateway.name }}-{{ namespace
+            }}.apps-crc.testing"
+    dataPropertyOrder:
+      "&":
+        - service
+      "&~|service":
+        - product
+        - customer
+        - user
+        - employee
+        - reference
+        - config
+        - oauth
+        - api_gateway
+      "&~|service~|product":
+        - name
+        - url
+      "&~|service~|customer":
+        - name
+        - url
+      "&~|service~|user":
+        - name
+        - url
+      "&~|service~|employee":
+        - name
+        - url
+      "&~|service~|reference":
+        - name
+        - url
+      "&~|service~|config":
+        - name
+        - url
+      "&~|service~|oauth":
+        - name
+        - url
+      "&~|service~|api_gateway":
+        - name
+        - url
+    color: null
+    isPrivate: false
+    metaSortKey: 1620783913417
+    _type: environment
