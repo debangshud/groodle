@@ -4,6 +4,7 @@ Spring Boot/Kubernetes Micro Services
 **Table of Contents**
 - [Setup](#setup)
     - [Minishift](#minishift)
+    - [CRC](#CRC)
 - [Services](#services)
     - [Postgresql](#postgresql)
     - [MongoDB](#mongodb)
@@ -32,94 +33,101 @@ minishift start
 #Password: developer
 ## Username: developer
 ## Password: developer    
-minishift status
-minishift console
-oc login
-oc new-project groodle
-oc project groodle
-oc policy add-role-to-user view system:serviceaccount:groodle:default
-minishift stop
+$ minishift status
+$ minishift console
+$ oc login
+$ oc new-project groodle
+$ oc project groodle
+$ oc policy add-role-to-user view system:serviceaccount:groodle:default
+$ minishift stop
+```
+### CRC
+Download and install CodeReady Container for MacOS<br>
+Setup and Start CodeReady Container
+```shell
+$ crc setup
+$ crc start
+$ crc console --credentials
+$ oc login -u <username> -p <password> https://api.crc.testing:6443
+$ oc new-project groodle
+$ oc project groodle
+$ oc policy add-role-to-user view system:serviceaccount:groodle:default
+```
+Stop and Delete CodeReady Container
+Delete 
+```shell
+$ crc stop
+$ crc delete
 ```
 ## Services
 ### Postgresql
 ```shell script
-oc port-forward <postgresql pod name> 5432:5432
+$ oc port-forward <postgresql pod name> 5432:5432
 ```
 ### MongoDB
 ```shell script
-oc port-forward <mongodb pod name> 5432:5432
+$ oc port-forward <mongodb pod name> 5432:5432
 ```
-
 ### Configuration Service
 Build & Deploy
 ```shell
-cd config-service
-oc policy add-role-to-user view system:serviceaccount:myproject:default
-# or
-oc policy add-role-to-user view system:serviceaccount:groodle:default
-=======
-oc login #using username:developer & password:developer 
-oc apply -f openshift/configmap.yml
-mvn clean fabric8:deploy
-mvn oc:build oc:resource oc:deploy
-curl --location --request GET '<base_url>/customer-service/default'
+$ cd config-service
+$ mvn oc:deploy
+$ curl --location --request GET '<base_url>/customer-service/default'
 ```
 ### OAuth Service
 Build & Deploy
 ```shell script
-cd oauth-service
-mvn clean fabric8:deploy
-```
-H2 console: http://localhost:8080/h2-console
-Use 'password' grant type and get an access token for a given client id, client secret, username and password
-```shell script
-curl --location --request POST '<base_url>/oauth/token' \
+$ cd oauth-service
+$ mvn oc:deploy
+
+# Use 'password' grant type and get an access token for a given client id, client secret, username and password
+$ curl --location --request POST '<base_url>/oauth/token' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --header 'Authorization: Basic Z3Jvb2RsZTpncm9vZGxlc2VjcmV0' \
 --data-urlencode 'grant_type=password' \
 --data-urlencode 'username=user' \
 --data-urlencode 'password=user'
-```
-Use 'client_credentials' grant type and get an access token for a given client id, client secret, username and password 
-```shell script
-curl --location --request POST '<base_url>/oauth/token' \
+
+# Use 'client_credentials' grant type and get an access token for a given client id, client secret, username and password 
+$ curl --location --request POST '<base_url>/oauth/token' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --header 'Authorization: Basic Z3Jvb2RsZTpncm9vZGxlc2VjcmV0' \
 --data-urlencode 'grant_type=client_credentials'
 ```
+H2 console: http://localhost:8080/h2-console
 ### API Gateway Service
 Build & Deploy
 ```shell script
-cd api-gateway-service
-mvn clean fabric8:deploy 
-curl --location --request GET '<base_url>/.well-known/jwks.json'
+$ cd api-gateway-service
+$ mvn oc:deploy 
+$ curl --location --request GET '<base_url>/.well-known/jwks.json'
 ```
 ### Customer Service
 Build & Deploy
 ```shell script
-cd customer-service
-mvn clean fabric8:deploy 
-curl --location --request GET '<base_url>/1'
+$ cd customer-service
+$ mvn oc:deploy
+$ curl --location --request GET '<base_url>/1'
 ```
-
 ### Employee Service
 Build & Deploy
 ```shell script
-cd employee-service
-mvn clean fabric8:deploy 
-curl --location --request GET '<base_url>/1'
+$ cd employee-service
+$ mvn oc:deploy
+$ curl --location --request GET '<base_url>/1'
 ```
 ### Product Service
 Build & Deploy
 ```shell script
 cd product-service
-mvn clean fabric8:deploy 
+mvn oc:build oc:resource oc:deploy 
 curl --location --request GET '<base_url>/1'
 ```
 ### Reference Service
 Build & Deploy
 ```shell script
 cd reference-service
-mvn clean fabric8:deploy 
+mvn oc:build oc:resource oc:deploy 
 curl --location --request GET '<base_url>/1'
 ```
