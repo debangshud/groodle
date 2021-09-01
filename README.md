@@ -120,14 +120,14 @@ $ curl --location --request GET '<base_url>/1'
 ### Product Service
 Build & Deploy
 ```shell script
-cd product-service
-mvn oc:build oc:resource oc:deploy 
-curl --location --request GET '<base_url>/1'
+$ cd product-service
+$ mvn oc:build oc:resource oc:deploy 
+$ curl --location --request GET '<base_url>/1'
 ```
 ### Reference Service
 Build & Deploy
 ```shell script
-cd reference-service
-mvn oc:build oc:resource oc:deploy 
-curl --location --request GET '<base_url>/1'
+$ cd reference-service
+$ mvn oc:build oc:resource oc:deploy 
+$ curl --location --request GET '<base_url>/1'
 ```
