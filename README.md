@@ -66,6 +66,13 @@ $ oc port-forward <postgresql pod name> 5432:5432
 ```
 ### MongoDB
 ```shell script
+$ oc new-app \
+-e MONGODB_USER=developer \
+-e MONGODB_PASSWORD=developer \
+-e MONGODB_DATABASE=sampledb \
+-e MONGODB_ADMIN_PASSWORD=admin \
+registry.access.redhat.com/rhscl/mongodb-26-rhel7 --name=mongodb
+
 $ oc port-forward <mongodb pod name> 5432:5432
 ```
 ### Configuration Service
