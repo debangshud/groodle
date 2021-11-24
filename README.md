@@ -62,6 +62,12 @@ $ crc delete
 ## Services
 ### Postgresql
 ```shell script
+$ oc new-app \
+    -e POSTGRESQL_USER=developer \
+    -e POSTGRESQL_PASSWORD=developer \
+    -e POSTGRESQL_DATABASE=sampledb \
+    registry.access.redhat.com/rhscl/postgresql-95-rhel7 --name=postgresql
+    
 $ oc port-forward <postgresql pod name> 5432:5432
 ```
 ### MongoDB
