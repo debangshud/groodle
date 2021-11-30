@@ -60,25 +60,30 @@ $ crc stop
 $ crc delete
 ```
 ## Services
+### Redis
+```shell script
+$ oc new-app registry.redhat.io/rhscl/redis-6-rhel7 --name=redis
+$ oc port-forward redis-6-rhel7-5547dbb659-n8h7b 6379:6379
+```
 ### Postgresql
 ```shell script
 $ oc new-app \
     -e POSTGRESQL_USER=developer \
     -e POSTGRESQL_PASSWORD=developer \
     -e POSTGRESQL_DATABASE=sampledb \
-    registry.access.redhat.com/rhscl/postgresql-95-rhel7 --name=postgresql
-    
+    registry.access.redhat.com/rhscl/postgresql-95-rhel7 \
+    --name=postgresql
 $ oc port-forward <postgresql pod name> 5432:5432
 ```
 ### MongoDB
 ```shell script
 $ oc new-app \
--e MONGODB_USER=developer \
--e MONGODB_PASSWORD=developer \
--e MONGODB_DATABASE=sampledb \
--e MONGODB_ADMIN_PASSWORD=admin \
-registry.access.redhat.com/rhscl/mongodb-26-rhel7 --name=mongodb
-
+    -e MONGODB_USER=developer \
+    -e MONGODB_PASSWORD=developer \
+    -e MONGODB_DATABASE=sampledb \
+    -e MONGODB_ADMIN_PASSWORD=admin \
+    registry.access.redhat.com/rhscl/mongodb-26-rhel7 \
+    --name=mongodb
 $ oc port-forward <mongodb pod name> 5432:5432
 ```
 ### Configuration Service

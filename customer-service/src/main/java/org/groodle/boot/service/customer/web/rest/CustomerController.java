@@ -1,22 +1,20 @@
 package org.groodle.boot.service.customer.web.rest;
 
 import lombok.extern.slf4j.Slf4j;
-import org.groodle.boot.service.customer.repository.CustomerRepository;
-import org.groodle.boot.service.customer.web.errors.CustomerNotFoundException;
-import org.groodle.boot.service.customer.web.vm.Customer;
+import org.groodle.boot.service.customer.service.CustomerService;
+import org.groodle.boot.service.customer.model.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @Slf4j
 public class CustomerController {
 
     @Autowired
-    private CustomerRepository repository;
+    private CustomerService customerService;
 
     @Value("${test.prop}")
     private String testProp;
@@ -24,28 +22,20 @@ public class CustomerController {
     @GetMapping("/")
     public List<Customer> getAll() {
         log.info("method:getAll()");
-        log.info("Test Property: {}",testProp);
-
-        return repository.findAll();
+        return customerService.getAll();
     }
 
     @GetMapping("/{id}")
     public Customer getById(@PathVariable Long id) {
         log.info("method: getById(id)");
         log.debug("Requested Customer Id:{}", id);
-        log.info("Test Property: {}",testProp);
-        Optional<Customer> customer = repository.findById(id);
-        if (customer.isPresent()) {
-            return customer.get();
-        } else {
-            throw new CustomerNotFoundException();
-        }
+        return customerService.getById(id);
     }
 
     @PostMapping("/")
     public Customer create(@RequestBody Customer customer) {
         log.info("method:create(customer)");
         log.debug("Customer:{}", customer);
-        return repository.save(customer);
+        return customerService.create(customer);
     }
 }

@@ -1,12 +1,13 @@
-package org.groodle.boot.service.customer.web.vm;
+package org.groodle.boot.service.customer.model;
 
 import lombok.*;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Data
-public class Customer {
+public class Customer implements Serializable {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
