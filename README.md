@@ -60,6 +60,11 @@ $ crc stop
 $ crc delete
 ```
 ## Services
+### AMQ
+```shell script
+$ oc new-app registry.redhat.io/jboss-amq-6/amq63-openshift --name=amq
+$ oc port-forward redis-6-rhel7-5547dbb659-n8h7b 6379:6379
+```
 ### Redis
 ```shell script
 $ oc new-app registry.redhat.io/rhscl/redis-6-rhel7 --name=redis

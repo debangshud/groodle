@@ -5,6 +5,8 @@ import org.groodle.boot.service.customer.service.CustomerService;
 import org.groodle.boot.service.customer.model.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,29 +15,36 @@ import java.util.List;
 @Slf4j
 public class CustomerController {
 
-    @Autowired
     private CustomerService customerService;
 
-    @Value("${test.prop}")
-    private String testProp;
+    public CustomerController(CustomerService customerService) {
+        this.customerService = customerService;
+    }
 
     @GetMapping("/")
-    public List<Customer> getAll() {
+    public ResponseEntity<List<Customer>> getAll() {
         log.info("method:getAll()");
-        return customerService.getAll();
+        return new ResponseEntity<>(customerService.getAll(),HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public Customer getById(@PathVariable Long id) {
+    public ResponseEntity<Customer> getById(@PathVariable Long id) {
         log.info("method: getById(id)");
         log.debug("Requested Customer Id:{}", id);
-        return customerService.getById(id);
+        return new ResponseEntity<>(customerService.getById(id),HttpStatus.OK);
     }
 
     @PostMapping("/")
-    public Customer create(@RequestBody Customer customer) {
+    public ResponseEntity<Customer> create(@RequestBody Customer customer) {
         log.info("method:create(customer)");
         log.debug("Customer:{}", customer);
-        return customerService.create(customer);
+        return new ResponseEntity<>(customerService.create(customer),HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteById(@PathVariable Long id){
+        log.info("deleteById({})",id);
+        customerService.deleteById(id);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }
