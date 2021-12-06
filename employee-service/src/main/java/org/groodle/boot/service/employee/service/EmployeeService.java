@@ -23,8 +23,8 @@ public class EmployeeService {
         this.employeeRepository = employeeRepository;
     }
 
-    public Employee getById(@PathVariable Long id) {
-        log.info("getById({}) called",id);
+    public Employee getById(Long id) {
+        log.info("getById({}) called", id);
         Optional<Employee> optionalEmployee = employeeRepository.findById(id);
         if (optionalEmployee.isPresent()) {
             return optionalEmployee.get();

@@ -60,7 +60,13 @@ $ crc stop
 $ crc delete
 ```
 ## Services
-### AMQ
+### RabbitMQ
+```shell script
+$ oc new-app registry.redhat.io/rhosp-rhel8/openstack-rabbitmq:16.2.0-77 --name=rabbitmq
+$ oc port-forward <Pod Name> 6379:6379
+```
+@sha256:f1123d164d9d0193e4da067620ed19b620bf201cc2f81bffa95ca2720077b20b
+### ActiveMQ
 ```shell script
 $ oc new-app registry.redhat.io/jboss-amq-6/amq63-openshift --name=amq
 $ oc port-forward redis-6-rhel7-5547dbb659-n8h7b 6379:6379

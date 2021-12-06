@@ -1,6 +1,7 @@
 package org.groodle.boot.service.user.web.rest;
 
 import lombok.extern.slf4j.Slf4j;
+import org.groodle.boot.service.user.service.UserDeletionEventSenderService;
 import org.groodle.boot.service.user.service.UserService;
 import org.groodle.boot.service.user.web.vm.*;
 import org.springframework.http.HttpStatus;
@@ -13,9 +14,11 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
     private final UserService userService;
+    private final UserDeletionEventSenderService userDeletionEventSenderService;
 
-    public UserController(UserService userService) {
+    public UserController(UserService userService, UserDeletionEventSenderService userDeletionEventSenderService) {
         this.userService = userService;
+        this.userDeletionEventSenderService = userDeletionEventSenderService;
     }
 
     @PostMapping()
@@ -51,6 +54,6 @@ public class UserController {
 
     @DeleteMapping("/{userId}")
     public UserDeleteResponse delete(@PathVariable String userId){
-        return userService.delete(userId);
+        return userDeletionEventSenderService.send(userId);
     }
 }
