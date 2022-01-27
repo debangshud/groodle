@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: order-service
+  cloud:
+    config:
+      discovery:
+        service-id: config-service
+        enabled: true
+  liquibase:
+    change-log: classpath:/db/changelog/changelog-master.yaml
+    default-schema: order_owner

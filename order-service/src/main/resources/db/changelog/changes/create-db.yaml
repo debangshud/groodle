@@ -1,0 +1,205 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: ddasgupta
+      changes:
+        - createTable:
+            tableName: association_value_entry
+            schemaName: order_owner
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+              - column:
+                  name: association_key
+                  type: varchar2(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: association_value
+                  type: varchar2(255)
+              - column:
+                  name: saga_id
+                  type: varchar2(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: saga_type
+                  type: varchar2(255)
+        - createTable:
+            tableName: domain_event_entry
+            schemaName: order_owner
+            columns:
+              - column:
+                  name: global_index
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+              - column:
+                  name: event_identifier
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: meta_data
+                  type: blob
+              - column:
+                  name: payload
+                  type: blob
+                  constraints:
+                    nullable: false
+              - column:
+                  name: payload_revision
+                  type: varchar2(255)
+              - column:
+                  name: payload_type
+                  type: varchar2(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: time_stamp
+                  type: varchar2(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: aggregate_identifier
+                  type: varchar2(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: sequence_number
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: type
+                  type: varchar2(255)
+        - createTable:
+            tableName: saga_entry
+            schemaName: order_owner
+            columns:
+              - column:
+                  name: saga_id
+                  type: varchar2(255)
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+              - column:
+                  name: revision
+                  type: varchar2(255)
+              - column:
+                  name: saga_type
+                  type: varchar2(255)
+              - column:
+                  name: serialized_saga
+                  type: blob
+        - createTable:
+            tableName: snapshot_event_entry
+            schemaName: order_owner
+            columns:
+              - column:
+                  name: aggregate_identifier
+                  type: varchar2(255)
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+              - column:
+                  name: sequence_number
+                  type: bigint
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: type
+                  type: varchar2(255)
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+              - column:
+                  name: event_identifier
+                  type: varchar2(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: meta_data
+                  type: blob
+              - column:
+                  name: payload
+                  type: blob
+                  constraints:
+                    nullable: false
+              - column:
+                  name: payload_revision
+                  type: varchar2(255)
+              - column:
+                  name: payload_type
+                  type: varchar2(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: time_stamp
+                  type: varchar2(255)
+                  constraints:
+                    nullable: false
+        - createTable:
+            tableName: token_entry
+            schemaName: order_owner
+            columns:
+              - column:
+                  name: processor_name
+                  type: varchar2(255)
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+              - column:
+                  name: segment
+                  type: int
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+              - column:
+                  name: owner
+                  type: varchar2(255)
+              - column:
+                  name: timestamp
+                  type: varchar2(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: token
+                  type: blob
+              - column:
+                  name: token_type
+                  type: varchar2(255)
+        - addUniqueConstraint:
+            tableName: domain_event_entry
+            columnNames: aggregate_identifier, sequence_number
+        - addUniqueConstraint:
+            tableName: domain_event_entry
+            columnNames: event_identifier
+        - addUniqueConstraint:
+            tableName: snapshot_event_entry
+            columnNames: event_identifier
+        - createIndex:
+            tableName: association_value_entry
+            columns:
+              - column:
+                  name: saga_id
+              - column:
+                  name: association_key
+        - createSequence:
+            sequenceName: global_event_index_seq
+            schemaName: order_owner
+            startValue: 1
+            incrementBy: 1
+        - createSequence:
+            sequenceName: hibernate_sequence
+            schemaName: order_owner
+            startValue: 1
+            incrementBy: 1
+      rollback:
+        - dropTable:
+            tableName: association_value_entry

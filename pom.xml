@@ -36,6 +36,7 @@
         <zipkin.version>2.12.9</zipkin.version>
         <io.cucumber.version>6.10.4</io.cucumber.version>
         <net.masterthought.version>5.5.3</net.masterthought.version>
+        <axon.version>3.2.2</axon.version>
     </properties>
     <modules>
         <module>parent-boot</module>
@@ -50,5 +51,7 @@
         <module>product-service</module>
         <module>user-service</module>
         <module>admin-service</module>
+        <module>notification-service</module>
+        <module>order-service</module>
     </modules>
 </project>

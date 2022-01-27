@@ -1,0 +1,66 @@
+create sequence global_event_index_seq start with 1 increment by 1;
+create sequence hibernate_sequence start with 1 increment by 1;
+
+    create table AssociationValueEntry (
+       id number(19,0) not null,
+        associationKey varchar2(255 char) not null,
+        associationValue varchar2(255 char),
+        sagaId varchar2(255 char) not null,
+        sagaType varchar2(255 char),
+        primary key (id)
+    );
+
+    create table DomainEventEntry (
+       globalIndex number(19,0) not null,
+        eventIdentifier varchar2(255 char) not null,
+        metaData blob,
+        payload blob not null,
+        payloadRevision varchar2(255 char),
+        payloadType varchar2(255 char) not null,
+        timeStamp varchar2(255 char) not null,
+        aggregateIdentifier varchar2(255 char) not null,
+        sequenceNumber number(19,0) not null,
+        type varchar2(255 char),
+        primary key (globalIndex)
+    );
+
+    create table SagaEntry (
+       sagaId varchar2(255 char) not null,
+        revision varchar2(255 char),
+        sagaType varchar2(255 char),
+        serializedSaga blob,
+        primary key (sagaId)
+    );
+
+    create table SnapshotEventEntry (
+       aggregateIdentifier varchar2(255 char) not null,
+        sequenceNumber number(19,0) not null,
+        type varchar2(255 char) not null,
+        eventIdentifier varchar2(255 char) not null,
+        metaData blob,
+        payload blob not null,
+        payloadRevision varchar2(255 char),
+        payloadType varchar2(255 char) not null,
+        timeStamp varchar2(255 char) not null,
+        primary key (aggregateIdentifier, sequenceNumber, type)
+    );
+
+    create table TokenEntry (
+       processorName varchar2(255 char) not null,
+        segment number(10,0) not null,
+        owner varchar2(255 char),
+        timestamp varchar2(255 char) not null,
+        token blob,
+        tokenType varchar2(255 char),
+        primary key (processorName, segment)
+    );
+create index IDX4056lb0rolits0rrkm49a22n on AssociationValueEntry (sagaId, associationKey);
+
+    alter table DomainEventEntry 
+       add constraint UKdg43ia27ypo1jovw2x64vbwv8 unique (aggregateIdentifier, sequenceNumber);
+
+    alter table DomainEventEntry 
+       add constraint UK_k5lt6d2792amnloo7q91njp0v unique (eventIdentifier);
+
+    alter table SnapshotEventEntry 
+       add constraint UK_sg7xx45yh4ajlsjd8t0uygnjn unique (eventIdentifier);

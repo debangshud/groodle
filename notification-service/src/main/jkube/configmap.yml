@@ -1,0 +1,7 @@
+metadata:
+  name: notification-service
+data:
+  application.yaml: |-
+    spring:
+      application:
+        name: notification-service

@@ -1,0 +1,7 @@
+metadata:
+  name: order-service
+data:
+  application.yaml: |-
+    spring:
+      application:
+        name: order-service
