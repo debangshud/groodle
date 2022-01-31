@@ -9,7 +9,7 @@ spring:
       fail-fast: true
       server:
         git:
-          uri: git@github.com:debangshud/micro-services-config.git
+          uri: git@github.com:debangshud/groodle-config.git
           default-label: main
           search-paths: src/main/resources
           basedir: file://${user.home}/config-repo
