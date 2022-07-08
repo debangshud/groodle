@@ -1,0 +1,7 @@
+metadata:
+  name: discount-service
+data:
+  application.yaml: |-
+    spring:
+      application:
+        name: discount-service

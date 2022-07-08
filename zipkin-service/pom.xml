@@ -20,7 +20,6 @@
         <dependency>
             <groupId>io.fabric8.zipkin</groupId>
             <artifactId>zipkin-starter-minimal</artifactId>
-            <version>0.1.12</version>
         </dependency>
     </dependencies>
 </project>

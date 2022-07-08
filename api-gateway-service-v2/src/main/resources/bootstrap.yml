@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: api-gateway-service-v2
+  cloud:
+    config:
+      discovery:
+        service-id: config-service
+        enabled: true

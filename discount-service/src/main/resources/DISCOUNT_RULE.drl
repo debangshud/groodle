@@ -1,0 +1,13 @@
+import org.groodle.boot.service.discount.model.Discount;
+import org.groodle.boot.service.discount.model.HotelInventory;
+import java.util.*;
+
+global org.groodle.boot.service.discount.model.Discount discount;
+dialect  "mvel"
+
+rule "Calculate Discount - Scenario 1"
+    when
+        hotelInventoryInstance:HotelInventory(isNightSurcharge == false && distanceInMile < 10);
+    then
+       	discount.setAmount(20.00);
+end

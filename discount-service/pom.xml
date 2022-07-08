@@ -1,10 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>tracing-service</artifactId>
+    <artifactId>discount-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>Tracing Service</name>
-    <description>Zipkin Distributed Tracing Service</description>
+    <name>Discount Service</name>
+    <description>Discount Service</description>
     <parent>
         <groupId>org.groodle.boot</groupId>
         <artifactId>parent-boot</artifactId>
@@ -12,7 +15,8 @@
         <relativePath>../parent-boot</relativePath>
     </parent>
     <properties>
-        <class.main>org.groodle.boot.service.tracing.Application</class.main>
+        <drools-version>7.0.0.Final</drools-version>
+        <class.main>org.groodle.boot.service.discount.Application</class.main>
     </properties>
     <dependencies>
         <dependency>
@@ -20,13 +24,25 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.zipkin.java</groupId>
-            <artifactId>zipkin-server</artifactId>
+            <groupId>org.kie</groupId>
+            <artifactId>kie-ci</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.zipkin.java</groupId>
-            <artifactId>zipkin-autoconfigure-ui</artifactId>
-            <scope>runtime</scope>
+            <groupId>org.drools</groupId>
+            <artifactId>drools-decisiontables</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.drools</groupId>
+            <artifactId>drools-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.drools</groupId>
+            <artifactId>drools-compiler</artifactId>
+        </dependency>
+        <!--spring integration -->
+        <dependency>
+            <groupId>org.kie</groupId>
+            <artifactId>kie-spring</artifactId>
         </dependency>
     </dependencies>
     <build>

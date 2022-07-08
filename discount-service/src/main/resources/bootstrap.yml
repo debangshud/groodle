@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: discount-service
+  cloud:
+    config:
+      discovery:
+        service-id: config-service
+        enabled: true

@@ -1,0 +1,7 @@
+metadata:
+  name: api-gateway-service-v2
+data:
+  application.yaml: |-
+    spring:
+      application:
+        name: api-gateway-service-v2

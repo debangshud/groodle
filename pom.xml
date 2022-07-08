@@ -37,12 +37,19 @@
         <io.cucumber.version>6.10.4</io.cucumber.version>
         <net.masterthought.version>5.5.3</net.masterthought.version>
         <axon.version>3.2.2</axon.version>
+        <swagger-request-validator.version>2.18.0</swagger-request-validator.version>
+        <commons-io.version>2.6</commons-io.version>
+        <zipkin-server.version>2.12.9</zipkin-server.version>
+        <zipkin-autoconfigure-ui.version>2.12.9</zipkin-autoconfigure-ui.version>
+        <zipkin-starter-minimal.version>0.1.12</zipkin-starter-minimal.version>
+        <drools-version>7.0.0.Final</drools-version>
     </properties>
     <modules>
         <module>parent-boot</module>
         <module>config-service</module>
         <module>discovery-service</module>
         <module>api-gateway-service</module>
+        <module>api-gateway-service-v2</module>
         <module>tracing-service</module>
         <module>oauth-service</module>
         <module>reference-service</module>
@@ -53,5 +60,6 @@
         <module>admin-service</module>
         <module>notification-service</module>
         <module>order-service</module>
+        <module>discount-service</module>
     </modules>
 </project>
