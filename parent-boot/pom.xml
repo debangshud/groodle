@@ -5,12 +5,12 @@
     <parent>
         <artifactId>groodle</artifactId>
         <groupId>org.groodle.boot</groupId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>${revision}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>parent-boot</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>parent-boot</name>
+    <version>${revision}</version>
+    <name>Parent Boot</name>
     <packaging>pom</packaging>
     <dependencies>
         <dependency>

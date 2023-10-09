@@ -5,9 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.groodle.boot</groupId>
     <artifactId>groodle</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>${revision}</version>
     <packaging>pom</packaging>
     <properties>
+        <revision>0.0.1-SNAPSHOT</revision>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
@@ -25,7 +26,7 @@
         <spring-boot-admin.version>2.2.2</spring-boot-admin.version>
         <liquibase-mongodb.version>4.1.1.2</liquibase-mongodb.version>
         <mongobee.version>0.13</mongobee.version>
-        <lombok.version>1.18.16</lombok.version>
+        <lombok.version>1.18.22</lombok.version>
         <mongock-spring.version>3.3.2</mongock-spring.version>
         <mongock-bom.version>4.3.8</mongock-bom.version>
         <opencsv.version>5.3</opencsv.version>
@@ -62,4 +63,32 @@
         <module>order-service</module>
         <module>discount-service</module>
     </modules>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>flatten-maven-plugin</artifactId>
+                <version>1.5.0</version>
+                <configuration>
+                    <updatePomFile>true</updatePomFile>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>flatten</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>flatten</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>flatten.clean</id>
+                        <phase>clean</phase>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>

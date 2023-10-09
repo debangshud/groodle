@@ -1,7 +1,7 @@
 package org.groodle.boot.service.user.web.rest;
 
-import org.groodle.boot.service.user.exception.CustomerNotFoundException;
 import org.groodle.boot.service.user.exception.CustomerAlreadyRegisteredException;
+import org.groodle.boot.service.user.exception.CustomerNotFoundException;
 import org.groodle.boot.service.user.exception.UserNotFoundException;
 import org.groodle.boot.service.user.web.vm.ErrorMessage;
 import org.springframework.http.HttpStatus;

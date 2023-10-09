@@ -1,10 +1,8 @@
 package org.groodle.boot.service.customer.web.rest;
 
 import lombok.extern.slf4j.Slf4j;
-import org.groodle.boot.service.customer.service.CustomerService;
 import org.groodle.boot.service.customer.model.Customer;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
+import org.groodle.boot.service.customer.service.CustomerService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

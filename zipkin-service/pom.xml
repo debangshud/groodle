@@ -3,14 +3,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <artifactId>zipkin-service</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>${revision}</version>
     <packaging>jar</packaging>
     <name>zipkin-service</name>
     <description>Zipkin Distributed Tracing Service</description>
     <parent>
         <groupId>org.groodle.boot</groupId>
         <artifactId>parent-boot</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>${revision}</version>
         <relativePath>../parent-boot</relativePath>
     </parent>
     <properties>

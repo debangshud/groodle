@@ -2,9 +2,9 @@ package org.groodle.boot.service.customer.service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.groodle.boot.service.customer.event.CustomerDeletionEvent;
+import org.groodle.boot.service.customer.model.Customer;
 import org.groodle.boot.service.customer.repository.CustomerRepository;
 import org.groodle.boot.service.customer.web.errors.CustomerNotFoundException;
-import org.groodle.boot.service.customer.model.Customer;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
