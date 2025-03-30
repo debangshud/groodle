@@ -1,0 +1,17 @@
+Design for Resiliency and High Availability
+	Availability
+	Fault Tolerance
+	Automated Continuity of Business
+	Recovery Point Objective
+	Recovery Time Objective
+	Disaster Recovery
+Build operationally ready and automated platforms and services
+	Observable Platforms and Services
+	Stress Testing
+	Documentation
+	Well defined support model
+	Upgrades and Maintenance
+Strategic Technology Selection and Standardization
+	Open source aligned platforms and services
+	Citi platforms and services
+	Vendor platforms and services vetted by Citi sourcing
