@@ -1,8 +1,10 @@
 # Created by .ignore support plugin (hsz.mobi)
 /.idea/
+data
 /target
 target/
 .metadata
 *.iws
 *.iml
 *.ipr
+.flattened-pom.xml
