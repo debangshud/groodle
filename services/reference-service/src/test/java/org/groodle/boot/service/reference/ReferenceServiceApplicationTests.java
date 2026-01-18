@@ -1,11 +1,11 @@
-package org.groodle.boot.service.customer;
+package org.groodle.boot.service.reference;
 
 import org.junit.jupiter.api.Assertions;
 import org.springframework.boot.test.context.SpringBootTest;
 
 
 @SpringBootTest
-public class ApplicationTests {
+public class ReferenceServiceApplicationTests {
 
     @org.junit.jupiter.api.Test
     public void contextLoads() {
@@ -13,3 +13,4 @@ public class ApplicationTests {
     }
 
 }
+

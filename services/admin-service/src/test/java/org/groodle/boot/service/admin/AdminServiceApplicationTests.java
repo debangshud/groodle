@@ -1,11 +1,11 @@
-package org.groodle.boot.service.gateway;
+package org.groodle.boot.service.admin;
 
 import org.junit.jupiter.api.Assertions;
 import org.springframework.boot.test.context.SpringBootTest;
 
 
 @SpringBootTest
-public class ApplicationTests {
+public class AdminServiceApplicationTests {
 
 	@org.junit.jupiter.api.Test
 	public void contextLoads() {

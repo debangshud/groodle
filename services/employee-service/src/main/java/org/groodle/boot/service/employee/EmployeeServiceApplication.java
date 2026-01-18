@@ -1,15 +1,16 @@
-package org.groodle.boot.service.gateway;
+package org.groodle.boot.service.employee;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
-@EnableDiscoveryClient
 @SpringBootApplication
-public class Application {
+@EnableDiscoveryClient
+public class EmployeeServiceApplication {
 
     static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(EmployeeServiceApplication.class, args);
     }
 
 }
+
