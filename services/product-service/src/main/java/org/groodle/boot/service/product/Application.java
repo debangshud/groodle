@@ -1,4 +1,4 @@
-package org.groodle.boot.service.customer;
+package org.groodle.boot.service.product;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,7 +8,9 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @EnableDiscoveryClient
 public class Application {
 
-    public static void main(String[] args) {
+    static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
+
 }
+

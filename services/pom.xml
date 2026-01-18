@@ -12,14 +12,17 @@
     <artifactId>services</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>user-service</module>
-        <module>reference-service</module>
-        <module>product-service</module>
-        <module>employee-service</module>
-        <module>customer-service</module>
         <module>admin-service</module>
+        <!--        <module>config-service</module>-->
+        <module>customer-service</module>
+        <module>discovery-service</module>
+        <module>employee-service</module>
         <module>gateway-service</module>
-<!--        <module>config-service</module>-->
-<!--        <module>oauth-service</module>-->
+        <!--        <module>oauth-service</module>-->
+        <module>product-service</module>
+        <module>reference-service</module>
+        <!--         <module>tracing-service</module>-->
+        <module>user-service</module>
+<!--        <module>zipkin-service</module>-->
     </modules>
 </project>
