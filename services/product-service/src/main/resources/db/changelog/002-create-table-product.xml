@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet author="ddasgupta" id="2">
+        <createTable tableName="product" >
+            <column name="id" autoIncrement="true" incrementBy="1" startWith="1" type="bigint">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(256)"/>
+            <column name="description" type="varchar(256)"/>
+            <column name="manufacturer_id" type="bigint">
+                <constraints nullable="false" foreignKeyName="fk_manufacturer_id" references="manufacturer(id)"/>
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable tableName="product"/>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>
