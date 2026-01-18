@@ -11,9 +11,9 @@
 
     <parent>
         <groupId>org.groodle.boot</groupId>
-        <artifactId>parent-boot</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../../parent-boot/pom.xml</relativePath>
+        <artifactId>service-starter-parent</artifactId>
+        <version>${revision}</version>
+        <relativePath>../../service-starters/service-starter-parent/pom.xml</relativePath>
     </parent>
     <properties>
         <class.main>org.groodle.boot.service.discovery.Application</class.main>

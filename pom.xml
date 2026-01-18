@@ -13,47 +13,10 @@
         <java.version>1.8</java.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-<!--        <spring-boot.version>2.2.2.RELEASE</spring-boot.version>-->
-<!--        <spring-boot.version>4.0.1</spring-boot.version>-->
-<!--        <spring-cloud.version>Hoxton.SR1</spring-cloud.version>-->
-<!--        <spring-cloud.version>2025.1.0</spring-cloud.version>-->
-
-<!--        <spring-boot-admin.version>2.2.2</spring-boot-admin.version>-->
-<!--        <docker.image.prefix>groodle</docker.image.prefix>-->
-<!--        <docker-maven-plugin.version>0.27.2</docker-maven-plugin.version>-->
-<!--        <fabric8-maven-plugin.version>4.4.1</fabric8-maven-plugin.version>-->
-<!--        <postgresql.version>42.2.9</postgresql.version>-->
-<!--        <liquibase-core.version>3.8.7</liquibase-core.version>-->
-<!--        <spring-boot-admin.version>2.2.2</spring-boot-admin.version>-->
-<!--        <liquibase-mongodb.version>4.1.1.2</liquibase-mongodb.version>-->
-<!--        <mongobee.version>0.13</mongobee.version>-->
-<!--        <lombok.version>1.18.16</lombok.version>-->
-<!--        <mongock-spring.version>3.3.2</mongock-spring.version>-->
-<!--        <mongock-bom.version>4.1.19</mongock-bom.version>-->
-<!--        <opencsv.version>5.3</opencsv.version>-->
-<!--        <maven-resources-plugin.version>3.2.0</maven-resources-plugin.version>-->
-<!--        <graphql-spring-boot-starter.version>5.0.2</graphql-spring-boot-starter.version>-->
-<!--        <graphql-java-tools.version>5.2.4</graphql-java-tools.version>-->
-<!--        <graphiql-spring-boot-starter.version>8.0.0</graphiql-spring-boot-starter.version>-->
-<!--        <zipkin.version>2.12.9</zipkin.version>-->
-<!--        <io.cucumber.version>6.10.4</io.cucumber.version>-->
-<!--        <net.masterthought.version>5.5.3</net.masterthought.version>-->
     </properties>
     <modules>
-<!--        <module>parent-boot</module>-->
-<!--        <module>config-service</module>-->
-<!--        <module>discovery-service</module>-->
-<!--        <module>api-gateway-service</module>-->
-<!--        <module>tracing-service</module>-->
-<!--        <module>oauth-service</module>-->
-<!--        <module>reference-service</module>-->
-<!--        <module>customer-service</module>-->
-<!--        <module>employee-service</module>-->
-<!--        <module>product-service</module>-->
-<!--        <module>admin-service</module>-->
         <module>service-dependencies</module>
         <module>service-starters</module>
         <module>services</module>
     </modules>
-
 </project>
