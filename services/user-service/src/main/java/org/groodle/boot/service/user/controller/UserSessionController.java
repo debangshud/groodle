@@ -1,8 +1,8 @@
-package org.groodle.boot.service.user.web.rest;
+package org.groodle.boot.service.user.controller;
 
 import org.groodle.boot.service.user.service.UserSessionService;
-import org.groodle.boot.service.user.web.vm.UserSessionCreateRequest;
-import org.groodle.boot.service.user.web.vm.UserSessionCreateResponse;
+import org.groodle.boot.service.user.dto.UserSessionCreateRequest;
+import org.groodle.boot.service.user.dto.UserSessionCreateResponse;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

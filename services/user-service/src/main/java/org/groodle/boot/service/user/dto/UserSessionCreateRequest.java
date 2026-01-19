@@ -1,4 +1,4 @@
-package org.groodle.boot.service.user.web.vm;
+package org.groodle.boot.service.user.dto;
 
 import lombok.Data;
 

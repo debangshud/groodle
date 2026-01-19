@@ -6,8 +6,8 @@ import org.groodle.boot.service.user.model.User;
 import org.groodle.boot.service.user.model.UserSession;
 import org.groodle.boot.service.user.repository.UserRepository;
 import org.groodle.boot.service.user.repository.UserSessionRepository;
-import org.groodle.boot.service.user.web.vm.UserSessionCreateRequest;
-import org.groodle.boot.service.user.web.vm.UserSessionCreateResponse;
+import org.groodle.boot.service.user.dto.UserSessionCreateRequest;
+import org.groodle.boot.service.user.dto.UserSessionCreateResponse;
 import org.springframework.stereotype.Service;
 
 @Service

@@ -22,7 +22,7 @@ public class CustomerController {
     @Value("${test.prop:test}")
     private String testProp;
 
-    @GetMapping("")
+    @GetMapping()
     public List<Customer> getAll() {
         log.info("method:getAll()");
         log.info("Test Property: {}",testProp);
@@ -31,7 +31,7 @@ public class CustomerController {
     }
 
     @GetMapping("/{id}")
-    public Customer getById(@PathVariable Long id) {
+    public Customer getById(@PathVariable("id") Long id) {
         log.info("method: getById(id)");
         log.debug("Requested Customer Id:{}", id);
         log.info("Test Property: {}",testProp);
@@ -43,7 +43,7 @@ public class CustomerController {
         }
     }
 
-    @PostMapping("/")
+    @PostMapping()
     public Customer create(@RequestBody Customer customer) {
         log.info("method:create(customer)");
         log.debug("Customer:{}", customer);
