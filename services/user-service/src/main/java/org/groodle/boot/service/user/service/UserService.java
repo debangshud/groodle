@@ -44,10 +44,10 @@ public class UserService {
         return UserDto.builder().id(user.getUsername()).password(user.getPassword()).build();
     }
 
-    public UserDto update(UserDto request, String userId) {
-        Objects.requireNonNull(userId, "User ID cannot be null");
+    public UserDto update(UserDto request, String id) {
+        Objects.requireNonNull(id, "User ID cannot be null");
         Objects.requireNonNull(request,"UserPartialUpdateRequest cannot be null");
-        final User user = userRepository.findFirstByUsername(userId).orElseThrow(() -> new UserNotFoundException(userId));
+        final User user = userRepository.findFirstByUsername(id).orElseThrow(() -> new UserNotFoundException(id));
         Optional.ofNullable(request.getPassword()).ifPresent(user::setPassword);
         Optional.ofNullable(request.getId()).ifPresent(user::setUsername);
         User saved = userRepository.save(user);

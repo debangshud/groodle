@@ -199,6 +199,11 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven.compiler.plugin.version}</version>
                 <configuration>
+                    <compilerArgs>
+                        <arg>-proc:full</arg>
+                        <arg>-parameters</arg>
+                    </compilerArgs>
+<!--                    <parameters>true</parameters>-->
 <!--                    <source>25</source>-->
 <!--                    <target>25</target>-->
                     <annotationProcessorPaths>
@@ -208,9 +213,6 @@
                             <version>${lombok.version}</version>
                         </path>
                     </annotationProcessorPaths>
-                    <compilerArgs>
-                        <arg>-proc:full</arg>
-                    </compilerArgs>
                 </configuration>
             </plugin>
         </plugins>

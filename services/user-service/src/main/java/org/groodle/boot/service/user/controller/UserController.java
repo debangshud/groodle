@@ -31,7 +31,7 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<UserDto> findByID(@PathVariable String id) {
+    public ResponseEntity<UserDto> findByID(@PathVariable("id") String id) {
         log.info("Id: {}", id);
         return ok(service.read(id));
     }
@@ -40,8 +40,8 @@ public class UserController {
         return ok(service.findAll());
     }
 
-    @PatchMapping("/{id}")
-    public ResponseEntity<UserDto> update(@RequestBody UserDto user, @PathVariable String id) {
+    @PutMapping("/{id}")
+    public ResponseEntity<UserDto> update(@RequestBody UserDto user, @PathVariable("id") String id) {
         log.info("{}", user);
         return ok(service.update(user, id));
     }
