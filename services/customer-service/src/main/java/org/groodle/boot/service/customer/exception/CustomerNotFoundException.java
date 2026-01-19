@@ -1,4 +1,4 @@
-package org.groodle.boot.service.customer.web.errors;
+package org.groodle.boot.service.customer.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

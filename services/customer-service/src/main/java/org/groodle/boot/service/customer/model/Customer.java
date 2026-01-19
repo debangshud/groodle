@@ -1,4 +1,4 @@
-package org.groodle.boot.service.customer.web.vm;
+package org.groodle.boot.service.customer.model;
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.*;
@@ -7,6 +7,9 @@ import jakarta.persistence.*;
 
 @Entity
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @JsonPropertyOrder({"id", "firstName", "lastName"})
 public class Customer {
 
