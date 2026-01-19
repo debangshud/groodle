@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@RequestMapping("/api/v1/customers")
 @Slf4j
 public class CustomerController {
 

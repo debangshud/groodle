@@ -6,10 +6,10 @@ import org.groodle.boot.service.user.web.vm.UserSessionCreateResponse;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/api/v1/users")
 public class UserSessionController {
 
-    private UserSessionService userSessionService;
+    private final UserSessionService userSessionService;
 
     public UserSessionController(UserSessionService userSessionService) {
         this.userSessionService = userSessionService;
