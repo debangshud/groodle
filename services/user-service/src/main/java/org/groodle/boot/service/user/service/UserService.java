@@ -11,8 +11,11 @@ import org.groodle.boot.service.user.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import jakarta.transaction.Transactional;
+
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Service
@@ -55,5 +58,9 @@ public class UserService {
         Objects.requireNonNull(id, "User ID cannot be null");
         userRepository.deleteByUsername(id);
         return UserDto.builder().id(id).build();
+    }
+
+    public List<UserDto> findAll() {
+        return userRepository.findAll().stream().map(user -> UserDto.builder().id(user.getUsername()).build()).collect(Collectors.toList());
     }
 }

@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
+import java.util.List;
 
 import static org.springframework.http.ResponseEntity.ok;
 
@@ -30,9 +31,13 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<UserDto> read(@PathVariable String id) {
+    public ResponseEntity<UserDto> findByID(@PathVariable String id) {
         log.info("Id: {}", id);
         return ok(service.read(id));
+    }
+    @GetMapping()
+    public ResponseEntity<List<UserDto>> findAll() {
+        return ok(service.findAll());
     }
 
     @PatchMapping("/{id}")
