@@ -22,7 +22,7 @@ public class CustomerController {
     @Value("${test.prop:test}")
     private String testProp;
 
-    @GetMapping("/")
+    @GetMapping("")
     public List<Customer> getAll() {
         log.info("method:getAll()");
         log.info("Test Property: {}",testProp);
