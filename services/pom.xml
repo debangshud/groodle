@@ -23,7 +23,7 @@
         <!--        <module>discovery-service</module>-->
         <!--        <module>tracing-service</module>-->
         <!--        <module>oauth-service</module>-->
-        <!--        <module>config-service</module>-->
+        <module>config-service</module>
         <!--        <module>zipkin-service</module>-->
     </modules>
 </project>

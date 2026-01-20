@@ -11,7 +11,7 @@
         <groupId>org.groodle.boot</groupId>
         <artifactId>service-starter-parent</artifactId>
         <version>${revision}</version>
-        <relativePath>../../starters/service-starter-parent/pom.xml</relativePath>
+        <relativePath>../../service-starters/service-starter-parent/pom.xml</relativePath>
     </parent>
     <dependencies>
         <dependency>
