@@ -12,19 +12,19 @@ import reactor.core.publisher.Mono;
 @RestController
 @RequestMapping("/api/v1/employees")
 public class EmployeeReactiveController {
-    private final EmployeeService employeeService;
+    private final EmployeeService service;
 
-    public EmployeeReactiveController(EmployeeService employeeService) {
-        this.employeeService = employeeService;
+    public EmployeeReactiveController(EmployeeService service) {
+        this.service = service;
     }
 
     @GetMapping("/{id}")
     private Mono<EmployeeDto> findByID(@PathVariable Long id) {
-        return Mono.just(employeeService.findByID(id));
+        return Mono.just(service.findByID(id));
     }
 
     @GetMapping
     private Flux<EmployeeDto> getAll() {
-        return Flux.fromIterable(employeeService.findAll());
+        return Flux.fromIterable(service.findAll());
     }
 }

@@ -1,7 +1,7 @@
 type Query {
-    products(count: Int):[Product]
-    productById(id: ID): Product
-    productCount: Int
+    findAll(count: Int):[Product]
+    findByID(id: ID): Product
+    count: Int
 }
 
 type Mutation {

@@ -1,3 +1,5 @@
+server:
+  port: 8084
 spring:
   application:
     name: product-service
@@ -9,37 +11,20 @@ spring:
   datasource:
     driver-class-name: org.h2.Driver
     password: ''
-    url: jdbc:h2:mem:testdb;CASE_INSENSITIVE_IDENTIFIERS=TRUE;DB_CLOSE_DELAY=-1
+    url: jdbc:h2:mem:product_db;CASE_INSENSITIVE_IDENTIFIERS=TRUE;DB_CLOSE_DELAY=-1
     username: sa
   jpa:
     hibernate:
       ddl-auto: none
     show-sql: true
+  graphql:
+    graphiql:
+      enabled: true
+      path: api/v1/products/graphiql
+    http:
+      path: /api/v1/products/graphql
 management:
   endpoints:
     web:
       exposure:
         include: "health,info,beans"
-graphql:
-  servlet:
-    actuator-metrics: true
-  playground:
-    cdn:
-      version: latest
-altair:
-  enabled: true
-  cdn:
-    enabled: false
-graphiql:
-  enabled: true
-  cdn:
-    enabled: true
-    version: 0.17.5
-voyager:
-  enabled: true
-  cdn:
-    enabled: false
-graphql.playground:
-  enabled: true
-  cdn:
-    enabled: false
